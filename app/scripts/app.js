@@ -12,10 +12,10 @@
 angular.module('dappstackAngularMasterApp', [
     'ngResource',
     'ui.router',
-    'ngDialog'
+    'ui.bootstrap'
   ])
 
-  .config(function ($stateProvider, $urlRouterProvider) {
+  .config(function($stateProvider, $urlRouterProvider) {
 
     $stateProvider
       //route for the home page
@@ -26,8 +26,7 @@ angular.module('dappstackAngularMasterApp', [
             templateUrl: 'views/header.html'
           },
           'content': {
-            templateUrl: 'views/main.html',
-            controller: 'MainController'
+            templateUrl: 'views/main.html'
           },
           'footer': {
             templateUrl: 'views/footer.html'
@@ -40,11 +39,10 @@ angular.module('dappstackAngularMasterApp', [
           url:'about',
           views: {
               'content@': {
-                  templateUrl: 'views/about.html',
-                  controller: 'AboutController'                 
+                  templateUrl: 'views/about.html'                 
               }
           }
-      })
+      });
 
       $urlRouterProvider.otherwise('/');
   });

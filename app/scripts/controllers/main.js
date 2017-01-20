@@ -5,13 +5,14 @@
  * @name dappstackAngularMasterApp.controller:MainCtrl
  * @description
  * # MainCtrl
- * Controller of the dappstackAngularMasterApp
+ * Controller of the dappstackAngularMasterApp main page
  */
+
 angular.module('dappstackAngularMasterApp')
-  .controller('MainCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
+
+  .controller('MainController', ['$scope', function($scope) {
+    $scope.awesomeThings = [
+
     ];
-  });
+  }])
+  ;
