@@ -1,9 +1,23 @@
 {
   "name": "dappstack-angular-master",
   "version": "0.0.0",
+  "description": "Application to search and learn about Ethereum DApps",
+  "main": "index.html",
+  "moduleType": [],
+  "authors": [
+    "Austin Steed"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
   "dependencies": {
-    "angular": "^1.4.0",
-    "bootstrap": "^3.2.0",
+    "angular": "~1.5.5",
+    "angular-ui-router": "~0.2.18",
     "angular-animate": "^1.4.0",
     "angular-aria": "^1.4.0",
     "angular-cookies": "^1.4.0",
@@ -11,7 +25,9 @@
     "angular-resource": "^1.4.0",
     "angular-route": "^1.4.0",
     "angular-sanitize": "^1.4.0",
-    "angular-touch": "^1.4.0"
+    "angular-touch": "^1.4.0",
+    "bootstrap": "~3.3.6",
+    "font-awesome": "fontawesome#~4.6.1"
   },
   "devDependencies": {
     "angular-mocks": "^1.4.0"
@@ -26,5 +42,8 @@
         "dist/js/bootstrap.js"
       ]
     }
+  },
+  "resolutions": {
+    "angular": "~1.5.5"
   }
 }
