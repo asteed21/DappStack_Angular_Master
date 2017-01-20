@@ -8,30 +8,43 @@
  *
  * Main module of the application.
  */
-angular
-  .module('dappstackAngularMasterApp', [
-    'ngAnimate',
-    'ngAria',
-    'ngCookies',
-    'ngMessages',
+
+angular.module('dappstackAngularMasterApp', [
     'ngResource',
-    'ngRoute',
-    'ngSanitize',
-    'ngTouch'
+    'ui.router',
+    'ngDialog'
   ])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
+
+  .config(function ($stateProvider, $urlRouterProvider) {
+
+    $stateProvider
+      //route for the home page
+      .state('app',{
+        url:'/',
+        views: {
+          'header': {
+            templateUrl: 'views/header.html'
+          },
+          'content': {
+            templateUrl: 'views/main.html',
+            controller: 'MainController'
+          },
+          'footer': {
+            templateUrl: 'views/footer.html'
+          }
+        }
       })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
+
+      // route for the about page
+      .state('app.about', {
+          url:'about',
+          views: {
+              'content@': {
+                  templateUrl: 'views/about.html',
+                  controller: 'AboutController'                 
+              }
+          }
       })
-      .otherwise({
-        redirectTo: '/'
-      });
+
+      $urlRouterProvider.otherwise('/');
   });
