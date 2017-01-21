@@ -1,24 +1,25 @@
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="container-fluid">
-        <div class="navbar-header col-xs-12 col-sm-3">
-            <a class="navbar-brand" ui-sref="app" href="#">DappStack</a>
+<div class="container">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" ng-click="isNavCollapsed = !isNavCollapsed">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" ui-sref="app"><img src="images/logo.png" height=40 width=40 id="logo"></a>
         </div>
-        <div class="col-xs-12 col-sm-6 text-center">
-            <form>
-                <input id="search-bar" type="search" placeholder="Search Dapps...">
-            </form>
-        </div>
-        <div class="col-xs-12 col-xs-3">
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#" ><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                <button type="button" class="btn menu-btn" uib-button-checkbox>
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
+        <div class="collapse navbar-collapse" uib-collapse="isNavCollapsed">
+            <ul class="nav navbar-nav">
+                <li class="navbar-right"><a href="#">Sign In</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Dapp Catalog</a></li>
+                <li><a href="#">Dapp News</a></li>
+                <li><a href="#">About</a></li>
+                <li id="search-li" class="text-center"><form class="navbar-nav navbar-form">
+                    <input type="search" class="form-control" id="search-bar" placeholder="Search Dapps..."></input>
+                </form></li>
             </ul>
         </div>
-    </div>
-</nav>  
+    </nav>
+</div>
