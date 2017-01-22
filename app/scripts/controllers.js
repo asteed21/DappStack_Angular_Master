@@ -6,4 +6,9 @@ angular.module('dappstackAngularMasterApp')
   $scope.isNavCollapsed = true;
   $scope.isCollapsed = false;
 }])
+
+
+.controller('SearchBoxController', ['$scope', function($scope) {
+
+}])
 ;
