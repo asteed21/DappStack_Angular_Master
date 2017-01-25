@@ -12,8 +12,8 @@
 <div class="container" id="main-content">
   <div class="row" id="featured-row">
     <h1>Featured</h1>
-    <ul id="featured-dapps">
-      <li class="thumbnail" id="list-item" ng-repeat=""
+    <ul id="featured-dapps" ng-repeat="dapp in dapps">
+      <dapp-results search-filter="featured='true'"></dapp-results>
     </ul>
   </div>
   <div class="row" id="popular-row">

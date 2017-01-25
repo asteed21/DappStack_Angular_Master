@@ -2,10 +2,13 @@
 
 angular.module('dappstackAngularMasterApp')
 
-.directive('dappThumbnail', function() {
+.directive('DappResults', function() {
     return {
         restrict: 'EA',
-        templateUrl: 'thumbnail.html',
+        templateUrl: 'results.html',
+        scope: {
+            'search-filter': '@'
+        }
     }
 })
 ;

@@ -22,15 +22,8 @@ angular.module('dappstackAngularMasterApp', [
       .state('app',{
         url:'/',
         views: {
-          'header': {
-            templateUrl: 'views/header.html',
-            controller: 'HeaderController'
-          },
-          'content': {
+          'view@': {
             templateUrl: 'views/main.html'
-          },
-          'footer': {
-            templateUrl: 'views/footer.html'
           }
         }
       })
@@ -39,7 +32,7 @@ angular.module('dappstackAngularMasterApp', [
       .state('app.about', {
           url:'about',
           views: {
-              'content@': {
+              'view@': {
                   templateUrl: 'views/about.html'                 
               }
           }
