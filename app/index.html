@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" ng-app="dappstackAngularMasterApp">
+<html lang="en" ng-app="app">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -26,7 +26,12 @@
 
     <!-- Site/application content here -->
 
-    <div ui-view="view"></div>
+    <!--<nav-bar brand="'Brand'"></nav-bar>-->
+    <div ui-view="header"></div>
+
+    <div ui-view="content"></div>
+    
+    <div ui-view="footer"></div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
@@ -50,9 +55,9 @@
     <script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
     <script src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
     <script src="../bower_components/angular-resource/angular-resource.min.js"></script>
-    <script src="scripts/app.js"></script>
-    <script src="scripts/controllers.js"></script>
-    <script src="scripts/services.js"></script>
+    <script src="./common/app.js"></script>
+    <script src="./common/nav-bar/nav-bar.component.js"></script>
+    <script src="./common/nav-bar/nav-bar.controller.js"></script>
     <!-- endbuild -->
 </body>
 </html>
