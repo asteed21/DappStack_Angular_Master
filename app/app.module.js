@@ -13,7 +13,8 @@ angular.module('dappstackApp', [
     'ngResource',
     'ui.router',
     'ui.bootstrap',
-    'dappstackApp.common'
+    'dappstackApp.common',
+    'dappstackApp.components'
   ])
 
 .config(function($stateProvider, $urlServiceProvider) {
@@ -27,7 +28,7 @@ angular.module('dappstackApp', [
             component: 'navBar'
           },
           'content': {
-            template: '<div>something</div>'
+            component: 'dappListItem'
           },
           'footer': {
             component: 'footerComponent'

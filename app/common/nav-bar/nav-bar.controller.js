@@ -3,16 +3,13 @@
 angular.module('dappstackApp.common.navBar')
 
     .controller('NavBarController', function() {
-        // A list of menus
+        // Two primary menus of menus
         this.menu = [{
-            name: "Home",
-            component: "home"
+            name: "Login",
+            component: "login"
         }, {
-            name: "About",
-            component: "about"
-        }, {
-            name: "Contact",
-            component: "contact"
+            name: "Sign Up",
+            component: "register"
         }];
     });
 
