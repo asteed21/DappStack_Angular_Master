@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="en" ng-app="app">
+<html lang="en" ng-app="dappstackApp">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Dapp Stack</title>
+    <title>DappStack</title>
     <meta name="description" content="">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
@@ -26,7 +26,6 @@
 
     <!-- Site/application content here -->
 
-    <!--<nav-bar brand="'Brand'"></nav-bar>-->
     <div ui-view="header"></div>
 
     <div ui-view="content"></div>
@@ -55,9 +54,13 @@
     <script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
     <script src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
     <script src="../bower_components/angular-resource/angular-resource.min.js"></script>
-    <script src="./common/app.js"></script>
-    <script src="./common/nav-bar/nav-bar.component.js"></script>
-    <script src="./common/nav-bar/nav-bar.controller.js"></script>
+    <script src="/app.module.js"></script>
+    <script src="/common/common.module.js"></script>
+    <script src="/common/footer/footer.module.js"></script>
+    <script src="/common/footer/footer.component.js"></script>
+    <script src="/common/nav-bar/nav-bar.module.js"></script>
+    <script src="/common/nav-bar/nav-bar.component.js"></script>
+    <script src="/common/nav-bar/nav-bar.controller.js"></script>
     <!-- endbuild -->
 </body>
 </html>

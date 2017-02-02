@@ -2,24 +2,25 @@
 
 /**
  * @ngdoc overview
- * @name dappstackAngularMasterApp
+ * @name dappstack
  * @description
- * # dappstackAngularMasterApp
+ * # dappstack
  *
  * Main module of the application.
  */
 
-let app = angular.module('app', [
+angular.module('dappstackApp', [
     'ngResource',
     'ui.router',
-    'ui.bootstrap'
+    'ui.bootstrap',
+    'dappstackApp.common'
   ])
 
-app.config(function($stateProvider, $urlServiceProvider) {
+.config(function($stateProvider, $urlServiceProvider) {
   
-  $urlServiceProvider.rules.otherwise({ state: 'app' });
+  $urlServiceProvider.rules.otherwise({ state: 'home' });
   
-  $stateProvider.state('app', {
+  $stateProvider.state('home', {
         url:'/',
         views: {
           'header': {
@@ -29,7 +30,7 @@ app.config(function($stateProvider, $urlServiceProvider) {
             template: '<div>something</div>'
           },
           'footer': {
-            template: '<div>something else</div>'
+            component: 'footerComponent'
           }
         }
     });

@@ -1,4 +1,6 @@
-angular.module('app')
+'use strict';
+
+angular.module('dappstackApp.common.navBar')
 
     .controller('NavBarController', function() {
         // A list of menus
