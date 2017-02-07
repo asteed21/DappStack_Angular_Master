@@ -1,5 +1,5 @@
 'use strict'
 
 angular.module('dappstackApp.components', [
-    'dappstackApp.components.dapps.dappListItem'
+    'dappstackApp.components.dapps'
 ]);

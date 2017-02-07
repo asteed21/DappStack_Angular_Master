@@ -28,7 +28,7 @@ angular.module('dappstackApp', [
             component: 'navBar'
           },
           'content': {
-            component: 'dappListItem'
+            component: 'dapps'
           },
           'footer': {
             component: 'footerComponent'
