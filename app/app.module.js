@@ -10,9 +10,12 @@
  */
 
 angular.module('dappstackApp', [
+  //Third Party
     'ngResource',
     'ui.router',
     'ui.bootstrap',
+    'angularCSS',
+  //In-App
     'dappstackApp.common',
     'dappstackApp.components'
   ])
