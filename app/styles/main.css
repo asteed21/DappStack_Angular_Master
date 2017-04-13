@@ -15,9 +15,13 @@ body {
     width: 100%;
 }
 
+#thumbnail-desc {
+    white-space: normal;
+}
+
 .thumbnail {
     width: 200px;
-    margin: 15px
+    margin: 15px;
 }
 
 .button-row {

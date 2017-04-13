@@ -2,7 +2,7 @@
     <img href="#" ng-src='{{$ctrl.logoImage}}' alt="Item Image"/>
     <div class="caption">
         <h3>{{$ctrl.name}}</h3>
-        <h4 class="text-left">{{$ctrl.thumbnailDescription}}</h4>
+        <h4 class="text-left" id="thumbnail-desc">{{$ctrl.thumbnailDescription}}</h4>
         <hr>
         <div class="button-row">
             <a href="#" class="btn btn-default pull-left" role="button">
@@ -12,6 +12,7 @@
                 <span>{{$ctrl.numOfLikes}}</span>
                 <span class="glyphicon glyphicon-thumbs-up"></span>
             </a>
+            <button type="button" class="btn btn-default" ng-click="$ctrl.open()">Open Modal</button>
         </div>
     </div>
 </li>

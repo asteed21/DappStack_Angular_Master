@@ -13,6 +13,7 @@ angular.module('dappstackApp', [
   //Third Party
     'ngResource',
     'ui.router',
+    'ngAnimate',
     'ui.bootstrap',
     'angularCSS',
   //In-App
