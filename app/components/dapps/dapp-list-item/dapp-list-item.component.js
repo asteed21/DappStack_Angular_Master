@@ -4,7 +4,6 @@ angular.module('dappstackApp.components.dapps.dappListItem')
 
     .component('dappListItem', {
         bindings: {
-            name: '<',
             thumbnailDescription: '<',
             logoImage: '<',
             numOfLikes: '<'

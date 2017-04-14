@@ -3,11 +3,21 @@
 angular.module('dappstackApp.components.dapps.dappListItem')
 
     .controller('DappListItemController', function($uibModal) {
+        
+        var $ctrl = this;
 
-        this.open = function() {
+        $ctrl.items = ['item1', 'item2', 'item3'];
+        
+        $ctrl.open = function() {
+
             var modalInstance = $uibModal.open({
-                component: 'dappDialogComponent'
-                //templateUrl: './components/dapps/dapp-dialog/dapp-dialog.html'
+                component: 'dappDialogComponent',
+                size: 'lg',
+                resolve: {
+                    items: function () {
+                    return $ctrl.items;
+                    }
+                }   
             })
         };
     });

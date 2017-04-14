@@ -2,18 +2,22 @@
 
 angular.module('dappstackApp.components.dapps.dappDialog')
 
-    .controller('DappDialogController', function() {
+    .controller('DappDialogController', function(items) {
 
-        this.handleClose = function() {
-            console.info("in handle close");
-            this.$close({
-                result: this.modalData
-            });
+        var $ctrl = this;
+
+        $ctrl.items = items;
+
+        $ctrl.selected = {
+            item: $ctrl.items[0]
         };
-        this.handleDismiss = function() {
-            console.info("in handle dismiss");
-            this.$dismiss({
-                reason: 'cancel'
-            });
+
+        $ctrl.ok = function () {
+            $uibModalInstance.close($ctrl.selected.item);
         };
+
+        $ctrl.cancel = function () {
+            $uibModalInstance.dismiss('cancel');
+        };
+
     });
