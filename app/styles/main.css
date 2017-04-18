@@ -14,7 +14,7 @@ body {
 #search-input {
     width: 100%;
 }
-
+/*
 #thumbnail-desc {
     white-space: normal;
 }
@@ -26,4 +26,8 @@ body {
 
 .button-row {
     height: 40px;
+}*/
+
+.modal-content{
+    border-radius: 0px !important;
 }

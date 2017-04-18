@@ -1,15 +1,13 @@
 <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal">&times;</button>
-    <h4 class="modal-title">{{$ctrl.name}}</h4>
+    <h4 class="modal-title">{{$ctrl.item}}</h4>
 </div>
 <div class="modal-body" name="modalData">
-    <ul>
-        <li ng-repeat="item in $ctrl.items">
-            <a href="#" ng-click="$event.preventDefault(); this.selected.item = item">{{ item }}</a>
-        </li>
-    </ul>
+  <uib-tabset active="activeJustified" justified="true">
+    <uib-tab index="0" heading="About">Placeholder for info about the Dapp</uib-tab>
+    <uib-tab index="1" heading="Stats">Placeholder for stats about the Dapp</uib-tab>
+    <uib-tab index="2" heading="Discussion">Placeholder for discussion about the Dapp</uib-tab>
+  </uib-tabset>
 </div>
 <div class="modal-footer">
-    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-    <button type="submit" class="btn btn-success" data-dismiss="modal">Submit</button>
 </div>
