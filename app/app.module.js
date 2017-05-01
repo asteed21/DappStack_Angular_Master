@@ -32,7 +32,7 @@ angular.module('dappstackApp', [
             component: 'navBar'
           },
           'content': {
-            component: 'dapps'
+            component: 'home'
           },
           'footer': {
             component: 'footerComponent'
