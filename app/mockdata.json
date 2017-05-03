@@ -1,0 +1,77 @@
+{
+    "dapps": [    
+        {
+            "id": 1,
+            "name": "Property Dapp",
+            "thumbnailDescription": "A summary of up to 40 characters.",
+            "logoImage": "./images/yeoman.png",
+            "numOfLikes": 43,
+            "numOfFavorites": 11
+        },
+            {
+            "id": 2,
+            "name": "Writing Dapp",
+            "thumbnailDescription": "A summary of up to 40 characters.",
+            "logoImage": "./images/yeoman.png",
+            "numOfLikes": 14,
+            "numOfFavorites": 5
+        },
+        {
+            "id": 3,
+            "name": "Contract Dapp",
+            "thumbnailDescription": "A summary of up to 40 characters.",
+            "logoImage": "./images/yeoman.png",
+            "numOfLikes": 43,
+            "numOfFavorites": 11
+        },
+            {
+            "id": 4,
+            "name": "Test Dapp",
+            "thumbnailDescription": "A summary of up to 40 characters.",
+            "logoImage": "./images/yeoman.png",
+            "numOfLikes": 14,
+            "numOfFavorites": 5
+        },
+        {
+            "id": 5,
+            "name": "Property Dapp",
+            "thumbnailDescription": "A summary of up to 40 characters.",
+            "logoImage": "./images/yeoman.png",
+            "numOfLikes": 43,
+            "numOfFavorites": 11
+        },
+        {
+            "id": 6,
+            "name": "Shipping Dapp",
+            "thumbnailDescription": "A summary of up to 40 characters.",
+            "logoImage": "./images/yeoman.png",
+            "numOfLikes": 14,
+            "numOfFavorites": 5
+        },
+        {
+            "id": 7,
+            "name": "DAO Dapp",
+            "thumbnailDescription": "A summary of up to 40 characters.",
+            "logoImage": "./images/yeoman.png",
+            "numOfLikes": 43,
+            "numOfFavorites": 11
+        }
+    ],
+    "users": [
+        {
+            "id": 1,
+            "firstName": "Austin",
+            "lastName": "Steed"
+        },
+        {
+            "id": 1,
+            "firstName": "Austin",
+            "lastName": "Steed"
+        },
+        {
+            "id": 1,
+            "firstName": "Austin",
+            "lastName": "Steed"
+        }
+    ]
+}

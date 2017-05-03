@@ -9,5 +9,6 @@ angular.module('dappstackApp.components.dapps.dappListItem')
             numOfLikes: '<'
         },
         templateUrl: './components/dapps/dapp-list-item/dapp-list-item.html',
-        controller: 'DappListItemController'
+        controller: 'DappListItemController',
+        controllerAs: 'vm'
     });
