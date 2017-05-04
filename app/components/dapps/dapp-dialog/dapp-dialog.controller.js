@@ -4,28 +4,39 @@ angular.module('dappstackApp.components.dapps.dappDialog')
 
     .controller('DappDialogController', function(dappsFactory) {
 
-        /* Assign scope as variable and create variable for dapp population */
+        /* 
+        Assign scope as variable and pass resolutions from list item controller
+         */
         var vm = this;
-        vm.dapp;
 
-        /* Initialize with resolutions from modal creation (id modal in scope), then create basic modal functions */
-        vm.$onInit = function () {
+        vm.$onInit = function() {
+            vm.dappId = vm.resolve.dappId;
             vm.selected = vm.resolve.dapp;
-            vm.dappId = vm.resolve.dappId
+
+            /* Get relevant dapp data for modal with dapps factory call, assign to dapp propert of controller */
+            dappsFactory.getDapp(vm.dappId).then(function(data) {
+                vm.dapp = data;
+            }).catch(function() {
+                vm.error = "Can't retrieve DApp data."; 
+            }).then(function() {
+            /* Controller methods requiring vm.dapp data */
+                vm.hasSocial = function(input) {
+                    if (vm.dapp.socialLinks[input]) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                }
+            })
         }
 
+        /* Stateless modal functions */
         vm.ok = function() {
             vm.close({$value: vm.selected});
         };
 
-        vm.cancel = function () {
+        vm.cancel = function() {
             vm.dismiss({$value: 'cancel'});
         };
-    
-        /* Get relevant dapp data for modal with dapps factory call */
-        dappsFactory.getDapp(vm.dappId).then(function(data) {
-            vm.dapp = data;
-            console.log(vm.dapp)
-        });
 
     });

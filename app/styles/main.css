@@ -14,20 +14,10 @@ body {
 #search-input {
     width: 100%;
 }
-/*
-#thumbnail-desc {
-    white-space: normal;
-}
-
-.thumbnail {
-    width: 200px;
-    margin: 15px;
-}
-
-.button-row {
-    height: 40px;
-}*/
 
 .modal-content{
     border-radius: 0px !important;
+}
+
+.dapp-social-links {
 }

@@ -8,7 +8,7 @@ angular.module('dappstackApp.components.dapps.dappListItem')
             name: '<',
             thumbnailDescription: '<',
             logoImage: '<',
-            numOfLikes: '<'
+            likes: '<'
         },
         templateUrl: './components/dapps/dapp-list-item/dapp-list-item.html',
         controller: 'DappListItemController',

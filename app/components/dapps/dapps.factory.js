@@ -2,7 +2,7 @@
 
 angular.module('dappstackApp.components.dapps')
 
-    .factory('dappsFactory', ['$http', function($http) {
+    .factory('dappsFactory', function($http) {
 
     var urlBase = '../../mockdata.json';
     var dappsFactory = {};
@@ -15,7 +15,7 @@ angular.module('dappstackApp.components.dapps')
 
     //TODO - update factory with proper URI route of APIs
     dappsFactory.getDapp = function(dappId) {
-        return $http.get(urlBase).then(function(response, dappId){
+        return $http.get(urlBase).then(function(response){
             return response.data.dapps[dappId];
         });
     };
@@ -37,4 +37,4 @@ angular.module('dappstackApp.components.dapps')
     // };
 
     return dappsFactory;
-}]);
+});
