@@ -13,25 +13,28 @@ angular.module('dappstackApp.components.dapps')
         });
     };
 
-    dappsFactory.getDapp = function (id) {
-        return $http.get(urlBase + '/' + id);
+    //TODO - update factory with proper URI route of APIs
+    dappsFactory.getDapp = function(dappId) {
+        return $http.get(urlBase).then(function(response, dappId){
+            return response.data.dapps[dappId];
+        });
     };
 
-    dappsFactory.insertDapp = function (dapp) {
-        return $http.post(urlBase, cust);
-    };
+    // dappsFactory.insertDapp = function (dapp) {
+    //     return $http.post(urlBase, cust);
+    // };
 
-    dappsFactory.updateDapp = function (dapp) {
-        return $http.put(urlBase + '/' + dapp.ID, dapp)
-    };
+    // dappsFactory.updateDapp = function (dapp) {
+    //     return $http.put(urlBase + '/' + dapp.ID, dapp)
+    // };
 
-    dappsFactory.deleteDapp = function (id) {
-        return $http.delete(urlBase + '/' + id);
-    };
+    // dappsFactory.deleteDapp = function (id) {
+    //     return $http.delete(urlBase + '/' + id);
+    // };
 
-    dappsFactory.getComments = function (id) {
-        return $http.get(urlBase + '/' + id + '/comments');
-    };
+    // dappsFactory.getComments = function (id) {
+    //     return $http.get(urlBase + '/' + id + '/comments');
+    // };
 
     return dappsFactory;
 }]);

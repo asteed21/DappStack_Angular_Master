@@ -4,6 +4,8 @@ angular.module('dappstackApp.components.dapps.dappListItem')
 
     .component('dappListItem', {
         bindings: {
+            dappId: '<',
+            name: '<',
             thumbnailDescription: '<',
             logoImage: '<',
             numOfLikes: '<'

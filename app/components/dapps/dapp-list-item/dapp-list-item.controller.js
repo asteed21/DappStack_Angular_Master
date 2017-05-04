@@ -6,11 +6,19 @@ angular.module('dappstackApp.components.dapps.dappListItem')
         
         var vm = this;
 
-        vm.open = function(items) {
+        vm.open = function(dapps) {
 
             var modalInstance = $uibModal.open( {
                 component: 'dappDialogComponent',
-                size: 'lg'
+                size: 'lg',
+                resolve: {
+                    dapp: function () {
+                        return vm.dapp;
+                    },
+                    dappId: function() {
+                        return vm.dappId;
+                    }
+                }
             })
         };
     });

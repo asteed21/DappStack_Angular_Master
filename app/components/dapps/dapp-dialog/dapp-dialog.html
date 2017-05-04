@@ -1,10 +1,12 @@
 <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal">&times;</button>
-    <h4 class="modal-title">{{$ctrl.item}}</h4>
+    <button type="button" class="close" data-dismiss="modal" ng-click="vm.cancel()">&times;</button>
+    <h4 class="modal-title">{{vm.dapp.name}}</h4>
 </div>
 <div class="modal-body" name="modalData">
-  <uib-tabset active="activeJustified" justified="true">
-    <uib-tab index="0" heading="About">Placeholder for info about the Dapp</uib-tab>
+  <uib-tabset active="activeJustified" justified="true" type="tabs">
+    <uib-tab index="0" heading="About">
+      <div>{{vm.dapp.name}}</div>
+    </uib-tab>
     <uib-tab index="1" heading="Stats">Placeholder for stats about the Dapp</uib-tab>
     <uib-tab index="2" heading="Discussion">Placeholder for discussion about the Dapp</uib-tab>
   </uib-tabset>

@@ -2,18 +2,30 @@
 
 angular.module('dappstackApp.components.dapps.dappDialog')
 
-    .controller('DappDialogController', function() {
+    .controller('DappDialogController', function(dappsFactory) {
 
-        this.selected = {
-            //item: this.items[0]
+        /* Assign scope as variable and create variable for dapp population */
+        var vm = this;
+        vm.dapp;
+
+        /* Initialize with resolutions from modal creation (id modal in scope), then create basic modal functions */
+        vm.$onInit = function () {
+            vm.selected = vm.resolve.dapp;
+            vm.dappId = vm.resolve.dappId
+        }
+
+        vm.ok = function() {
+            vm.close({$value: vm.selected});
         };
 
-        this.ok = function () {
-            $uibModalInstance.close(this.selected.item);
+        vm.cancel = function () {
+            vm.dismiss({$value: 'cancel'});
         };
-
-        this.cancel = function () {
-            $uibModalInstance.dismiss('cancel');
-        };
+    
+        /* Get relevant dapp data for modal with dapps factory call */
+        dappsFactory.getDapp(vm.dappId).then(function(data) {
+            vm.dapp = data;
+            console.log(vm.dapp)
+        });
 
     });

@@ -8,7 +8,6 @@ angular.module('dappstackApp.components.dapps')
         vm.dapps;
 
         dappsFactory.getDapps().then(function(data) {
-            console.log(data);
             vm.dapps = data;
         });
 

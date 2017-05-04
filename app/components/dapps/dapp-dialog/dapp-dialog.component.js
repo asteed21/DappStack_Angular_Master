@@ -9,5 +9,6 @@ angular.module('dappstackApp.components.dapps.dappDialog')
             dismiss: '&'
         },
         templateUrl: './components/dapps/dapp-dialog/dapp-dialog.html',
-        controller: 'DappDialogController'
+        controller: 'DappDialogController',
+        controllerAs: 'vm'
     });

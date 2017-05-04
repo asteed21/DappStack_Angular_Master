@@ -1,7 +1,7 @@
 {
     "dapps": [    
         {
-            "id": 1,
+            "id": 0,
             "name": "Property Dapp",
             "thumbnailDescription": "A summary of up to 40 characters.",
             "logoImage": "./images/yeoman.png",
@@ -9,7 +9,7 @@
             "numOfFavorites": 11
         },
             {
-            "id": 2,
+            "id": 1,
             "name": "Writing Dapp",
             "thumbnailDescription": "A summary of up to 40 characters.",
             "logoImage": "./images/yeoman.png",
@@ -17,7 +17,7 @@
             "numOfFavorites": 5
         },
         {
-            "id": 3,
+            "id": 2,
             "name": "Contract Dapp",
             "thumbnailDescription": "A summary of up to 40 characters.",
             "logoImage": "./images/yeoman.png",
@@ -25,7 +25,7 @@
             "numOfFavorites": 11
         },
             {
-            "id": 4,
+            "id": 3,
             "name": "Test Dapp",
             "thumbnailDescription": "A summary of up to 40 characters.",
             "logoImage": "./images/yeoman.png",
@@ -33,7 +33,7 @@
             "numOfFavorites": 5
         },
         {
-            "id": 5,
+            "id": 4,
             "name": "Property Dapp",
             "thumbnailDescription": "A summary of up to 40 characters.",
             "logoImage": "./images/yeoman.png",
@@ -41,7 +41,7 @@
             "numOfFavorites": 11
         },
         {
-            "id": 6,
+            "id": 5,
             "name": "Shipping Dapp",
             "thumbnailDescription": "A summary of up to 40 characters.",
             "logoImage": "./images/yeoman.png",
@@ -49,7 +49,7 @@
             "numOfFavorites": 5
         },
         {
-            "id": 7,
+            "id": 6,
             "name": "DAO Dapp",
             "thumbnailDescription": "A summary of up to 40 characters.",
             "logoImage": "./images/yeoman.png",
