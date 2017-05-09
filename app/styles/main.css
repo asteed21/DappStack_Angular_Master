@@ -19,5 +19,9 @@ body {
     border-radius: 0px !important;
 }
 
-.dapp-social-links {
+.profile-header {
+    margin: 30px;
+    padding: 60px;
+    background: grey;
+    border-radius: 15px;
 }
