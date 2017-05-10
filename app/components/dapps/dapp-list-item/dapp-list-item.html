@@ -1,8 +1,8 @@
 <li class="col-xs-12">
-    <img class="col-xs-3" ng-src='{{vm.logoImage}}' ng-click="vm.open()" alt="Item Image"/>
+    <img class="col-xs-3" ng-src='{{vm.dappsCtrl.dapps[vm.dappId].logoImage}}' ui-sref="app.dapps.dappdetails({dappId: vm.dappId})" alt="Item Image"/>
     <div class="caption col-xs-6">
-        <h3>{{vm.name}}</h3>
-        <h4 class="text-left" id="thumbnail-desc">{{vm.thumbnailDescription}}</h4>
+        <h3>{{vm.dappsCtrl.dapps[vm.dappId].name}}</h3>
+        <h4 class="text-left" id="thumbnail-desc">{{vm.dappsCtrl.dapps[vm.dappId].thumbnailDescription}}</h4>
         <hr>
     </div>
     <div class="button-section col-xs-2">
@@ -10,7 +10,7 @@
             <span class="glyphicon glyphicon-heart"></span>
         </a>
         <a href="#" class="btn btn-default pull-right" role="button">
-            <span>{{vm.likes}}</span>
+            {{vm.dappsCtrl.dapps[vm.dappId].likes}}
             <span class="glyphicon glyphicon-thumbs-up"></span>
         </a>
     </div>

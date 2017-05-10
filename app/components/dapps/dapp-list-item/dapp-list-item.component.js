@@ -4,11 +4,10 @@ angular.module('dappstackApp.components.dapps.dappListItem')
 
     .component('dappListItem', {
         bindings: {
-            dappId: '<',
-            name: '<',
-            thumbnailDescription: '<',
-            logoImage: '<',
-            likes: '<'
+            dappId: '<'
+        },
+        require: {
+            dappsCtrl: '^dapps'
         },
         templateUrl: './components/dapps/dapp-list-item/dapp-list-item.html',
         controller: 'DappListItemController',

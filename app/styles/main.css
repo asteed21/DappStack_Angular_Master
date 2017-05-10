@@ -1,4 +1,4 @@
-/*TODO: modularize all css into respective module directories*/
+/* TODO: modularize all css into respective module directories */
 
 body {
     padding-top: 50px;
@@ -20,8 +20,16 @@ body {
 }
 
 .profile-header {
-    margin: 30px;
-    padding: 60px;
+    margin-top: 30px;
+    padding: 40px;
     background: grey;
     border-radius: 15px;
+}
+
+.profile-tabs {
+    margin-top: 30px;
+}
+
+#profile-pic {
+    margin: auto;
 }

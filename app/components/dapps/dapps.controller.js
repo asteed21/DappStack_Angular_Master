@@ -7,8 +7,14 @@ angular.module('dappstackApp.components.dapps')
         var vm = this;
         vm.dapps;
 
-        dappsFactory.getDapps().then(function(data) {
-            vm.dapps = data;
-        });
+        dappsFactory.query(
+            function (response) {
+                vm.dapps = response;
+                console.log(response);
+            },
+            function (response) {
+                vm.message = "Error: " + response.status + " " + response.statusText;
+            }
+        );
 
     });

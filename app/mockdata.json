@@ -155,19 +155,37 @@
     ],
     "users": [
         {
-            "id": 1,
+            "id": 0,
             "firstName": "Austin",
-            "lastName": "Steed"
+            "lastName": "Steed",
+            "realm": "admin",
+            "username": "asteed21",
+            "password": "admin",
+            "email": "asteed21@gmail.com",
+            "emailVerified": true,
+            "verificationToken": "09138740923qe3"
         },
         {
             "id": 1,
-            "firstName": "Austin",
-            "lastName": "Steed"
+            "firstName": "No",
+            "lastName": "Body",
+            "realm": "user",
+            "username": "nbdy",
+            "password": "admin",
+            "email": "something@something.com",
+            "emailVerified": true,
+            "verificationToken": "0000001"
         },
         {
-            "id": 1,
-            "firstName": "Austin",
-            "lastName": "Steed"
+            "id": 2,
+            "firstName": "Sam",
+            "lastName": "Sham",
+            "realm": "user",
+            "username": "nbdy",
+            "password": "admin",
+            "email": "somethingelse@something.com",
+            "emailVerified": false,
+            "verificationToken": "0000001"
         }
     ]
 }
