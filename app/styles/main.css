@@ -33,3 +33,7 @@ body {
 #profile-pic {
     margin: auto;
 }
+
+#nav-profile-pic {
+    border-radius: 50%;
+}

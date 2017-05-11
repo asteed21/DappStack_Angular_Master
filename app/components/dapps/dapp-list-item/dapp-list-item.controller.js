@@ -2,26 +2,16 @@
 
 angular.module('dappstackApp.components.dapps.dappListItem')
 
-    .controller('DappListItemController', function($uibModal) {
+    .controller('DappListItemController', function($state) {
         
         var vm = this;
+        
+        vm.provideState = function() {
+            if ($state.current.name === "app") {
+                return "app.dappdetails({dappId: vm.dappId})";
+            } else {
+                return "app.dapps.dappdetails({dappId: vm.dappId})";
+            }
+        }
 
-        // vm.open = function(dapps) {
-
-        //     var modalInstance = $uibModal.open( {
-        //         component: 'dappDialogComponent',
-        //         size: 'lg',
-        //         resolve: {
-        //             instance: function() {
-        //                 return vm.dapp;
-        //             },
-        //             dapp: function () {
-        //                 return vm.dappsCtrl.dapps[vm.dappId];
-        //             },
-        //             dappId: function() {
-        //                 return vm.dappId;
-        //             }
-        //         }
-        //     })
-        // };
     });

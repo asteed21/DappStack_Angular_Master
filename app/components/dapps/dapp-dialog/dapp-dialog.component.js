@@ -4,7 +4,6 @@ angular.module('dappstackApp.components.dapps.dappDialog')
 
     .component('dappDialogComponent', {
         bindings: {
-            resolve: '<',
             close: '&',
             dismiss: '&'
         },

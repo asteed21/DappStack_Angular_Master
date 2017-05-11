@@ -2,15 +2,24 @@
 
 angular.module('dappstackApp.components.dapps.dappDialog')
 
-    .controller('DappDialogController', function(dappsFactory) {
+    //Include $stateParams to get local route parameter of dappId and use in dappsFactory to populate modal
+    .controller('DappDialogController', function(dappsFactory, $stateParams) {
 
-        /* 
-        Assign scope as variable and pass resolutions from list item controller
-         */
+        //Assign scope as variable
         var vm = this;
-        vm.dappId = vm.resolve.dappId;
-        vm.dapp = vm.resolve.dapp;
 
+        //assign scope access to dapp information
+        vm.dappId = $stateParams.dappId;
+        vm.dapp = dappsFactory.get({id: vm.dappId}).$promise.then(
+            function (response) {
+                vm.dapp = response;
+            },
+            function (response) {
+                console.log("Error: " + response.status + " " + response.statusText);
+            }
+        );
+
+        //Function to populate social icons with ng-show in dapp-diaolog view
         vm.hasSocial = function(input) {
             if (vm.dapp.socialLinks[input]) {
                 return true;
@@ -19,7 +28,7 @@ angular.module('dappstackApp.components.dapps.dappDialog')
             }
         };
 
-        /* Stateless modal functions */
+        // Stateless modal functions to manage modal interactions
         vm.ok = function() {
             vm.close({$value: vm.selected});
         };
