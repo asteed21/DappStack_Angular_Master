@@ -2,18 +2,19 @@
 
 angular.module('dappstackApp.components.dapps')
 
-    .controller('DappsController', function(dappsFactory) {
+    .controller('DappsController', function(Dapps) {
         
         var vm = this;
         vm.dapps;
 
-        dappsFactory.query(
+        Dapps.find()
+            .$promise.then(
             function (response) {
                 vm.dapps = response;
                 console.log(response);
             },
             function (response) {
-                vm.message = "Error: " + response.status + " " + response.statusText;
+                console.log("Error: " + response.status + " " + response.statusText);
             }
         );
 

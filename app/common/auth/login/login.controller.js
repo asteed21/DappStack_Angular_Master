@@ -2,7 +2,7 @@
 
 angular.module('dappstackApp.common.auth.login')
 
-    .controller('LoginController', function ($localStorage, authService) {
+    .controller('LoginController', function ($uibModal, $localStorage, authService) {
         
         var vm = this;
 
@@ -14,11 +14,11 @@ angular.module('dappstackApp.common.auth.login')
 
             authService.login(vm.loginData);
 
-            ngDialog.close();
+            //ngDialog.close();
 
         };
                 
         vm.openRegister = function () {
-            //ngDialog.open({ template:'<register></register>', plain: true, className:'ngdialog-theme-default'});
+            //ngDialog.open({ template: 'views/register.html', scope: vm, className: 'ngdialog-theme-default', controller:"RegisterController" });
         };
     });

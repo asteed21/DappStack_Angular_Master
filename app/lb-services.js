@@ -10,7 +10,7 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
   module.exports = "lbServices";
 }
 
-(function(window, angular, undefined) {
+(function(window, angular, undefined, baseURL) {
   'use strict';
 
   var urlBase = "/api";

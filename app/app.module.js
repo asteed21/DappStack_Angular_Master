@@ -17,14 +17,10 @@ angular.module('dappstackApp', [
   'ui.bootstrap',
   'angularCSS',
 //In-App
-  'lbServices',
+  'lbServices', //-->Loopback-generated services
   'dappstackApp.common',
   'dappstackApp.components',
-  //'lbServices' //-->Loopback-generated services
 ])
-
-//Establish app-wide URL for database access for api calls
-.constant('baseURL','http://0.0.0.0:3000/api/')
 
 /* Create provider to enable stateful modals,
 works alongside normal $stateProvider service to apply routing to modals*/
@@ -56,9 +52,12 @@ works alongside normal $stateProvider service to apply routing to modals*/
     };
 })
 
-//Configure routing for various URLs/states in the application
-.config(function($stateProvider, $urlServiceProvider, modalStateProvider) {
+.config(function($stateProvider, $urlServiceProvider, modalStateProvider, LoopBackResourceProvider) {
   
+  // Assign the URL lb-services uses to access the LoopBack REST API server
+  LoopBackResourceProvider.setUrlBase('http://0.0.0.0:3000/api');
+
+  //Configure routing for various URLs/states in the application
   $stateProvider.state('app', {
         url:'/',
         views: {

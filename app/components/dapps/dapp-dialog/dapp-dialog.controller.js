@@ -3,7 +3,7 @@
 angular.module('dappstackApp.components.dapps.dappDialog')
 
     //Include $stateParams to get local route parameter of dappId and use in dappsFactory to populate modal
-    .controller('DappDialogController', function(dappsFactory, $stateParams) {
+    .controller('DappDialogController', function(Dapps, $stateParams) {
 
         //Assign scope as variable
         var vm = this;
@@ -11,14 +11,15 @@ angular.module('dappstackApp.components.dapps.dappDialog')
         //assign scope access to dapp information
         vm.$onInit = function() {
             vm.dappId = $stateParams.dappId;
-            vm.dapp = dappsFactory.get({id: vm.dappId}).$promise.then(
-                function (response) {
-                    vm.dapp = response;
-                },
-                function (response) {
-                    console.log("Error: " + response.status + " " + response.statusText);
-                }
-            );
+            vm.dapp = Dapps.get({id: vm.dappId})
+                .$promise.then(
+                    function (response) {
+                        vm.dapp = response;
+                    },
+                    function (response) {
+                        console.log("Error: " + response.status + " " + response.statusText);
+                    }
+                );
         }
 
         //Function to populate social icons with ng-show in dapp-diaolog view
