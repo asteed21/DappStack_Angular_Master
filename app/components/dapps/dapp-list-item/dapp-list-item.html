@@ -1,16 +1,21 @@
-<li class="col-xs-12">
-    <img class="col-xs-3" ng-src='{{vm.logoImage}}' ui-sref="{{vm.provideState()}}" alt="Item Image"/>
-    <div class="caption col-xs-6">
-        <h3>{{vm.name}}</h3>
-        <h4 class="text-left" id="thumbnail-desc">{{vm.thumbnailDescription}}</h4>
-        <hr>
+<li class="col-xs-12 dapp-list-item list-group-item">
+    <div class="col-xs-3 list-image-section">
+        <img class="img-fluid img-thumbnail rounded" ng-src='{{vm.logoImage}}' ui-sref="{{vm.provideState()}}" alt="dapp logo"/>
     </div>
-    <div class="button-section col-xs-2">
-        <a href="#" class="btn btn-default pull-left" role="button">
-            <span class="glyphicon glyphicon-heart"></span>
-        </a>
-        <a href="#" class="btn btn-default pull-right" role="button">
-            <span class="glyphicon glyphicon-thumbs-up"></span>
-        </a>
+    <div class="caption col-xs-9">
+        <div class="row">
+            <h3 class="list-group-item-heading">{{vm.name}}</h3>
+            <p class="text-left lead" id="thumbnail-desc">{{vm.thumbnailDescription}}</p>
+        </div>
+        <div class="row">
+            <div class="list-button-section text-right col-xs-12">
+                    <a href="#" class="btn btn-default" role="button">
+                        <span class="glyphicon glyphicon-heart"></span>
+                    </a>
+                    <a href="#" class="btn btn-default" role="button">
+                        <span class="glyphicon glyphicon-thumbs-up"></span>
+                    </a>
+            </div>    
+        </div>
     </div>
 </li>

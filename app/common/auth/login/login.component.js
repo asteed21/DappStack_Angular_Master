@@ -2,7 +2,7 @@
 
 angular.module('dappstackApp.common.auth.login')
 
-    .component('registerComponent', {
+    .component('loginComponent', {
         templateUrl: './common/auth/login/login.html',
         controller: 'LoginController',
         controllerAs: 'vm'

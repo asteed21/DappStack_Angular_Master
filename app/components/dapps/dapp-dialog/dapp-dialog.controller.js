@@ -9,15 +9,17 @@ angular.module('dappstackApp.components.dapps.dappDialog')
         var vm = this;
 
         //assign scope access to dapp information
-        vm.dappId = $stateParams.dappId;
-        vm.dapp = dappsFactory.get({id: vm.dappId}).$promise.then(
-            function (response) {
-                vm.dapp = response;
-            },
-            function (response) {
-                console.log("Error: " + response.status + " " + response.statusText);
-            }
-        );
+        vm.$onInit = function() {
+            vm.dappId = $stateParams.dappId;
+            vm.dapp = dappsFactory.get({id: vm.dappId}).$promise.then(
+                function (response) {
+                    vm.dapp = response;
+                },
+                function (response) {
+                    console.log("Error: " + response.status + " " + response.statusText);
+                }
+            );
+        }
 
         //Function to populate social icons with ng-show in dapp-diaolog view
         vm.hasSocial = function(input) {
@@ -28,7 +30,7 @@ angular.module('dappstackApp.components.dapps.dappDialog')
             }
         };
 
-        // Stateless modal functions to manage modal interactions
+        // Stateless built-in modal functions from uib-modal to manage close/destroy
         vm.ok = function() {
             vm.close({$value: vm.selected});
         };

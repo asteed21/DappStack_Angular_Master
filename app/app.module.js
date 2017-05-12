@@ -10,13 +10,14 @@
  */
 
 angular.module('dappstackApp', [
-//Third Party
+//Third Party Modules
   'ngResource',
   'ui.router',
   'ngAnimate',
   'ui.bootstrap',
   'angularCSS',
 //In-App
+  'lbServices',
   'dappstackApp.common',
   'dappstackApp.components',
   //'lbServices' //-->Loopback-generated services

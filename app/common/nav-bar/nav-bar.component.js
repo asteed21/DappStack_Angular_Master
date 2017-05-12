@@ -7,5 +7,6 @@ angular.module('dappstackApp.common.navBar')
             brand: '<'
         },  
         templateUrl: './common/nav-bar/nav-bar.html',
-        controller: 'NavBarController'
+        controller: 'NavBarController',
+        controllerAs: 'vm'
     });

@@ -1,5 +1,3 @@
 'use strict'
 
-angular.module('dappstackApp.common.auth.login', [
-    'ngDialog'
-]);
+angular.module('dappstackApp.common.auth.login', []);

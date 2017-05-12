@@ -9,21 +9,21 @@
     </div>
     <div class="col-xs-3">
       <ul class="list-unstyled list-inline">
-        <li ng-show="vm.hasSocial('facebook')">
+        <li ng-show="true">
           <a class="dapp-social-links" href="{{vm.dapp.socialLinks.facebook}}">
             <i class="fa fa-facebook-f fa-2x"></i>
           </a>
         </li>
-        <li ng-show="vm.hasSocial('twitter')">
+        <li ng-show="true">
           <a class="dapp-social-links" href="{{vm.dapp.socialLinks.twitter}}">
             <i class="fa fa-twitter fa-2x"></i>
           </a>
         </li>
-        <li ng-show="vm.hasSocial('reddit')">
+        <li ng-show="true">
           <a class="dapp-social-links" href="{{vm.dapp.socialLinks.reddit}}">
             <i class="fa fa-reddit-alien fa-2x"></i>
           </a>
-        <li ng-show="vm.hasSocial('github')">
+        <li ng-show="true">
           <a class="dapp-social-links" href="{{vm.dapp.socialLinks.github}}">
             <i class="fa fa-github fa-2x"></i>
           </a>
@@ -33,8 +33,8 @@
 </div>
 <div class="modal-body" name="modalData">
   <uib-tabset active="activeJustified" justified="true" type="tabs">
-    <uib-tab index="0" heading="About">
-      <dapp-about></dapp-about>
+    <uib-tab index="0" heading="About" ui-sref="app.dappdetails.about">
+      <dapp-about-component about-content="vm.dapp.aboutContent" about-images="vm.dapp.aboutImages"></dapp-about-component>
     </uib-tab>
     <uib-tab index="1" heading="Stats">Placeholder for stats about the Dapp</uib-tab>
     <uib-tab index="2" heading="Discussion">Placeholder for discussion about the Dapp</uib-tab>

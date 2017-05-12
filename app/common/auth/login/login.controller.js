@@ -1,18 +1,24 @@
 'use strict'
 
-angular.module('dappstackApp.common.auth.register')
+angular.module('dappstackApp.common.auth.login')
 
-    .controller('LoginController', function ($state, authService) {
+    .controller('LoginController', function ($localStorage, authService) {
         
         var vm = this;
 
-        vm.login = function () {
-            authService.login(this.username, this.password).then(function (response) {
-                $location.path('/home');
-                console.log(response);
-            }, function (err) {
-                alert(err.data.error.message);
-                console.log(err);
-            });
+        vm.loginData = $localStorage.getObject('userinfo','{}');
+        
+        vm.doLogin = function() {
+            if(vm.rememberMe)
+            $localStorage.storeObject('userinfo',vm.loginData);
+
+            authService.login(vm.loginData);
+
+            ngDialog.close();
+
+        };
+                
+        vm.openRegister = function () {
+            //ngDialog.open({ template:'<register></register>', plain: true, className:'ngdialog-theme-default'});
         };
     });
