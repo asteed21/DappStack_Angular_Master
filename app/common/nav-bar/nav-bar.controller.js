@@ -2,7 +2,7 @@
 
 angular.module('dappstackApp.common.navBar')
 
-    .controller('NavBarController', function($state, $rootScope, authService) {
+    .controller('NavBarController', ['$scope', '$state', '$rootScope', 'ngDialog', 'authService', function($scope, $state, $rootScope, ngDialog, authService) {
         
         var vm = this;
 
@@ -13,9 +13,9 @@ angular.module('dappstackApp.common.navBar')
             vm.loggedIn = true;
             vm.username = authService.getUsername();
         }
-            
+
         vm.openLogin = function () {
-            //ngDialog.open({ template:'<login></login>', plain: true, className: 'ngdialog-theme-default'});
+            ngDialog.open({ template: 'common/auth/login/login.html', scope: $scope, className: 'ngdialog-theme-default', controller:"LoginController" });
         };
         
         vm.logOut = function() {
@@ -24,12 +24,12 @@ angular.module('dappstackApp.common.navBar')
             vm.username = '';
         };
         
-        $rootScope.$on('login:Successful', function () {
+        $rootScope.$on('login:Successful', function() {
             vm.loggedIn = authService.isAuthenticated();
             vm.username = authService.getUsername();
         });
             
-        $rootScope.$on('registration:Successful', function () {
+        $rootScope.$on('registration:Successful', function() {
             vm.loggedIn = authService.isAuthenticated();
             vm.username = authService.getUsername();
         });
@@ -38,5 +38,5 @@ angular.module('dappstackApp.common.navBar')
             return $state.is(curstate);  
         };
     
-    });
+    }]);
 

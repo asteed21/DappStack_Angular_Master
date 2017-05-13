@@ -16,48 +16,19 @@ angular.module('dappstackApp', [
   'ngAnimate',
   'ui.bootstrap',
   'angularCSS',
+  'ngDialog',
 //In-App
   'lbServices', //-->Loopback-generated services
   'dappstackApp.common',
   'dappstackApp.components',
 ])
 
-/* Create provider to enable stateful modals,
-works alongside normal $stateProvider service to apply routing to modals*/
-.provider('modalState', function($stateProvider) {
-    var provider = this;
-    this.$get = function() {
-        return provider;
-    }
-    this.state = function(stateName, options) {
-        var modalInstance;
-        $stateProvider.state(stateName, {
-            url: options.url,
-            onEnter: function($uibModal, $state, $stateParams) {
-                console.log($stateParams.dappId);
-                modalInstance = $uibModal.open(options);
-                modalInstance.result['finally'](function() {
-                    modalInstance = null;
-                    if ($state.$current.name === stateName) {
-                        $state.go('^');
-                    }
-                });
-            },
-            onExit: function() {
-                if (modalInstance) {
-                    modalInstance.close();
-                }
-            }
-        });
-    };
-})
+.config( function($stateProvider, $urlServiceProvider, LoopBackResourceProvider) {
 
-.config(function($stateProvider, $urlServiceProvider, modalStateProvider, LoopBackResourceProvider) {
-  
   // Assign the URL lb-services uses to access the LoopBack REST API server
   LoopBackResourceProvider.setUrlBase('http://0.0.0.0:3000/api');
 
-  //Configure routing for various URLs/states in the application
+  //state routing for basic app states (no other dependencies)
   $stateProvider.state('app', {
         url:'/',
         views: {
@@ -73,27 +44,6 @@ works alongside normal $stateProvider service to apply routing to modals*/
         }
   });
 
-  $stateProvider.state('app.dapps', {
-        url:'dapps',
-        views: {
-          'content@': {
-            component: 'dapps'
-          }
-        }
-  });
-
-  modalStateProvider.state('app.dapps.dappdetails', {
-        url:'/:dappId',
-        size: 'lg',
-        component: 'dappDialogComponent',
-  });
-
-  modalStateProvider.state('app.dappdetails', {
-        url:'dapps/:dappId',
-        size: 'lg',
-        component: 'dappDialogComponent',
-  });
-
   $stateProvider.state('app.profile', {
         url:'profile',
         views: {
@@ -103,24 +53,36 @@ works alongside normal $stateProvider service to apply routing to modals*/
         }
   });
 
-  $stateProvider.state('login', {
-        url:'/login',
+  $stateProvider.state('app.dapps', {
+        url:'dapps',
         views: {
           'content@': {
-            component: 'login'
+            component: 'dapps'
           }
         }
   });
 
-  $stateProvider.state('register', {
-        url:'/register',
+  $stateProvider.state('app.dapps.dappdetails', {
+        url:'/:dappId',
         views: {
           'content@': {
-            component: 'register'
+            component: 'dappDialogComponent'
           }
         }
   });
 
+  //set default route for the app to homepage
   $urlServiceProvider.rules.otherwise({ state: 'app' })
 
-});
+})
+
+//set function on $rootScope to check for state change, set variable for use in controllers
+.run(function($rootScope, $transitions, $state) {    
+
+    $transitions.onSuccess({}, function($transition$) {
+      $rootScope.previousState = $transition$.$from().name;
+  });
+
+})
+
+;

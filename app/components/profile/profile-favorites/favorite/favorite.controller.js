@@ -2,8 +2,8 @@
 
 angular.module('dappstackApp.components.profile.profileFavorites.favorite')
 
-    .controller('FavoriteController', function() {
+    .controller('FavoriteController', [ function() {
         
         var vm = this;
 
-    });
+    }]);

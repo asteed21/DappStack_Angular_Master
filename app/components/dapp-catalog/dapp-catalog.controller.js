@@ -2,8 +2,8 @@
 
 angular.module('dappstackApp.components.dappCatalog')
 
-    .controller('DappCatalogController', function() {
+    .controller('DappCatalogController', [function() {
 
         var vm = this;
 
-    });
+    }]);

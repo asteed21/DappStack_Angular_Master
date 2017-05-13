@@ -2,9 +2,9 @@
 
 angular.module('dappstackApp.components.home')
 
-    .controller('HomeController', function() {
+    .controller('HomeController', [ function() {
 
         var vm = this;
 
         vm.heading = "Latest";
-    });
+    }]);

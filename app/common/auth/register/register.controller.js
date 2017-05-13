@@ -2,16 +2,16 @@
 
 angular.module('dappstackApp.common.auth.register')
     
-    .controller('RegisterController', function($uibModal, $localStorage, authService) {
-
-        var vm = this;
-
-        vm.register={};
-        vm.loginData={};
+    .controller('RegisterController', ['$scope', 'ngDialog', '$localStorage', 'authService', function ($scope, ngDialog, $localStorage, authService) {
         
-        vm.doRegister = function() {
-            authService.register(vm.registration);
-            //ngDialog.close();
-        };
+        $scope.register={};
+        $scope.loginData={};
+        
+        $scope.doRegister = function() {
 
-    });
+            authService.register($scope.registration);
+            
+            ngDialog.close();
+
+        };
+    }]);

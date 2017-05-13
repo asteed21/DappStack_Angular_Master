@@ -1,6 +1,8 @@
 <li class="col-xs-12 dapp-list-item list-group-item">
     <div class="col-xs-3 list-image-section">
-        <img class="img-fluid img-thumbnail rounded" ng-src='{{vm.logoImage}}' ui-sref="{{vm.provideState()}}" alt="dapp logo"/>
+        <a class="thumbnail" ui-sref="app.dapps.dappdetails({dappId: vm.dappId})" >
+            <img class="img-fluid img-thumbnail rounded" ng-src='{{vm.logoImage}}' alt="dapp logo"/>
+        </a>
     </div>
     <div class="caption col-xs-9">
         <div class="row">

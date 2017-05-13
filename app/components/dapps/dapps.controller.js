@@ -2,7 +2,7 @@
 
 angular.module('dappstackApp.components.dapps')
 
-    .controller('DappsController', function(Dapps) {
+    .controller('DappsController', ['Dapps', function(Dapps) {
         
         var vm = this;
         vm.dapps;
@@ -18,4 +18,4 @@ angular.module('dappstackApp.components.dapps')
             }
         );
 
-    });
+    }]);

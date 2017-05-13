@@ -2,8 +2,8 @@
 
 angular.module('dappstackApp.components.profile')
 
-    .controller('ProfileController', function() {
+    .controller('ProfileController', [ function() {
         
         var vm = this;
 
-    });
+    }]);

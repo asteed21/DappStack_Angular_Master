@@ -8,6 +8,7 @@ var lazypipe = require('lazypipe');
 var rimraf = require('rimraf');
 var wiredep = require('wiredep').stream;
 var runSequence = require('run-sequence');
+var gutil = require('gulp-util');
 
 var yeoman = {
   app: require('./bower.json').appPath || 'app',
@@ -161,7 +162,7 @@ gulp.task('client:build', ['html', 'styles'], function () {
   return gulp.src(paths.views.main)
     .pipe($.useref({searchPath: [yeoman.app, '.tmp']}))
     .pipe(jsFilter)
-    .pipe($.ngAnnotate())
+    .pipe($.ngAnnotate().on('error', errorHandler))
     .pipe($.uglify())
     .pipe(jsFilter.restore())
     .pipe(cssFilter)
@@ -202,3 +203,9 @@ gulp.task('build', ['clean:dist'], function () {
 });
 
 gulp.task('default', ['build']);
+
+// Handle an error
+function errorHandler (error) {
+  console.log(error.toString());
+  this.emit('end');
+}
