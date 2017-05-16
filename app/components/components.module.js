@@ -3,5 +3,6 @@
 angular.module('dappstackApp.components', [
     'dappstackApp.components.home',
     'dappstackApp.components.dapps',
-    'dappstackApp.components.profile'
+    'dappstackApp.components.profile',
+    'dappstackApp.components.dappCatalog'
 ]);

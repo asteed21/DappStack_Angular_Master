@@ -1,9 +1,15 @@
-/* TODO: modularize all css into respective module directories */
+/*** TODO: modularize all css into respective module/component directories ***/
 
-/* OVERALL STYLING */
+/* OVERALL STYLES */
 body {
     padding-top: 50px;
     background: rgba(225,225,225,.5);
+}
+
+/* REDIRECT PAGE STYLES */
+.access-restricted {
+    height: 400px;
+    padding: 10%;
 }
 
 /* SEARCH FORM STYLES */
@@ -18,21 +24,56 @@ body {
     width: 100%;
 }
 
+/* HOMEPAGE STYLES */
+.home-splash {
+    height: 400px;
+    background-image: url("/images/homepage_pic_1.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.jumbo-innards {
+    height: 100%;
+    color: white;
+}
+
+.home-container {
+    margin-bottom: 50px;
+}
+
+/*DAPP CATALOG STYLES*/
+.dapps-content-container {
+    padding: 0;
+    width: 100%;
+}
+
+.filter-panel {
+    background: white;
+    height: 400px;
+    margin-top: 40px;
+}
+
+.dapps-panel {
+    margin-top: 20px;
+}
+
+.action-panel {
+    background: white;
+    height: 400px;
+    margin-top: 40px;
+}
+
 /* DAPP LIST ELEMENT STYLES */
 .dapp-list {
     padding: 0;
     width: 100%;
-    margin: 10px 0;
 }
 
 .dapp-list-header {
-    background: white;
-    margin: auto 0px -5px 0px;
-    border-left: .5px solid rgba(200,200,200,.4);
-    border-top: 1px solid rgba(200,200,200,.8);
-    border-right: 1px solid rgba(200,200,200,.4);
+    /*margin: auto 0px -5px 0px;*/
     border-radius: 5px 5px 0 0;
-    padding: 0 0 10px 15px;
+    padding: 0 0 5px 0;
 
 }
 
@@ -45,11 +86,16 @@ body {
 }
 
 /* DAPP DETAIL PAGE STYLES */
-.dapp-header {
+.close {
+    margin-top: 20px;
+    border: 1px solid black;
+    border-radius: 50%;
+    padding: 8px 15px 12px 15px;
 }
 
-.dapp-body {
-
+/* DAPP ABOUT TAB STYLES*/
+.about-content-row {
+    margin: 50px auto;
 }
 
 /* PROFILE PAGE STYLES */
@@ -60,15 +106,36 @@ body {
     border-radius: 15px;
 }
 
-.profile-tabs {
-    margin-top: 30px;
+.profile-content-header {
+    border: 2px solid gray;
+    border-radius: 15px;
+    margin: 0 5px 15px 5px;
+    padding-bottom: 10px;
+}
+
+.profile-content-area {
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.profile-row-2 {
+    margin-top: 2em;
 }
 
 #profile-pic {
     margin: auto;
 }
 
-#nav-profile-pic {
-    border-radius: 50%;
+.profile-edit-btn {
+    position: absolute;
+    width: 5em;
+    top: 50%;
+    transform: translateY(50%);
+    margin-left: -5em;
 }
+
+.profile-menu-area {
+    margin-top: 20px;
+}
+
 

@@ -2,7 +2,10 @@ angular.module('dappstackApp.components.dapps')
 
     .component('dapps', {
         bindings: {
-            heading: '<'
+            heading: '<',
+            filter: '<',
+            limitTo: '<',
+            orderBy: '<'
         },
         templateUrl: './components/dapps/dapps.html',
         controller: 'DappsController',

@@ -1,0 +1,35 @@
+<div class="favorites-list">
+    <div class="profile-content-header row text-center">
+        <div class="col-xs-2">
+            <h2>Favorites</h2>
+        </div>
+        <div class="col-xs-10 text-right">
+            <button ng-click="vm.toggleDelete()" class="btn btn-primary profile-edit-btn"
+                type="button">
+                {{vm.showDelete ? 'Confirm':'Edit'}}
+            </button>
+        </div>
+    </div>
+    <div class="row">
+        <ul class="list-group">
+            <li class="media list-group-item" ng-repeat="favorite in vm.favorites">
+                <div class="media-left media-middle">
+                    <a ui-sref="app.dapps.dappdetails({dappId: favorite.dapps.id})">
+                        <img class="media-object img-thumbnail" ng-src={{favorite.dapps.logoImage}} alt="favorite.dapps.name" width="150" height="150">
+                    </a>
+                </div>
+                <div class="media-body">
+                    <div class="col-xs-10">
+                        <h2 class="media-heading">{{favorite.dapps.name}}
+                        <p class="lead">{{favorite.dapps.thumbnailDescription}}</p>
+                    </div>
+                    <div class="col-xs-2">
+                        <button  ng-show="vm.showDelete" ng-click="vm.deleteFavorite(favorite.id)" class="btn btn-xs btn-danger pull-right" type="button">
+                            <i class="fa fa-remove"></i>
+                        </button>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

@@ -18,7 +18,7 @@
                     </a>
                 </li>
                 <li ng-if="vm.loggedIn">
-                    <a>{{vm.username}}</a>
+                    <a ui-sref="app.profile">{{vm.username}}</a>
                 </li>
                 <li ng-if="vm.loggedIn">
                     <a ng-click="vm.logOut()">
@@ -26,11 +26,7 @@
                     </a>
                 </li>
             </ul>
-            <form class="navbar-form" id="search-form">
-                <div class="form-group" style="display:inline;">
-                    <input type="text" class="form-control" id="search-input" placeholder="Search Dapps...">
-                </div>
-            </form>
+            <search-component placeholder="Search Dapps..."></search-component>
         </div>
     </div>
 </nav>

@@ -48,19 +48,30 @@ angular.module('dappstackApp.common.auth')
             return DappStackUser.logout().$promise
             .then(function() {
                 $rootScope.currentUser = null;
+                $rootScope.$broadcast('logout:Successful');
             });
         }
 
         function register(registerData) {
+            var date = new Date();
+            var dateSubmitted = date.getFullYear() + '-' + ('0' + (date.getMonth() + 1)).slice(-2) + '-' + ('0' + date.getDate()).slice(-2);
             return DappStackUser
             .create({
                 username: registerData.username,
                 email: registerData.email,
-                password: registerData.password
+                password: registerData.password,
+                firstName: registerData.firstname,
+                lastName: registerData.lastname,
+                joinDate: dateSubmitted
             })
             .$promise
             .then (function(response) {
-                
+                $rootScope.currentUser = {
+                    id: response.id,
+                    tokenId: response.id,
+                    username: registerData.username
+                };
+                $rootScope.$broadcast('registration:Successful');
             },
             function(response){
                 

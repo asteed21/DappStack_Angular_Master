@@ -38,4 +38,5 @@ angular.module('dappstackApp.components.dapps.dappDialog')
                 $state.go('^');   
             }
         }
+        
     }]);

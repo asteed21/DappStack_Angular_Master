@@ -31,7 +31,7 @@
     "node": ">=0.10.0"
   },
   "dependencies": {
-    "angular": "^1.6.4",
+    "angular": "^1.5.1",
     "angular-ui-router": "^1.0.3",
     "karma": "^1.7.0",
     "ui-router-sticky-states": "^1.2.0"

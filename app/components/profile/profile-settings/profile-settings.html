@@ -1,0 +1,63 @@
+<div class="profile-settings">
+    <div class="profile-content-header row text-center">
+        <div class="col-xs-2">
+            <h2>Settings</h2>
+        </div>
+        <div class="col-xs-10 text-right">
+            <button ng-click="vm.toggleEdit()" class="btn btn-primary profile-edit-btn"
+                type="button">
+                {{vm.showEdit ? 'Back':'Edit'}}
+            </button>
+        </div>
+    </div>
+    <div class="row" ng-show="!vm.showEdit">
+        <table class="table table-bordered">
+            <tr>
+                <th>Username</th>
+                <th>{{vm.user.username}}</th>
+            </tr>
+            <tr>
+                <th>Password</th>
+                <td>{{vm.user.password}}</td>
+            </tr>
+            <tr>
+                <th>First Name</th>
+                <td>{{vm.user.firstName}}</td>
+            </tr>
+            <tr>
+                <th>Last Name</th>
+                <td>{{vm.user.lastName}}</td>
+            </tr>
+            <tr>
+                <th>Profile Image</th>
+                <td>{{vm.user.profileImage}}</td>
+            </tr>
+        </table>
+    </div>
+    <div class="row">
+        <form ng-show="vm.showEdit" ng-submit="vm.updateProfile()">
+            <div class="form-group">
+                <label for="userUsername">Username</label>
+                <input ng-model="vm.newUsername" type="text" class="form-control" id="userUsername" placeholder="{{vm.user.username}}">
+            </div>
+            <div class="form-group">
+                <label for="userPassword">Password</label>
+                <input ng-model="vm.newPassword" type="password" class="form-control" id="userPassword" placeholder="*******">
+            </div>
+            <div class="form-group">
+                <label for="userFirstName">First Name</label>
+                <input ng-model="vm.newFirstName" type="text" class="form-control" id="userFirstName" placeholder="{{vm.user.firstName}}">
+            </div>
+            <div class="form-group">
+                <label for="userLastName">Last Name</label>
+                <input ng-model="vm.newLastName" type="text" class="form-control" id="userLastName" placeholder="{{vm.user.lastName}}">
+            </div>
+            <div class="form-group">
+                <label for="userProfilePic">Avatar Image</label>
+                <input type="file" id="userProfilePic" accept="image/*">
+                <p class="help-block">Upload a picture for your avatar (Not Currently Active).</p>
+            </div>
+            <button type="submit" class="btn btn-default">Confirm</button>
+        </form>
+    </div>
+</div>

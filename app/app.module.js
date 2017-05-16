@@ -49,6 +49,27 @@ angular.module('dappstackApp', [
         views: {
           'content@': {
             component: 'profile'
+          },
+          'profile-content@app.profile': {
+            component: 'profileFavorites'
+          }
+        }
+  });
+
+  $stateProvider.state('app.profile.favorites', {
+        url:'/favorites',
+        views: {
+          'profile-content@app.profile': {
+            component: 'profileFavorites'
+          }
+        }
+  });
+
+  $stateProvider.state('app.profile.settings', {
+        url:'/settings',
+        views: {
+          'profile-content@app.profile': {
+            component: 'profileSettings'
           }
         }
   });
@@ -57,7 +78,16 @@ angular.module('dappstackApp', [
         url:'dapps',
         views: {
           'content@': {
-            component: 'dapps'
+            component: 'dappCatalog'
+          }
+        }
+  });
+
+  $stateProvider.state('app.search', {
+        url:'search/dapps?q',
+        views: {
+          'content@': {
+            component: 'dappCatalog'
           }
         }
   });
@@ -70,6 +100,8 @@ angular.module('dappstackApp', [
           }
         }
   });
+
+
 
   //set default route for the app to homepage
   $urlServiceProvider.rules.otherwise({ state: 'app' })

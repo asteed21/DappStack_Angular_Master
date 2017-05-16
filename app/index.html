@@ -28,9 +28,9 @@
 
     <!-- Site/application content here -->
 
-    <div ui-view="header"></div>
+    <div ui-view="header" class="header-area"></div>
 
-    <div ui-view="content" id="content-area"></div>
+    <div ui-view="content" class="content-area"></div>
     
     <div ui-view="footer"></div>
 
@@ -51,13 +51,14 @@
     <!-- endbuild -->
 
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
     <script src="../bower_components/angular/angular.js"></script>
     <script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
     <script src="../bower_components/angular-animate/angular-animate.min.js"></script>
     <script src="../bower_components/angular-resource/angular-resource.min.js"></script>
     <script src="../bower_components/angular-css/angular-css.min.js"></script>
     <script src="../bower_components/ng-dialog/js/ngDialog.min.js"></script>
-    <script src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>  
+    <script src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
     <script src="/app.module.js"></script>
     <script src="/lb-services.js"></script>
     <script src="/common/common.module.js"></script>
@@ -69,6 +70,9 @@
     <script src="/common/nav-bar/nav-bar.module.js"></script>
     <script src="/common/nav-bar/nav-bar.component.js"></script>
     <script src="/common/nav-bar/nav-bar.controller.js"></script>
+    <script src="/common/search/search.module.js"></script>
+    <script src="/common/search/search.component.js"></script>
+    <script src="/common/search/search.controller.js"></script>
     <script src="/common/auth/login/login.module.js"></script>
     <script src="/common/auth/login/login.controller.js"></script>
     <script src="/common/auth/register/register.module.js"></script>
@@ -97,9 +101,9 @@
     <script src="/components/profile/profile-favorites/profile-favorites.module.js"></script>
     <script src="/components/profile/profile-favorites/profile-favorites.component.js"></script>
     <script src="/components/profile/profile-favorites/profile-favorites.controller.js"></script>
-    <script src="/components/profile/profile-favorites/favorite/favorite.module.js"></script>
-    <script src="/components/profile/profile-favorites/favorite/favorite.component.js"></script>
-    <script src="/components/profile/profile-favorites/favorite/favorite.controller.js"></script>
+    <script src="/components/profile/profile-settings/profile-settings.module.js"></script>
+    <script src="/components/profile/profile-settings/profile-settings.component.js"></script>
+    <script src="/components/profile/profile-settings/profile-settings.controller.js"></script>
     <!-- endbuild -->
 </body>
 </html>
