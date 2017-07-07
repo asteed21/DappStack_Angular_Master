@@ -12,8 +12,8 @@
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css styles/main.css -->
+    <link href="../bower_components/tether/dist/css/tether.min.css" rel="stylesheet">
     <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
     <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <link href="../bower_components/ng-dialog/css/ngDialog.min.css" rel="stylesheet"> 
     <link href="../bower_components/ng-dialog/css/ngDialog-theme-default.min.css" rel="stylesheet">
@@ -35,7 +35,7 @@
     <div ui-view="footer"></div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-     <script>
+    <script>
        !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
        (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
        r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
@@ -54,11 +54,14 @@
     <script src="../bower_components/jquery/dist/jquery.min.js"></script>
     <script src="../bower_components/angular/angular.js"></script>
     <script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="../bower_components/tether/dist/js/tether.min.js"></script>
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="../bower_components/angular-animate/angular-animate.min.js"></script>
     <script src="../bower_components/angular-resource/angular-resource.min.js"></script>
     <script src="../bower_components/angular-css/angular-css.min.js"></script>
     <script src="../bower_components/ng-dialog/js/ngDialog.min.js"></script>
     <script src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="../bower_components/angular-file-upload/dist/angular-file-upload.min.js"></script>
     <script src="/app.module.js"></script>
     <script src="/lb-services.js"></script>
     <script src="/common/common.module.js"></script>
@@ -95,6 +98,15 @@
     <script src="/components/dapps/dapp-dialog/dapp-about/dapp-about.module.js"></script>
     <script src="/components/dapps/dapp-dialog/dapp-about/dapp-about.component.js"></script>
     <script src="/components/dapps/dapp-dialog/dapp-about/dapp-about.controller.js"></script>
+    <script src="/components/dapps/dapp-dialog/dapp-discussion/dapp-discussion.module.js"></script>
+    <script src="/components/dapps/dapp-dialog/dapp-discussion/dapp-discussion.component.js"></script>
+    <script src="/components/dapps/dapp-dialog/dapp-discussion/dapp-discussion.controller.js"></script>
+    <script src="/components/dapps/dapp-dialog/dapp-discussion/comments/comments.module.js"></script>
+    <script src="/components/dapps/dapp-dialog/dapp-discussion/comments/comments.component.js"></script>
+    <script src="/components/dapps/dapp-dialog/dapp-discussion/comments/comments.controller.js"></script>
+    <script src="/components/dapps/dapp-dialog/dapp-discussion/comments/comment/comment.module.js"></script>
+    <script src="/components/dapps/dapp-dialog/dapp-discussion/comments/comment/comment.component.js"></script>
+    <script src="/components/dapps/dapp-dialog/dapp-discussion/comments/comment/comment.controller.js"></script>
     <script src="/components/profile/profile.module.js"></script>
     <script src="/components/profile/profile.component.js"></script>
     <script src="/components/profile/profile.controller.js"></script>

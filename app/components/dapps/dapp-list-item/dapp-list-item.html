@@ -1,26 +1,20 @@
-<li class="col-xs-12 dapp-list-item list-group-item">
-    <div class="col-xs-3 list-image-section">
-        <a class="thumbnail" ui-sref="app.dapps.dappdetails({dappId: vm.dappId})" >
-            <img class="img-fluid rounded" ng-src='{{vm.logoImage}}' alt="dapp logo" width="150" height="150">
+<li class="list-group-item d-flex justify-content-between">
+    <div class="">
+        <a ui-sref="app.dapps.dappdetails({dappId: vm.dappId})">
+            <img class="img-thumbnail align-self-center" width="200" height="200" ng-src='{{vm.logoImage}}' alt="dapp logo">
         </a>
     </div>
-    <div class="caption col-xs-9">
-        <div class="row">
-            <h3 class="list-group-item-heading">{{vm.name}}</h3>
-            <p class="text-left lead" id="thumbnail-desc">{{vm.thumbnailDescription}}</p>
-        </div>
-        <div class="row">
-            <div class="list-button-section text-right col-xs-12">
-                <a ng-click="vm.addFavorite(vm.dappId)" ng-disabled="!vm.loggedIn()" ng-show="vm.showFavorite" class="btn btn-default" role="button" uib-tooltip="Login to Favorite" tooltip-placement="top" tooltip-enable="!vm.loggedIn()">
-                    <span class="glyphicon glyphicon-heart"></span>
-                </a>
-                <a ng-show="!vm.showFavorite" class="btn btn-default" role="button" uib-tooltip="This dapp has been favorited." tooltip-placement="top" tooltip-enable="false">
-                    <span class="glyphicon glyphicon-ok"></span>
-                </a>
-                <a ng-click="vm.addLike(vm.dappId)" ng-disabled="!vm.loggedIn() || vm.disableLikes" class="btn btn-default" role="button" uib-tooltip="Login to like" tooltip-placement="top" tooltip-enable="!vm.loggedIn()">
-                    {{vm.likes}} <span class="glyphicon glyphicon-thumbs-up"></span>
-                </a>
-            </div>    
-        </div>
+    <div class="card-block">
+        <h3 class="card-title mb-1">{{vm.name}}</h3>
+        <p class="card-text" id="thumbnail-desc">{{vm.thumbnailDescription}}</p>
+        <button ng-click="vm.addFavorite(vm.dappId)" ng-disabled="!vm.loggedIn()" ng-show="vm.showFavorite" class="btn btn-default" role="button" uib-tooltip="Login to Favorite" tooltip-placement="top" tooltip-enable="!vm.loggedIn()">
+            <span class="fa fa-heart"></span>
+        </button>
+        <button ng-show="!vm.showFavorite" ng-disabled="true" class="btn btn-default" role="button" uib-tooltip="This dapp has been favorited." tooltip-placement="top" tooltip-enable="false">
+            <span class="fa fa-check"></span>
+        </button>
+        <button ng-click="vm.addLike(vm.dappId)" ng-disabled="!vm.loggedIn() || vm.disableLikes" class="btn btn-default" role="button" uib-tooltip="Login to like" tooltip-placement="top" tooltip-enable="!vm.loggedIn()">
+            <span class="fa fa-thumbs-up"></span>
+        </button>
     </div>
 </li>

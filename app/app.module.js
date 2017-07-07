@@ -17,11 +17,14 @@ angular.module('dappstackApp', [
   'ui.bootstrap',
   'angularCSS',
   'ngDialog',
+  'angularFileUpload',
 //In-App
   'lbServices', //-->Loopback-generated services
   'dappstackApp.common',
   'dappstackApp.components',
 ])
+
+.constant('urlBase','http://0.0.0.0:3000/api')
 
 .config( function($stateProvider, $urlServiceProvider, LoopBackResourceProvider) {
 
@@ -100,8 +103,6 @@ angular.module('dappstackApp', [
           }
         }
   });
-
-
 
   //set default route for the app to homepage
   $urlServiceProvider.rules.otherwise({ state: 'app' })

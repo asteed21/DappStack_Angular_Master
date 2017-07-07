@@ -2,9 +2,12 @@
 
 angular.module('dappstackApp.common.navBar')
 
-    .controller('NavBarController', ['$scope', '$state', '$rootScope', 'ngDialog', 'authService', function($scope, $state, $rootScope, ngDialog, authService) {
+    .controller('NavBarController', ['$scope', '$state', '$rootScope', 'ngDialog', 'authService', 'DappStackUser', function($scope, $state, $rootScope, ngDialog, authService, DappStackUser) {
         
         var vm = this;
+
+        vm.isNavCollapsed = true;
+        vm.isCollapsed = false;
 
         vm.loggedIn = false;
         vm.username = '';
@@ -12,6 +15,17 @@ angular.module('dappstackApp.common.navBar')
         if(authService.isAuthenticated()) {
             vm.loggedIn = true;
             vm.username = authService.getUsername();
+            
+            DappStackUser.findOne({id: $rootScope.currentUser.id})
+            .$promise.then(
+                function (response) {
+                    vm.user = response;
+                    console.log(vm.user);
+                },
+                function (response) {
+                    console.log("Error: " + response.status + " " + response.statusText);
+                }
+            );
         }
 
         vm.openLogin = function () {

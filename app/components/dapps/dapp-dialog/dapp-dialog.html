@@ -1,5 +1,5 @@
 <div class="container">
-    <a type="button" class="close" ng-click="vm.goBack()">&times;</a>
+    <a type="button" class="close" aria-label="Close" ng-click="vm.goBack()">&times;</a>
     <div class="row">
       <div class="page-header dapp-header col-xs-12 col-sm-10 col-sm-offset-1">
         <div class="col-xs-3">
@@ -37,10 +37,12 @@
     <div class="row">
       <div class="dapp-body col-xs-12 col-sm-10 col-sm-offset-1">
         <uib-tabset active="activeJustified" justified="true" type="tabs">
-          <uib-tab index="0" heading="About" ui-sref="app.dappdetails.about">
+          <uib-tab index="0" heading="About">
             <dapp-about-component about-content="vm.dapp.aboutContent" about-images="vm.dapp.aboutImages"></dapp-about-component>
           </uib-tab>
-          <uib-tab index="1" heading="Discussion">Placeholder for discussion about the Dapp</uib-tab>
+          <uib-tab index="1" heading="Discussion">
+            <dapp-discussion-component dapp-id="vm.dapp.id"></dapp-discussion-component>
+          </uib-tab>
         </uib-tabset>
       </div>
     </div>

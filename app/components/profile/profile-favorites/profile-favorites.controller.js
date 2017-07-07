@@ -10,7 +10,6 @@ angular.module('dappstackApp.components.profile.profileFavorites')
         .$promise.then(
             function (response) {
                 vm.favorites = response;
-                console.log(vm.favorites);
             },
             function (response) {
                 console.log("Error: " + response.status + " " + response.statusText);

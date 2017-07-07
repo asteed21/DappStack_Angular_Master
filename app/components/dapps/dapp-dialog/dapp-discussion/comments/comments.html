@@ -1,0 +1,20 @@
+
+<div class="row">
+  <div class="comments-container col-xs-8 col-xs-offset-2">
+    <div ng-hide="vm.loggedIn" class="col-xs-12 add-top-level-area text-center">
+      Please <a href="#">Login</a> or <a href="#">Sign Up</a> to comment on this Dapp
+    </div>
+    <div ng-show="vm.loggedIn" class="col-xs-12">
+      <div class="col-xs-9">
+        <textarea class="text-box-top" ng-model="vm.formComment.body" placeholder="Add Comment..." ></textarea>
+      </div>
+      <div class="col-xs-3 btn-container">
+        <button class="top-btn btn btn-primary" ng-click="vm.createComment()">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+<ul>
+  <comment-component class="comment-block" ng-repeat="comment in vm.comments" comment="comment" comments="vm.comments" logged-in="vm.loggedIn">
+  </comment-component>
+</ul>

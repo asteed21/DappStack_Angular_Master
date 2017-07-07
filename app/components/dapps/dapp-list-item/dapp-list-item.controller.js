@@ -11,23 +11,41 @@ angular.module('dappstackApp.components.dapps.dappListItem')
         vm.disableLikes = false;
         vm.disableFavorite = false;
 
-        //function to check if user liked dapp already
-        // vm.checkLikes = function(dappId) {
-        //     DappStackUser.getCurrent().$promise.then(
-        //         function(response) {
-        //             console.log(response);
-        //             //if (response.dappsLiked.indexOf(dappId) !== -1)
-        //                 //vm.disableLikes = true;
-        //         },
-        //         function(response) {
-        //             console.log(response + "ERROR - could not retrieve dapp info");
-        //         }
-        //     )
-        // }
+        //function to check if user liked dapp already TODO: add boolean property to model to enable dislike functionality
+        vm.checkLikesandFavorites = function(input) {
+            DappStackUser.likes({id:$rootScope.currentUser.id, "filter":{"include":["dapps"]}})
+            .$promise.then(
+                function (response) {
+                    response.forEach( function(element) {
+                        if (element.dappsId == input) {
+                            vm.disableLikes = !vm.disableLikes;
+                        }
+                    });
+                },
+                function (response) {
+                    console.log("Error: " + response.status + " " + response.statusText);
+                }
+            );
+            DappStackUser.favorites({id:$rootScope.currentUser.id, "filter":{"include":["dapps"]}})
+            .$promise.then(
+                function (response) {
+                    response.forEach( function(element) {
+                        if (element.dappsId == input) {
+                            vm.showFavorite = !vm.showFavorite;
+                        }
+                    });
+                },
+                function (response) {
+                    console.log("Error: " + response.status + " " + response.statusText);
+                }
+            );
+        }
 
-        // $scope.$watch('vm.loggedIn()', function (newValue, oldValue, scope) {
-        //     vm.checkLikes();
-        // }, true);
+        //watch scope for login to check and disable likes/check and disable favorites
+        $scope.$watch('vm.loggedIn()', function (newValue, oldValue, scope) {
+            if (vm.loggedIn())
+                vm.checkLikesandFavorites(vm.dappId);
+        }, true);
 
         //function to confirm current user is logged in
         vm.loggedIn = function() {
@@ -50,9 +68,6 @@ angular.module('dappstackApp.components.dapps.dappListItem')
         //function to add a like to the list-item selected, then disable liking again
         vm.addLike = function(input) {
             if (vm.loggedIn())
-                var newLikes = vm.likes + 1;
-                var updatedLikes = {likes: newLikes};
-
                 Likes.create({dappStackUserId: $rootScope.currentUser.id, dappsId: input}).$promise.then(
                     function(response) {
                         vm.disableLikes = !vm.disableLikes;
