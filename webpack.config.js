@@ -1,11 +1,31 @@
-var webpack = require('webpack');
-var path = require('path');
+'use strict';
 
-module.exports = {
-    entry: './app/index.js',
+//import webpack plugins
+var webpack = require('webpack');
+
+//define the webpack configuration object (to be exported from this file)
+var config = {
+    devtool: 'inline-source-map',
+    context: __dirname + '/app',
+    entry: './app.module.js',
     output: {
-        path: path.resolve(__dirname,'dist'),
-        filename: 'index_bundle.js'
+        path: __dirname + '/dist',
+        filename: 'bundle.js'
     },
-    filename: 'bundle.js'
+    resolve: {
+        alias:  {
+            'npm': __dirname + '/node_modules'
+        }
+    },
+    module: {
+        loaders: [
+            {
+                test: /\.css$/,
+                loader: 'style-loader!css-loader'
+            }
+        ]
+    }
+
 }
+
+module.exports = config;

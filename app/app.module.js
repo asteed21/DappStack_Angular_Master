@@ -1,21 +1,41 @@
 'use strict';
 
+//css require statements
+require("css-loader!../node_modules/tether/dist/css/tether.min.css");
+require("css-loader!../node_modules/bootstrap/dist/css/bootstrap.min.css");
+require("css-loader!../node_modules/ng-dialog/css/ngDialog.min.css");
+require("css-loader!../node_modules/ng-dialog/css/ngDialog-theme-default.min.css");
+require("css-loader!./styles/main.css");
+
+//vendor module loading
+require('angular');
+require('angular-resource');
+require('angular-ui-router');
+require('angular-animate');
+require('angular-ui-bootstrap');
+require('ng-dialog');
+require('angular-file-upload');
+
+//app module loading
+require('./lb-services');
+require('./common/common.module');
+require('./components/components.module');
+
 /**
  * @ngdoc overview
  * @name dappstack
- * @description
+ * @description 
  * # dappstack
  *
  * Main module of the application.
  */
 
 angular.module('dappstackApp', [
-//Third Party Modules
+//Vendor Modules
   'ngResource',
   'ui.router',
   'ngAnimate',
   'ui.bootstrap',
-  'angularCSS',
   'ngDialog',
   'angularFileUpload',
 //In-App
