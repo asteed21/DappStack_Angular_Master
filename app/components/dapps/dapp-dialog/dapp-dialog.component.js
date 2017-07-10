@@ -3,7 +3,7 @@
 angular.module('dappstackApp.components.dapps.dappDialog')
 
     .component('dappDialogComponent', {
-        templateUrl: './components/dapps/dapp-dialog/dapp-dialog.html',
+        template: require('./dapp-dialog.html'),
         controller: 'DappDialogController',
         controllerAs: 'vm'
     });

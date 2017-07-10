@@ -8,7 +8,7 @@ angular.module('dappstackApp.components.dapps.dappDialog.dappDiscussion.comments
             comments: '<',
             loggedIn: '<'
         },
-        templateUrl: './components/dapps/dapp-dialog/dapp-discussion/comments/comment/comment.html',
+        template: require('./comment.html'),
         controller: 'CommentController',
         controllerAs: 'vm'
     });

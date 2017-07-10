@@ -6,7 +6,7 @@ angular.module('dappstackApp.common.navBar')
         bindings: {
             brand: '<'
         },  
-        templateUrl: './common/nav-bar/nav-bar.html',
+        template: require('./nav-bar.html'),
         controller: 'NavBarController',
         controllerAs: 'vm'
     });

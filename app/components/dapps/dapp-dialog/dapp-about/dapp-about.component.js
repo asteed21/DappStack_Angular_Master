@@ -7,7 +7,7 @@ angular.module('dappstackApp.components.dapps.dappDialog.dappAbout')
             aboutContent: '<',
             aboutImages: '<'
         },
-        templateUrl: './components/dapps/dapp-dialog/dapp-about/dapp-about.html',
+        template: require('./dapp-about.html'),
         controller: 'DappAboutController',
         controllerAs: 'vm'
     });

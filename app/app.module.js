@@ -1,16 +1,16 @@
 'use strict';
 
 //css require statements
-require("css-loader!../node_modules/tether/dist/css/tether.min.css");
-require("css-loader!../node_modules/bootstrap/dist/css/bootstrap.min.css");
-require("css-loader!../node_modules/ng-dialog/css/ngDialog.min.css");
-require("css-loader!../node_modules/ng-dialog/css/ngDialog-theme-default.min.css");
-require("css-loader!./styles/main.css");
+require("../node_modules/tether/dist/css/tether.min.css");
+require("../node_modules/bootstrap/dist/css/bootstrap.min.css");
+require("../node_modules/ng-dialog/css/ngDialog.min.css");
+require("../node_modules/ng-dialog/css/ngDialog-theme-default.min.css");
+require("./styles/main.css");
 
 //vendor module loading
 require('angular');
 require('angular-resource');
-require('angular-ui-router');
+var uiRouter = require('angular-ui-router').default;
 require('angular-animate');
 require('angular-ui-bootstrap');
 require('ng-dialog');
@@ -20,6 +20,9 @@ require('angular-file-upload');
 require('./lb-services');
 require('./common/common.module');
 require('./components/components.module');
+require('./common/nav-bar/nav-bar.module');
+require('./common/nav-bar/nav-bar.controller');
+require('./common/nav-bar/nav-bar.component');
 
 /**
  * @ngdoc overview
@@ -30,10 +33,10 @@ require('./components/components.module');
  * Main module of the application.
  */
 
-angular.module('dappstackApp', [
+module.exports = angular.module('dappstackApp', [
 //Vendor Modules
   'ngResource',
-  'ui.router',
+  uiRouter,
   'ngAnimate',
   'ui.bootstrap',
   'ngDialog',
@@ -136,6 +139,4 @@ angular.module('dappstackApp', [
       $rootScope.previousState = $transition$.$from().name;
   });
 
-})
-
-;
+}).name;

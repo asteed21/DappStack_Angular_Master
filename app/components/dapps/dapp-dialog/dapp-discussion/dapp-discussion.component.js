@@ -6,7 +6,7 @@ angular.module('dappstackApp.components.dapps.dappDialog.dappDiscussion')
         bindings: {
             dappId: '<'
         },
-        templateUrl: './components/dapps/dapp-dialog/dapp-discussion/dapp-discussion.html',
+        template: require('./dapp-discussion.html'),
         controller: 'DappDiscussionController',
         controllerAs: 'vm'
     });

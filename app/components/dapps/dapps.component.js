@@ -7,7 +7,7 @@ angular.module('dappstackApp.components.dapps')
             limitTo: '<',
             orderBy: '<'
         },
-        templateUrl: './components/dapps/dapps.html',
+        template: require('./dapps.html'),
         controller: 'DappsController',
         controllerAs: 'vm'
     });

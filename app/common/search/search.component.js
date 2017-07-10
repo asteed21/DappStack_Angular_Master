@@ -6,7 +6,7 @@ angular.module('dappstackApp.common.search')
         bindings: {
             pladeholder: '<'
         },
-        templateUrl: './common/search/search.html',
+        template: require('./search.html'),
         controller: 'SearchController',
         controllerAs: 'vm'
     });

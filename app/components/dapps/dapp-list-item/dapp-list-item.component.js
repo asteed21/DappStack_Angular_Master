@@ -9,7 +9,7 @@ angular.module('dappstackApp.components.dapps.dappListItem')
             thumbnailDescription: '<',
             logoImage: '<'
         },
-        templateUrl: './components/dapps/dapp-list-item/dapp-list-item.html',
+        template: require('./dapp-list-item.html'),
         controller: 'DappListItemController',
         controllerAs: 'vm'
     });

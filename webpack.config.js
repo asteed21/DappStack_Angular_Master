@@ -2,30 +2,37 @@
 
 //import webpack plugins
 var webpack = require('webpack');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 //define the webpack configuration object (to be exported from this file)
 var config = {
-    devtool: 'inline-source-map',
     context: __dirname + '/app',
-    entry: './app.module.js',
+    entry: {
+        app: './app.module.js'
+    },
     output: {
         path: __dirname + '/dist',
-        filename: 'bundle.js'
-    },
-    resolve: {
-        alias:  {
-            'npm': __dirname + '/node_modules'
-        }
+        filename: 'app.bundle.js'
     },
     module: {
         loaders: [
             {
                 test: /\.css$/,
                 loader: 'style-loader!css-loader'
+            },
+            {
+                test: /\.html$/,
+                exclude: /node_modules/,
+                loader: 'raw-loader'
             }
         ]
-    }
-
-}
+    },
+    plugins: [
+        //new webpack.optimize.CommonsChunkPlugin(/* chunkName= */"vendor"),
+        new HtmlWebpackPlugin({
+            template: './index.ejs'
+        })
+    ]
+};
 
 module.exports = config;
