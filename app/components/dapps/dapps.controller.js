@@ -2,13 +2,13 @@
 
 angular.module('dappstackApp.components.dapps')
 
-    .controller('DappsController', ['Dapps', function(Dapps) {
+    .controller('DappsController', ['Dapp', function(Dapp) {
         
         var vm = this;
         vm.dapps;
 
         //Get dapps list from database - TODO: work filter into db query
-        Dapps.find()
+        Dapp.find()
             .$promise.then(
             function (response) {
                 vm.dapps = response;

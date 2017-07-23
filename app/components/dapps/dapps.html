@@ -1,8 +1,9 @@
-<div class="dapp-list">
-    <div class="dapp-list-header">
+<div class="container-fluid">
+    <div>
         <h3>{{vm.heading}}</h3>
     </div>
-    <ul class="list-group">
-        <dapp-list-item ng-repeat="dapp in vm.dapps | filter: vm.filter | limitTo: vm.limit | orderBy: vm.order" dapp-id="dapp.id" name="dapp.name" thumbnail-description="dapp.thumbnailDescription" logo-image="dapp.logoImage" likes="dapp.likes"></dapp-list-item>
-    </ul>
+
+    <div class="row flex-row flex-sm-nowrap justify-content-start dapps-row">
+        <dapp-list-item class="col-sm-4 col-lg-3 " ng-repeat="dapp in vm.dapps | filter: vm.filter | limitTo: vm.limit | orderBy: vm.order" dapp-id="dapp.id" name="dapp.name" thumbnail-description="dapp.thumbnailDescription" logo-image="dapp.logoImage" likes="dapp.likes"></dapp-list-item>
+    </div>
 </div>

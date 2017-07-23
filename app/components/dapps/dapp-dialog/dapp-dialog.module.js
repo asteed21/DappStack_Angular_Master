@@ -1,7 +1,7 @@
 'use strict'
 
 require('./dapp-about/dapp-about.module');
-require('./dapp-discussion/dapp-discussion.module')
+require('./dapp-discussion/dapp-discussion.module');
 
 module.exports = angular.module('dappstackApp.components.dapps.dappDialog', [
     'dappstackApp.components.dapps.dappDialog.dappAbout',

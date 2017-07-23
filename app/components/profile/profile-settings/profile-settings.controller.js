@@ -28,7 +28,7 @@ angular.module('dappstackApp.components.profile.profileSettings')
             scope: vm,                          // to automatically update the html. Default: $rootScope
             url: urlBase + '/attachments/pics/upload',
             formData: [
-                { dappStackUserId: $rootScope.currentUser.id }
+                { DappStackUserId: $rootScope.currentUser.id }
             ]
         });
 

@@ -2,7 +2,7 @@
 
 angular.module('dappstackApp.components.dapps.dappDialog.dappDiscussion.comments')
 
-    .controller('CommentsController', ['$scope', 'Dapps', 'Comments', '$rootScope', 'authService', '$stateParams', function($scope, Dapps, Comments, $rootScope, authService, $stateParams) {
+    .controller('CommentsController', ['$scope', 'Dapp', 'Comment', '$rootScope', 'authService', '$stateParams', function($scope, Dapp, Comment, $rootScope, authService, $stateParams) {
 
         var vm = this;
 
@@ -15,7 +15,7 @@ angular.module('dappstackApp.components.dapps.dappDialog.dappDiscussion.comments
 
             //TODO - configure $scope.watch() or similar to manage list updates automatically
             function _updateCommentsList() {
-                Dapps.comments({id: $stateParams.dappId})
+                Dapp.comments({id: $stateParams.dappId})
                 .$promise.then(
                     function(response) {
                         console.log(response);
@@ -30,12 +30,12 @@ angular.module('dappstackApp.components.dapps.dappDialog.dappDiscussion.comments
             vm.createComment = function() {
                 if (vm.formComment.body) {
                     var newComment = {
-                        dappsId: $stateParams.dappId,
-                        dappStackUserId: $rootScope.currentUser.id,
+                        DappId: $stateParams.dappId,
+                        DappStackUserId: $rootScope.currentUser.id,
                         comment: vm.formComment.body,
                         comments: []
                     };
-                    Comments.create(newComment)
+                    Comment.create(newComment)
                     .$promise.then(
                         function(response) {
                             _resetFormComment();

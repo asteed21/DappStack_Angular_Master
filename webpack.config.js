@@ -31,7 +31,12 @@ var config = {
         //new webpack.optimize.CommonsChunkPlugin(/* chunkName= */"vendor"),
         new HtmlWebpackPlugin({
             template: './index.ejs'
-        })
+        }),
+        new webpack.ProvidePlugin({
+           $: "jquery",
+           jQuery: "jquery",
+           "Tether": 'tether'
+       })
     ]
 };
 
