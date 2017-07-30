@@ -1,49 +1,64 @@
 <div class="container">
-    <a type="button" class="close" aria-label="Close" ng-click="vm.goBack()">&times;</a>
-    <div class="row">
-      <div class="page-header dapp-header col-xs-12 col-sm-10 col-sm-offset-1">
-        <div class="col-xs-3">
-            <img class="col-xs-12 img-thumbnail" ng-src='{{vm.dapp.logoImage}}'/>
-        </div>
-        <div class="col-xs-6">
-          <h4 class="">{{vm.dapp.name}}</h4>
-          <p>{{vm.dapp.thumbnailDescription}}</p>
-        </div>
-        <div class="col-xs-3">
-          <ul class="list-unstyled list-inline">
-            <li ng-show="vm.hasSocial('facebook')">
-              <a class="dapp-social-links" href="{{vm.dapp.socialLinks.facebook}}">
-                <i class="fa fa-facebook-f fa-2x"></i>
-              </a>
-            </li>
-            <li ng-show="vm.hasSocial('twitter')">
-              <a class="dapp-social-links" href="{{vm.dapp.socialLinks.twitter}}">
-                <i class="fa fa-twitter fa-2x"></i>
-              </a>
-            </li>
-            <li ng-show="vm.hasSocial('reddit')">
-              <a class="dapp-social-links" href="{{vm.dapp.socialLinks.reddit}}">
-                <i class="fa fa-reddit-alien fa-2x"></i>
-              </a>
-            <li ng-show="vm.hasSocial('github')">
-              <a class="dapp-social-links" href="{{vm.dapp.socialLinks.github}}">
-                <i class="fa fa-github fa-2x"></i>
-              </a>
-            </li>
-          </ul>
-        </div>
+    <div class="row justify-content-end pr-5 mt-5">
+      <button type="button" class="close" aria-label="Close" ng-click="vm.goBack()">
+        <span class="close-button" aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="row flex-row justify-content-center mb-5">
+      <div class="col-12 col-sm-3">
+          <img class="rounded img-fluid" ng-src='{{vm.dapp.logoImage}}'/>
+      </div>
+      <div class="col-12 col-sm-5">
+        <h2 class="">{{vm.dapp.name}}</h2>
+        <p>{{vm.dapp.thumbnailDescription}}</p>
+      </div>
+      <div class="col-12 col-sm-3 d-flex justify-content-center align-items-center">
+        <ul class="list-unstyled d-flex">
+            <li class="pl-2" ng-show="vm.hasSocial('facebook')">
+            <a class="dapp-social-links" href="{{vm.dapp.socialLinks.facebook}}">
+              <i class="fa fa-facebook-f fa-2x"></i>
+            </a>
+          </li>
+          <li class="pl-2" ng-show="vm.hasSocial('twitter')">
+            <a class="dapp-social-links" href="{{vm.dapp.socialLinks.twitter}}">
+              <i class="fa fa-twitter fa-2x"></i>
+            </a>
+          </li>
+          <li class="pl-2" ng-show="vm.hasSocial('reddit')">
+            <a class="dapp-social-links" href="{{vm.dapp.socialLinks.reddit}}">
+              <i class="fa fa-reddit-alien fa-2x"></i>
+            </a>
+          <li class="pl-2" ng-show="vm.hasSocial('github')">
+            <a class="dapp-social-links" href="{{vm.dapp.socialLinks.github}}">
+              <i class="fa fa-github fa-2x"></i>
+            </a>
+          </li>
+          <li class="pl-2" ng-show="vm.hasSocial('slack')">
+            <a class="dapp-social-links" href="{{vm.dapp.socialLinks.slack}}">
+              <i class="fa fa-slack fa-2x"></i>
+            </a>
+          </li> 
+        </ul>
       </div>
     </div>
-    <div class="row">
-      <div class="dapp-body col-xs-12 col-sm-10 col-sm-offset-1">
-        <uib-tabset active="activeJustified" justified="true" type="tabs">
-          <uib-tab index="0" heading="About">
-            <dapp-about-component about-content="vm.dapp.aboutContent" about-images="vm.dapp.aboutImages"></dapp-about-component>
-          </uib-tab>
-          <uib-tab index="1" heading="Discussion">
-            <dapp-discussion-component dapp-id="vm.dapp.id"></dapp-discussion-component>
-          </uib-tab>
-        </uib-tabset>
+    <div class="row flex-row justify-content-center">
+      <div class="dapp-body col-10">
+        <ul class="nav nav-tabs nav-justified" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" data-target="#dapp-about" role="tab">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" data-target="#dapp-discussion" role="tab">Discussion</a>
+          </li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane active fade show" id="dapp-about" role="tabpanel">
+             <dapp-about-component about-content="vm.dapp.aboutContent" about-images="vm.dapp.aboutImages"></dapp-about-component> 
+          </div>
+          <div class="tab-pane fade" id="dapp-discussion" role="tabpanel">
+             <dapp-discussion-component dapp-id="vm.dapp.id"></dapp-discussion-component> 
+          </div>
+        </div>
       </div>
     </div>
   </div>

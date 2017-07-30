@@ -55,6 +55,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    border-radius: 0;
 }
 
 .home-container {
@@ -67,26 +68,7 @@ body {
 }
 
 /*DAPP CATALOG STYLES*/
-.dapps-content-container {
-    padding: 0;
-    width: 100%;
-}
 
-.filter-panel {
-    background: white;
-    height: 400px;
-    margin-top: 40px;
-}
-
-.dapps-panel {
-    margin-top: 20px;
-}
-
-.action-panel {
-    background: white;
-    height: 400px;
-    margin-top: 40px;
-}
 
 /* DAPP LIST ELEMENT STYLES */
 .dapps-row {
@@ -99,16 +81,17 @@ body {
 }
 
 /* DAPP DETAIL PAGE STYLES */
-.close {
-    margin-top: 20px;
+.close-button {
     border: 1px solid black;
     border-radius: 50%;
-    padding: 8px 15px 12px 15px;
+    padding: 7px 14px 7px 14px;
+    margin: 0;
 }
 
-/* DAPP ABOUT TAB STYLES*/
-.about-content-row {
-    margin: 50px auto;
+/* DAPP ABOUT PAGE STYLES */
+.about-slides {
+    width: 100%;
+    height: 100%;
 }
 
 /* PROFILE PAGE STYLES */

@@ -3,6 +3,8 @@
 //css require statements
 require("../node_modules/tether/dist/css/tether.min.css");
 require("../node_modules/bootstrap/dist/css/bootstrap.min.css");
+require("../node_modules/ng1bs4/library/library.css");
+require("../node_modules/font-awesome/css/font-awesome.min.css");
 require("../node_modules/ng-dialog/css/ngDialog.min.css");
 require("../node_modules/ng-dialog/css/ngDialog-theme-default.min.css");
 require("./styles/main.css");

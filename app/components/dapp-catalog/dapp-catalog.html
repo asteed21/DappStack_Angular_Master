@@ -1,10 +1,15 @@
-<div class="container dapps-content-container">
-    <div class="col-xs-12 col-md-2 col-md-offset-1 filter-panel">
-        
-    </div>
-    <div class="col-xs-12 col-md-8 dapps-panel">
-        <div class="col-xs-12 dapp-list-container">
-            <dapps heading="vm.heading" filter="vm.query"></dapps>
+<div class="container-fluid dapps-content-container" style="background: grey;">
+    <div class="row">
+        <div class="col-12 col-sm-3 dapps-sort-panel p-2" id="catalog-nav">
+
+        </div>
+        <div class="col-12 col-sm-9 mt-5 mb-5 dapps-view-panel">
+            <div ng-hide="vm.query == null" class="pl-2">
+                <h4 class="card-deck-title">{{vm.heading}}</h4>
+            </div>
+            <div class="card-deck">
+                <dapp-list-item class="col-sm-4 col-lg-3 pt-3" ng-repeat="dapp in vm.dapps | filter: vm.filter | limitTo: vm.limit | orderBy: vm.order" dapp-id="dapp.id" name="dapp.name" thumbnail-description="dapp.thumbnailDescription" logo-image="dapp.logoImage" likes="dapp.likes"></dapp-list-item>
+            </div>
         </div>
     </div>
 </div>
