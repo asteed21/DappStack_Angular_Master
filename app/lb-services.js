@@ -197,6 +197,114 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
               method: "HEAD",
             },
 
+            // INTERNAL. Use Dapp.tags.findById() instead.
+            "prototype$__findById__tags": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/dapps/:id/tags/:fk",
+              method: "GET",
+            },
+
+            // INTERNAL. Use Dapp.tags.destroyById() instead.
+            "prototype$__destroyById__tags": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/dapps/:id/tags/:fk",
+              method: "DELETE",
+            },
+
+            // INTERNAL. Use Dapp.tags.updateById() instead.
+            "prototype$__updateById__tags": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/dapps/:id/tags/:fk",
+              method: "PUT",
+            },
+
+            // INTERNAL. Use Dapp.tags.link() instead.
+            "prototype$__link__tags": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/dapps/:id/tags/rel/:fk",
+              method: "PUT",
+            },
+
+            // INTERNAL. Use Dapp.tags.unlink() instead.
+            "prototype$__unlink__tags": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/dapps/:id/tags/rel/:fk",
+              method: "DELETE",
+            },
+
+            // INTERNAL. Use Dapp.tags.exists() instead.
+            "prototype$__exists__tags": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/dapps/:id/tags/rel/:fk",
+              method: "HEAD",
+            },
+
+            // INTERNAL. Use Dapp.categories.findById() instead.
+            "prototype$__findById__categories": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/dapps/:id/categories/:fk",
+              method: "GET",
+            },
+
+            // INTERNAL. Use Dapp.categories.destroyById() instead.
+            "prototype$__destroyById__categories": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/dapps/:id/categories/:fk",
+              method: "DELETE",
+            },
+
+            // INTERNAL. Use Dapp.categories.updateById() instead.
+            "prototype$__updateById__categories": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/dapps/:id/categories/:fk",
+              method: "PUT",
+            },
+
+            // INTERNAL. Use Dapp.categories.link() instead.
+            "prototype$__link__categories": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/dapps/:id/categories/rel/:fk",
+              method: "PUT",
+            },
+
+            // INTERNAL. Use Dapp.categories.unlink() instead.
+            "prototype$__unlink__categories": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/dapps/:id/categories/rel/:fk",
+              method: "DELETE",
+            },
+
+            // INTERNAL. Use Dapp.categories.exists() instead.
+            "prototype$__exists__categories": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/dapps/:id/categories/rel/:fk",
+              method: "HEAD",
+            },
+
             // INTERNAL. Use Dapp.comments() instead.
             "prototype$__get__comments": {
               isArray: true,
@@ -294,6 +402,56 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
             // INTERNAL. Use Dapp.teamMembers.count() instead.
             "prototype$__count__teamMembers": {
               url: urlBase + "/dapps/:id/teamMembers/count",
+              method: "GET",
+            },
+
+            // INTERNAL. Use Dapp.tags() instead.
+            "prototype$__get__tags": {
+              isArray: true,
+              url: urlBase + "/dapps/:id/tags",
+              method: "GET",
+            },
+
+            // INTERNAL. Use Dapp.tags.create() instead.
+            "prototype$__create__tags": {
+              url: urlBase + "/dapps/:id/tags",
+              method: "POST",
+            },
+
+            // INTERNAL. Use Dapp.tags.destroyAll() instead.
+            "prototype$__delete__tags": {
+              url: urlBase + "/dapps/:id/tags",
+              method: "DELETE",
+            },
+
+            // INTERNAL. Use Dapp.tags.count() instead.
+            "prototype$__count__tags": {
+              url: urlBase + "/dapps/:id/tags/count",
+              method: "GET",
+            },
+
+            // INTERNAL. Use Dapp.categories() instead.
+            "prototype$__get__categories": {
+              isArray: true,
+              url: urlBase + "/dapps/:id/categories",
+              method: "GET",
+            },
+
+            // INTERNAL. Use Dapp.categories.create() instead.
+            "prototype$__create__categories": {
+              url: urlBase + "/dapps/:id/categories",
+              method: "POST",
+            },
+
+            // INTERNAL. Use Dapp.categories.destroyAll() instead.
+            "prototype$__delete__categories": {
+              url: urlBase + "/dapps/:id/categories",
+              method: "DELETE",
+            },
+
+            // INTERNAL. Use Dapp.categories.count() instead.
+            "prototype$__count__categories": {
+              url: urlBase + "/dapps/:id/categories/count",
               method: "GET",
             },
 
@@ -846,6 +1004,178 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
             // INTERNAL. Use DappTeamMember.dapp() instead.
             "::get::DappTeamMember::dapp": {
               url: urlBase + "/dappTeamMembers/:id/dapp",
+              method: "GET",
+            },
+
+            // INTERNAL. Use Tag.dapps.findById() instead.
+            "::findById::Tag::dapps": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/tags/:id/dapps/:fk",
+              method: "GET",
+            },
+
+            // INTERNAL. Use Tag.dapps.destroyById() instead.
+            "::destroyById::Tag::dapps": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/tags/:id/dapps/:fk",
+              method: "DELETE",
+            },
+
+            // INTERNAL. Use Tag.dapps.updateById() instead.
+            "::updateById::Tag::dapps": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/tags/:id/dapps/:fk",
+              method: "PUT",
+            },
+
+            // INTERNAL. Use Tag.dapps.link() instead.
+            "::link::Tag::dapps": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/tags/:id/dapps/rel/:fk",
+              method: "PUT",
+            },
+
+            // INTERNAL. Use Tag.dapps.unlink() instead.
+            "::unlink::Tag::dapps": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/tags/:id/dapps/rel/:fk",
+              method: "DELETE",
+            },
+
+            // INTERNAL. Use Tag.dapps.exists() instead.
+            "::exists::Tag::dapps": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/tags/:id/dapps/rel/:fk",
+              method: "HEAD",
+            },
+
+            // INTERNAL. Use Tag.dapps() instead.
+            "::get::Tag::dapps": {
+              isArray: true,
+              url: urlBase + "/tags/:id/dapps",
+              method: "GET",
+            },
+
+            // INTERNAL. Use Tag.dapps.create() instead.
+            "::create::Tag::dapps": {
+              url: urlBase + "/tags/:id/dapps",
+              method: "POST",
+            },
+
+            // INTERNAL. Use Tag.dapps.createMany() instead.
+            "::createMany::Tag::dapps": {
+              isArray: true,
+              url: urlBase + "/tags/:id/dapps",
+              method: "POST",
+            },
+
+            // INTERNAL. Use Tag.dapps.destroyAll() instead.
+            "::delete::Tag::dapps": {
+              url: urlBase + "/tags/:id/dapps",
+              method: "DELETE",
+            },
+
+            // INTERNAL. Use Tag.dapps.count() instead.
+            "::count::Tag::dapps": {
+              url: urlBase + "/tags/:id/dapps/count",
+              method: "GET",
+            },
+
+            // INTERNAL. Use Category.dapps.findById() instead.
+            "::findById::Category::dapps": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/categories/:id/dapps/:fk",
+              method: "GET",
+            },
+
+            // INTERNAL. Use Category.dapps.destroyById() instead.
+            "::destroyById::Category::dapps": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/categories/:id/dapps/:fk",
+              method: "DELETE",
+            },
+
+            // INTERNAL. Use Category.dapps.updateById() instead.
+            "::updateById::Category::dapps": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/categories/:id/dapps/:fk",
+              method: "PUT",
+            },
+
+            // INTERNAL. Use Category.dapps.link() instead.
+            "::link::Category::dapps": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/categories/:id/dapps/rel/:fk",
+              method: "PUT",
+            },
+
+            // INTERNAL. Use Category.dapps.unlink() instead.
+            "::unlink::Category::dapps": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/categories/:id/dapps/rel/:fk",
+              method: "DELETE",
+            },
+
+            // INTERNAL. Use Category.dapps.exists() instead.
+            "::exists::Category::dapps": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/categories/:id/dapps/rel/:fk",
+              method: "HEAD",
+            },
+
+            // INTERNAL. Use Category.dapps() instead.
+            "::get::Category::dapps": {
+              isArray: true,
+              url: urlBase + "/categories/:id/dapps",
+              method: "GET",
+            },
+
+            // INTERNAL. Use Category.dapps.create() instead.
+            "::create::Category::dapps": {
+              url: urlBase + "/categories/:id/dapps",
+              method: "POST",
+            },
+
+            // INTERNAL. Use Category.dapps.createMany() instead.
+            "::createMany::Category::dapps": {
+              isArray: true,
+              url: urlBase + "/categories/:id/dapps",
+              method: "POST",
+            },
+
+            // INTERNAL. Use Category.dapps.destroyAll() instead.
+            "::delete::Category::dapps": {
+              url: urlBase + "/categories/:id/dapps",
+              method: "DELETE",
+            },
+
+            // INTERNAL. Use Category.dapps.count() instead.
+            "::count::Category::dapps": {
+              url: urlBase + "/categories/:id/dapps/count",
               method: "GET",
             },
           }
@@ -2412,6 +2742,830 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
         R.teamMembers.updateById = function() {
           var TargetResource = $injector.get("DappStackUser");
           var action = TargetResource["::updateById::Dapp::teamMembers"];
+          return action.apply(R, arguments);
+        };
+    /**
+     * @ngdoc object
+     * @name lbServices.Dapp.tags
+     * @header lbServices.Dapp.tags
+     * @object
+     * @description
+     *
+     * The object `Dapp.tags` groups methods
+     * manipulating `Tag` instances related to `Dapp`.
+     *
+     * Call {@link lbServices.Dapp#tags Dapp.tags()}
+     * to query all related instances.
+     */
+
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Dapp#tags
+             * @methodOf lbServices.Dapp
+             *
+             * @description
+             *
+             * Queries tags of dapp.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - dapp id
+             *
+             *  - `filter` – `{object=}` -
+             *
+             * @param {function(Array.<Object>,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Array.<Object>} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Tag` object.)
+             * </em>
+             */
+        R.tags = function() {
+          var TargetResource = $injector.get("Tag");
+          var action = TargetResource["::get::Dapp::tags"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Dapp.tags#count
+             * @methodOf lbServices.Dapp.tags
+             *
+             * @description
+             *
+             * Counts tags of dapp.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - dapp id
+             *
+             *  - `where` – `{object=}` - Criteria to match model instances
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * Data properties:
+             *
+             *  - `count` – `{number=}` -
+             */
+        R.tags.count = function() {
+          var TargetResource = $injector.get("Tag");
+          var action = TargetResource["::count::Dapp::tags"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Dapp.tags#create
+             * @methodOf lbServices.Dapp.tags
+             *
+             * @description
+             *
+             * Creates a new instance in tags of this model.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - dapp id
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Tag` object.)
+             * </em>
+             */
+        R.tags.create = function() {
+          var TargetResource = $injector.get("Tag");
+          var action = TargetResource["::create::Dapp::tags"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Dapp.tags#createMany
+             * @methodOf lbServices.Dapp.tags
+             *
+             * @description
+             *
+             * Creates a new instance in tags of this model.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - dapp id
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Array.<Object>,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Array.<Object>} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Tag` object.)
+             * </em>
+             */
+        R.tags.createMany = function() {
+          var TargetResource = $injector.get("Tag");
+          var action = TargetResource["::createMany::Dapp::tags"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Dapp.tags#destroyAll
+             * @methodOf lbServices.Dapp.tags
+             *
+             * @description
+             *
+             * Deletes all tags of this model.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - dapp id
+             *
+             *  - `where` – `{object=}` -
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * This method returns no data.
+             */
+        R.tags.destroyAll = function() {
+          var TargetResource = $injector.get("Tag");
+          var action = TargetResource["::delete::Dapp::tags"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Dapp.tags#destroyById
+             * @methodOf lbServices.Dapp.tags
+             *
+             * @description
+             *
+             * Delete a related item by id for tags.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - dapp id
+             *
+             *  - `fk` – `{*}` - Foreign key for tags
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * This method returns no data.
+             */
+        R.tags.destroyById = function() {
+          var TargetResource = $injector.get("Tag");
+          var action = TargetResource["::destroyById::Dapp::tags"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Dapp.tags#exists
+             * @methodOf lbServices.Dapp.tags
+             *
+             * @description
+             *
+             * Check the existence of tags relation to an item by id.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - dapp id
+             *
+             *  - `fk` – `{*}` - Foreign key for tags
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Tag` object.)
+             * </em>
+             */
+        R.tags.exists = function() {
+          var TargetResource = $injector.get("Tag");
+          var action = TargetResource["::exists::Dapp::tags"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Dapp.tags#findById
+             * @methodOf lbServices.Dapp.tags
+             *
+             * @description
+             *
+             * Find a related item by id for tags.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - dapp id
+             *
+             *  - `fk` – `{*}` - Foreign key for tags
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Tag` object.)
+             * </em>
+             */
+        R.tags.findById = function() {
+          var TargetResource = $injector.get("Tag");
+          var action = TargetResource["::findById::Dapp::tags"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Dapp.tags#link
+             * @methodOf lbServices.Dapp.tags
+             *
+             * @description
+             *
+             * Add a related item by id for tags.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - dapp id
+             *
+             *  - `fk` – `{*}` - Foreign key for tags
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Tag` object.)
+             * </em>
+             */
+        R.tags.link = function() {
+          var TargetResource = $injector.get("Tag");
+          var action = TargetResource["::link::Dapp::tags"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Dapp.tags#unlink
+             * @methodOf lbServices.Dapp.tags
+             *
+             * @description
+             *
+             * Remove the tags relation to an item by id.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - dapp id
+             *
+             *  - `fk` – `{*}` - Foreign key for tags
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * This method returns no data.
+             */
+        R.tags.unlink = function() {
+          var TargetResource = $injector.get("Tag");
+          var action = TargetResource["::unlink::Dapp::tags"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Dapp.tags#updateById
+             * @methodOf lbServices.Dapp.tags
+             *
+             * @description
+             *
+             * Update a related item by id for tags.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - dapp id
+             *
+             *  - `fk` – `{*}` - Foreign key for tags
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Tag` object.)
+             * </em>
+             */
+        R.tags.updateById = function() {
+          var TargetResource = $injector.get("Tag");
+          var action = TargetResource["::updateById::Dapp::tags"];
+          return action.apply(R, arguments);
+        };
+    /**
+     * @ngdoc object
+     * @name lbServices.Dapp.categories
+     * @header lbServices.Dapp.categories
+     * @object
+     * @description
+     *
+     * The object `Dapp.categories` groups methods
+     * manipulating `Category` instances related to `Dapp`.
+     *
+     * Call {@link lbServices.Dapp#categories Dapp.categories()}
+     * to query all related instances.
+     */
+
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Dapp#categories
+             * @methodOf lbServices.Dapp
+             *
+             * @description
+             *
+             * Queries categories of dapp.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - dapp id
+             *
+             *  - `filter` – `{object=}` -
+             *
+             * @param {function(Array.<Object>,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Array.<Object>} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Category` object.)
+             * </em>
+             */
+        R.categories = function() {
+          var TargetResource = $injector.get("Category");
+          var action = TargetResource["::get::Dapp::categories"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Dapp.categories#count
+             * @methodOf lbServices.Dapp.categories
+             *
+             * @description
+             *
+             * Counts categories of dapp.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - dapp id
+             *
+             *  - `where` – `{object=}` - Criteria to match model instances
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * Data properties:
+             *
+             *  - `count` – `{number=}` -
+             */
+        R.categories.count = function() {
+          var TargetResource = $injector.get("Category");
+          var action = TargetResource["::count::Dapp::categories"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Dapp.categories#create
+             * @methodOf lbServices.Dapp.categories
+             *
+             * @description
+             *
+             * Creates a new instance in categories of this model.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - dapp id
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Category` object.)
+             * </em>
+             */
+        R.categories.create = function() {
+          var TargetResource = $injector.get("Category");
+          var action = TargetResource["::create::Dapp::categories"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Dapp.categories#createMany
+             * @methodOf lbServices.Dapp.categories
+             *
+             * @description
+             *
+             * Creates a new instance in categories of this model.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - dapp id
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Array.<Object>,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Array.<Object>} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Category` object.)
+             * </em>
+             */
+        R.categories.createMany = function() {
+          var TargetResource = $injector.get("Category");
+          var action = TargetResource["::createMany::Dapp::categories"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Dapp.categories#destroyAll
+             * @methodOf lbServices.Dapp.categories
+             *
+             * @description
+             *
+             * Deletes all categories of this model.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - dapp id
+             *
+             *  - `where` – `{object=}` -
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * This method returns no data.
+             */
+        R.categories.destroyAll = function() {
+          var TargetResource = $injector.get("Category");
+          var action = TargetResource["::delete::Dapp::categories"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Dapp.categories#destroyById
+             * @methodOf lbServices.Dapp.categories
+             *
+             * @description
+             *
+             * Delete a related item by id for categories.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - dapp id
+             *
+             *  - `fk` – `{*}` - Foreign key for categories
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * This method returns no data.
+             */
+        R.categories.destroyById = function() {
+          var TargetResource = $injector.get("Category");
+          var action = TargetResource["::destroyById::Dapp::categories"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Dapp.categories#exists
+             * @methodOf lbServices.Dapp.categories
+             *
+             * @description
+             *
+             * Check the existence of categories relation to an item by id.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - dapp id
+             *
+             *  - `fk` – `{*}` - Foreign key for categories
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Category` object.)
+             * </em>
+             */
+        R.categories.exists = function() {
+          var TargetResource = $injector.get("Category");
+          var action = TargetResource["::exists::Dapp::categories"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Dapp.categories#findById
+             * @methodOf lbServices.Dapp.categories
+             *
+             * @description
+             *
+             * Find a related item by id for categories.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - dapp id
+             *
+             *  - `fk` – `{*}` - Foreign key for categories
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Category` object.)
+             * </em>
+             */
+        R.categories.findById = function() {
+          var TargetResource = $injector.get("Category");
+          var action = TargetResource["::findById::Dapp::categories"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Dapp.categories#link
+             * @methodOf lbServices.Dapp.categories
+             *
+             * @description
+             *
+             * Add a related item by id for categories.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - dapp id
+             *
+             *  - `fk` – `{*}` - Foreign key for categories
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Category` object.)
+             * </em>
+             */
+        R.categories.link = function() {
+          var TargetResource = $injector.get("Category");
+          var action = TargetResource["::link::Dapp::categories"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Dapp.categories#unlink
+             * @methodOf lbServices.Dapp.categories
+             *
+             * @description
+             *
+             * Remove the categories relation to an item by id.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - dapp id
+             *
+             *  - `fk` – `{*}` - Foreign key for categories
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * This method returns no data.
+             */
+        R.categories.unlink = function() {
+          var TargetResource = $injector.get("Category");
+          var action = TargetResource["::unlink::Dapp::categories"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Dapp.categories#updateById
+             * @methodOf lbServices.Dapp.categories
+             *
+             * @description
+             *
+             * Update a related item by id for categories.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - dapp id
+             *
+             *  - `fk` – `{*}` - Foreign key for categories
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Category` object.)
+             * </em>
+             */
+        R.categories.updateById = function() {
+          var TargetResource = $injector.get("Category");
+          var action = TargetResource["::updateById::Dapp::categories"];
           return action.apply(R, arguments);
         };
 
@@ -9117,6 +10271,3194 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
         R.dapp = function() {
           var TargetResource = $injector.get("Dapp");
           var action = TargetResource["::get::DappTeamMember::dapp"];
+          return action.apply(R, arguments);
+        };
+
+
+        return R;
+      }]);
+
+/**
+ * @ngdoc object
+ * @name lbServices.Tag
+ * @header lbServices.Tag
+ * @object
+ *
+ * @description
+ *
+ * A $resource object for interacting with the `Tag` model.
+ *
+ * ## Example
+ *
+ * See
+ * {@link http://docs.angularjs.org/api/ngResource.$resource#example $resource}
+ * for an example of using this object.
+ *
+ */
+  module.factory(
+    "Tag",
+    [
+      'LoopBackResource', 'LoopBackAuth', '$injector', '$q',
+      function(LoopBackResource, LoopBackAuth, $injector, $q) {
+        var R = LoopBackResource(
+        urlBase + "/tags/:id",
+          { 'id': '@id' },
+          {
+
+            // INTERNAL. Use Tag.dapps.findById() instead.
+            "prototype$__findById__dapps": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/tags/:id/dapps/:fk",
+              method: "GET",
+            },
+
+            // INTERNAL. Use Tag.dapps.destroyById() instead.
+            "prototype$__destroyById__dapps": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/tags/:id/dapps/:fk",
+              method: "DELETE",
+            },
+
+            // INTERNAL. Use Tag.dapps.updateById() instead.
+            "prototype$__updateById__dapps": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/tags/:id/dapps/:fk",
+              method: "PUT",
+            },
+
+            // INTERNAL. Use Tag.dapps.link() instead.
+            "prototype$__link__dapps": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/tags/:id/dapps/rel/:fk",
+              method: "PUT",
+            },
+
+            // INTERNAL. Use Tag.dapps.unlink() instead.
+            "prototype$__unlink__dapps": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/tags/:id/dapps/rel/:fk",
+              method: "DELETE",
+            },
+
+            // INTERNAL. Use Tag.dapps.exists() instead.
+            "prototype$__exists__dapps": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/tags/:id/dapps/rel/:fk",
+              method: "HEAD",
+            },
+
+            // INTERNAL. Use Tag.dapps() instead.
+            "prototype$__get__dapps": {
+              isArray: true,
+              url: urlBase + "/tags/:id/dapps",
+              method: "GET",
+            },
+
+            // INTERNAL. Use Tag.dapps.create() instead.
+            "prototype$__create__dapps": {
+              url: urlBase + "/tags/:id/dapps",
+              method: "POST",
+            },
+
+            // INTERNAL. Use Tag.dapps.destroyAll() instead.
+            "prototype$__delete__dapps": {
+              url: urlBase + "/tags/:id/dapps",
+              method: "DELETE",
+            },
+
+            // INTERNAL. Use Tag.dapps.count() instead.
+            "prototype$__count__dapps": {
+              url: urlBase + "/tags/:id/dapps/count",
+              method: "GET",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Tag#create
+             * @methodOf lbServices.Tag
+             *
+             * @description
+             *
+             * Create a new instance of the model and persist it into the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *   This method does not accept any parameters.
+             *   Supply an empty object or omit this argument altogether.
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Tag` object.)
+             * </em>
+             */
+            "create": {
+              url: urlBase + "/tags",
+              method: "POST",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Tag#createMany
+             * @methodOf lbServices.Tag
+             *
+             * @description
+             *
+             * Create a new instance of the model and persist it into the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *   This method does not accept any parameters.
+             *   Supply an empty object or omit this argument altogether.
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Array.<Object>,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Array.<Object>} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Tag` object.)
+             * </em>
+             */
+            "createMany": {
+              isArray: true,
+              url: urlBase + "/tags",
+              method: "POST",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Tag#upsert
+             * @methodOf lbServices.Tag
+             *
+             * @description
+             *
+             * Patch an existing model instance or insert a new one into the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *   This method does not accept any parameters.
+             *   Supply an empty object or omit this argument altogether.
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Tag` object.)
+             * </em>
+             */
+            "upsert": {
+              url: urlBase + "/tags",
+              method: "PUT",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Tag#replaceOrCreate
+             * @methodOf lbServices.Tag
+             *
+             * @description
+             *
+             * Replace an existing model instance or insert a new one into the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *   This method does not accept any parameters.
+             *   Supply an empty object or omit this argument altogether.
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Tag` object.)
+             * </em>
+             */
+            "replaceOrCreate": {
+              url: urlBase + "/tags/replaceOrCreate",
+              method: "POST",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Tag#upsertWithWhere
+             * @methodOf lbServices.Tag
+             *
+             * @description
+             *
+             * Update an existing model instance or insert a new one into the data source based on the where criteria.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `where` – `{object=}` - Criteria to match model instances
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Tag` object.)
+             * </em>
+             */
+            "upsertWithWhere": {
+              url: urlBase + "/tags/upsertWithWhere",
+              method: "POST",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Tag#exists
+             * @methodOf lbServices.Tag
+             *
+             * @description
+             *
+             * Check whether a model instance exists in the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - Model id
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * Data properties:
+             *
+             *  - `exists` – `{boolean=}` -
+             */
+            "exists": {
+              url: urlBase + "/tags/:id/exists",
+              method: "GET",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Tag#findById
+             * @methodOf lbServices.Tag
+             *
+             * @description
+             *
+             * Find a model instance by {{id}} from the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - Model id
+             *
+             *  - `filter` – `{object=}` - Filter defining fields and include
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Tag` object.)
+             * </em>
+             */
+            "findById": {
+              url: urlBase + "/tags/:id",
+              method: "GET",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Tag#replaceById
+             * @methodOf lbServices.Tag
+             *
+             * @description
+             *
+             * Replace attributes for a model instance and persist it into the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - Model id
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Tag` object.)
+             * </em>
+             */
+            "replaceById": {
+              url: urlBase + "/tags/:id/replace",
+              method: "POST",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Tag#find
+             * @methodOf lbServices.Tag
+             *
+             * @description
+             *
+             * Find all instances of the model matched by filter from the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `filter` – `{object=}` - Filter defining fields, where, include, order, offset, and limit
+             *
+             * @param {function(Array.<Object>,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Array.<Object>} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Tag` object.)
+             * </em>
+             */
+            "find": {
+              isArray: true,
+              url: urlBase + "/tags",
+              method: "GET",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Tag#findOne
+             * @methodOf lbServices.Tag
+             *
+             * @description
+             *
+             * Find first instance of the model matched by filter from the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `filter` – `{object=}` - Filter defining fields, where, include, order, offset, and limit
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Tag` object.)
+             * </em>
+             */
+            "findOne": {
+              url: urlBase + "/tags/findOne",
+              method: "GET",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Tag#updateAll
+             * @methodOf lbServices.Tag
+             *
+             * @description
+             *
+             * Update instances of the model matched by {{where}} from the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `where` – `{object=}` - Criteria to match model instances
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * Information related to the outcome of the operation
+             */
+            "updateAll": {
+              url: urlBase + "/tags/update",
+              method: "POST",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Tag#deleteById
+             * @methodOf lbServices.Tag
+             *
+             * @description
+             *
+             * Delete a model instance by {{id}} from the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - Model id
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Tag` object.)
+             * </em>
+             */
+            "deleteById": {
+              url: urlBase + "/tags/:id",
+              method: "DELETE",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Tag#count
+             * @methodOf lbServices.Tag
+             *
+             * @description
+             *
+             * Count instances of the model matched by where from the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `where` – `{object=}` - Criteria to match model instances
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * Data properties:
+             *
+             *  - `count` – `{number=}` -
+             */
+            "count": {
+              url: urlBase + "/tags/count",
+              method: "GET",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Tag#prototype$updateAttributes
+             * @methodOf lbServices.Tag
+             *
+             * @description
+             *
+             * Patch attributes for a model instance and persist it into the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - tag id
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Tag` object.)
+             * </em>
+             */
+            "prototype$updateAttributes": {
+              url: urlBase + "/tags/:id",
+              method: "PUT",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Tag#createChangeStream
+             * @methodOf lbServices.Tag
+             *
+             * @description
+             *
+             * Create a change stream.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *   This method does not accept any parameters.
+             *   Supply an empty object or omit this argument altogether.
+             *
+             * @param {Object} postData Request data.
+             *
+             *  - `options` – `{object=}` -
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * Data properties:
+             *
+             *  - `changes` – `{ReadableStream=}` -
+             */
+            "createChangeStream": {
+              url: urlBase + "/tags/change-stream",
+              method: "POST",
+            },
+
+            // INTERNAL. Use Dapp.tags.findById() instead.
+            "::findById::Dapp::tags": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/dapps/:id/tags/:fk",
+              method: "GET",
+            },
+
+            // INTERNAL. Use Dapp.tags.destroyById() instead.
+            "::destroyById::Dapp::tags": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/dapps/:id/tags/:fk",
+              method: "DELETE",
+            },
+
+            // INTERNAL. Use Dapp.tags.updateById() instead.
+            "::updateById::Dapp::tags": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/dapps/:id/tags/:fk",
+              method: "PUT",
+            },
+
+            // INTERNAL. Use Dapp.tags.link() instead.
+            "::link::Dapp::tags": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/dapps/:id/tags/rel/:fk",
+              method: "PUT",
+            },
+
+            // INTERNAL. Use Dapp.tags.unlink() instead.
+            "::unlink::Dapp::tags": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/dapps/:id/tags/rel/:fk",
+              method: "DELETE",
+            },
+
+            // INTERNAL. Use Dapp.tags.exists() instead.
+            "::exists::Dapp::tags": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/dapps/:id/tags/rel/:fk",
+              method: "HEAD",
+            },
+
+            // INTERNAL. Use Dapp.tags() instead.
+            "::get::Dapp::tags": {
+              isArray: true,
+              url: urlBase + "/dapps/:id/tags",
+              method: "GET",
+            },
+
+            // INTERNAL. Use Dapp.tags.create() instead.
+            "::create::Dapp::tags": {
+              url: urlBase + "/dapps/:id/tags",
+              method: "POST",
+            },
+
+            // INTERNAL. Use Dapp.tags.createMany() instead.
+            "::createMany::Dapp::tags": {
+              isArray: true,
+              url: urlBase + "/dapps/:id/tags",
+              method: "POST",
+            },
+
+            // INTERNAL. Use Dapp.tags.destroyAll() instead.
+            "::delete::Dapp::tags": {
+              url: urlBase + "/dapps/:id/tags",
+              method: "DELETE",
+            },
+
+            // INTERNAL. Use Dapp.tags.count() instead.
+            "::count::Dapp::tags": {
+              url: urlBase + "/dapps/:id/tags/count",
+              method: "GET",
+            },
+          }
+        );
+
+
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Tag#patchOrCreate
+             * @methodOf lbServices.Tag
+             *
+             * @description
+             *
+             * Patch an existing model instance or insert a new one into the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *   This method does not accept any parameters.
+             *   Supply an empty object or omit this argument altogether.
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Tag` object.)
+             * </em>
+             */
+        R["patchOrCreate"] = R["upsert"];
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Tag#updateOrCreate
+             * @methodOf lbServices.Tag
+             *
+             * @description
+             *
+             * Patch an existing model instance or insert a new one into the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *   This method does not accept any parameters.
+             *   Supply an empty object or omit this argument altogether.
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Tag` object.)
+             * </em>
+             */
+        R["updateOrCreate"] = R["upsert"];
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Tag#patchOrCreateWithWhere
+             * @methodOf lbServices.Tag
+             *
+             * @description
+             *
+             * Update an existing model instance or insert a new one into the data source based on the where criteria.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `where` – `{object=}` - Criteria to match model instances
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Tag` object.)
+             * </em>
+             */
+        R["patchOrCreateWithWhere"] = R["upsertWithWhere"];
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Tag#update
+             * @methodOf lbServices.Tag
+             *
+             * @description
+             *
+             * Update instances of the model matched by {{where}} from the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `where` – `{object=}` - Criteria to match model instances
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * Information related to the outcome of the operation
+             */
+        R["update"] = R["updateAll"];
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Tag#destroyById
+             * @methodOf lbServices.Tag
+             *
+             * @description
+             *
+             * Delete a model instance by {{id}} from the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - Model id
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Tag` object.)
+             * </em>
+             */
+        R["destroyById"] = R["deleteById"];
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Tag#removeById
+             * @methodOf lbServices.Tag
+             *
+             * @description
+             *
+             * Delete a model instance by {{id}} from the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - Model id
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Tag` object.)
+             * </em>
+             */
+        R["removeById"] = R["deleteById"];
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Tag#patchAttributes
+             * @methodOf lbServices.Tag
+             *
+             * @description
+             *
+             * Patch attributes for a model instance and persist it into the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - tag id
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Tag` object.)
+             * </em>
+             */
+        R["patchAttributes"] = R["prototype$updateAttributes"];
+
+
+        /**
+        * @ngdoc property
+        * @name lbServices.Tag#modelName
+        * @propertyOf lbServices.Tag
+        * @description
+        * The name of the model represented by this $resource,
+        * i.e. `Tag`.
+        */
+        R.modelName = "Tag";
+
+    /**
+     * @ngdoc object
+     * @name lbServices.Tag.dapps
+     * @header lbServices.Tag.dapps
+     * @object
+     * @description
+     *
+     * The object `Tag.dapps` groups methods
+     * manipulating `Dapp` instances related to `Tag`.
+     *
+     * Call {@link lbServices.Tag#dapps Tag.dapps()}
+     * to query all related instances.
+     */
+
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Tag#dapps
+             * @methodOf lbServices.Tag
+             *
+             * @description
+             *
+             * Queries dapps of tag.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - tag id
+             *
+             *  - `filter` – `{object=}` -
+             *
+             * @param {function(Array.<Object>,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Array.<Object>} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Dapp` object.)
+             * </em>
+             */
+        R.dapps = function() {
+          var TargetResource = $injector.get("Dapp");
+          var action = TargetResource["::get::Tag::dapps"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Tag.dapps#count
+             * @methodOf lbServices.Tag.dapps
+             *
+             * @description
+             *
+             * Counts dapps of tag.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - tag id
+             *
+             *  - `where` – `{object=}` - Criteria to match model instances
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * Data properties:
+             *
+             *  - `count` – `{number=}` -
+             */
+        R.dapps.count = function() {
+          var TargetResource = $injector.get("Dapp");
+          var action = TargetResource["::count::Tag::dapps"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Tag.dapps#create
+             * @methodOf lbServices.Tag.dapps
+             *
+             * @description
+             *
+             * Creates a new instance in dapps of this model.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - tag id
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Dapp` object.)
+             * </em>
+             */
+        R.dapps.create = function() {
+          var TargetResource = $injector.get("Dapp");
+          var action = TargetResource["::create::Tag::dapps"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Tag.dapps#createMany
+             * @methodOf lbServices.Tag.dapps
+             *
+             * @description
+             *
+             * Creates a new instance in dapps of this model.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - tag id
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Array.<Object>,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Array.<Object>} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Dapp` object.)
+             * </em>
+             */
+        R.dapps.createMany = function() {
+          var TargetResource = $injector.get("Dapp");
+          var action = TargetResource["::createMany::Tag::dapps"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Tag.dapps#destroyAll
+             * @methodOf lbServices.Tag.dapps
+             *
+             * @description
+             *
+             * Deletes all dapps of this model.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - tag id
+             *
+             *  - `where` – `{object=}` -
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * This method returns no data.
+             */
+        R.dapps.destroyAll = function() {
+          var TargetResource = $injector.get("Dapp");
+          var action = TargetResource["::delete::Tag::dapps"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Tag.dapps#destroyById
+             * @methodOf lbServices.Tag.dapps
+             *
+             * @description
+             *
+             * Delete a related item by id for dapps.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - tag id
+             *
+             *  - `fk` – `{*}` - Foreign key for dapps
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * This method returns no data.
+             */
+        R.dapps.destroyById = function() {
+          var TargetResource = $injector.get("Dapp");
+          var action = TargetResource["::destroyById::Tag::dapps"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Tag.dapps#exists
+             * @methodOf lbServices.Tag.dapps
+             *
+             * @description
+             *
+             * Check the existence of dapps relation to an item by id.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - tag id
+             *
+             *  - `fk` – `{*}` - Foreign key for dapps
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Dapp` object.)
+             * </em>
+             */
+        R.dapps.exists = function() {
+          var TargetResource = $injector.get("Dapp");
+          var action = TargetResource["::exists::Tag::dapps"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Tag.dapps#findById
+             * @methodOf lbServices.Tag.dapps
+             *
+             * @description
+             *
+             * Find a related item by id for dapps.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - tag id
+             *
+             *  - `fk` – `{*}` - Foreign key for dapps
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Dapp` object.)
+             * </em>
+             */
+        R.dapps.findById = function() {
+          var TargetResource = $injector.get("Dapp");
+          var action = TargetResource["::findById::Tag::dapps"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Tag.dapps#link
+             * @methodOf lbServices.Tag.dapps
+             *
+             * @description
+             *
+             * Add a related item by id for dapps.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - tag id
+             *
+             *  - `fk` – `{*}` - Foreign key for dapps
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Dapp` object.)
+             * </em>
+             */
+        R.dapps.link = function() {
+          var TargetResource = $injector.get("Dapp");
+          var action = TargetResource["::link::Tag::dapps"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Tag.dapps#unlink
+             * @methodOf lbServices.Tag.dapps
+             *
+             * @description
+             *
+             * Remove the dapps relation to an item by id.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - tag id
+             *
+             *  - `fk` – `{*}` - Foreign key for dapps
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * This method returns no data.
+             */
+        R.dapps.unlink = function() {
+          var TargetResource = $injector.get("Dapp");
+          var action = TargetResource["::unlink::Tag::dapps"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Tag.dapps#updateById
+             * @methodOf lbServices.Tag.dapps
+             *
+             * @description
+             *
+             * Update a related item by id for dapps.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - tag id
+             *
+             *  - `fk` – `{*}` - Foreign key for dapps
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Dapp` object.)
+             * </em>
+             */
+        R.dapps.updateById = function() {
+          var TargetResource = $injector.get("Dapp");
+          var action = TargetResource["::updateById::Tag::dapps"];
+          return action.apply(R, arguments);
+        };
+
+
+        return R;
+      }]);
+
+/**
+ * @ngdoc object
+ * @name lbServices.Category
+ * @header lbServices.Category
+ * @object
+ *
+ * @description
+ *
+ * A $resource object for interacting with the `Category` model.
+ *
+ * ## Example
+ *
+ * See
+ * {@link http://docs.angularjs.org/api/ngResource.$resource#example $resource}
+ * for an example of using this object.
+ *
+ */
+  module.factory(
+    "Category",
+    [
+      'LoopBackResource', 'LoopBackAuth', '$injector', '$q',
+      function(LoopBackResource, LoopBackAuth, $injector, $q) {
+        var R = LoopBackResource(
+        urlBase + "/categories/:id",
+          { 'id': '@id' },
+          {
+
+            // INTERNAL. Use Category.categories.findById() instead.
+            "prototype$__findById__categories": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/categories/:id/categories/:fk",
+              method: "GET",
+            },
+
+            // INTERNAL. Use Category.categories.destroyById() instead.
+            "prototype$__destroyById__categories": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/categories/:id/categories/:fk",
+              method: "DELETE",
+            },
+
+            // INTERNAL. Use Category.categories.updateById() instead.
+            "prototype$__updateById__categories": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/categories/:id/categories/:fk",
+              method: "PUT",
+            },
+
+            // INTERNAL. Use Category.dapps.findById() instead.
+            "prototype$__findById__dapps": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/categories/:id/dapps/:fk",
+              method: "GET",
+            },
+
+            // INTERNAL. Use Category.dapps.destroyById() instead.
+            "prototype$__destroyById__dapps": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/categories/:id/dapps/:fk",
+              method: "DELETE",
+            },
+
+            // INTERNAL. Use Category.dapps.updateById() instead.
+            "prototype$__updateById__dapps": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/categories/:id/dapps/:fk",
+              method: "PUT",
+            },
+
+            // INTERNAL. Use Category.dapps.link() instead.
+            "prototype$__link__dapps": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/categories/:id/dapps/rel/:fk",
+              method: "PUT",
+            },
+
+            // INTERNAL. Use Category.dapps.unlink() instead.
+            "prototype$__unlink__dapps": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/categories/:id/dapps/rel/:fk",
+              method: "DELETE",
+            },
+
+            // INTERNAL. Use Category.dapps.exists() instead.
+            "prototype$__exists__dapps": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/categories/:id/dapps/rel/:fk",
+              method: "HEAD",
+            },
+
+            // INTERNAL. Use Category.categories() instead.
+            "prototype$__get__categories": {
+              isArray: true,
+              url: urlBase + "/categories/:id/categories",
+              method: "GET",
+            },
+
+            // INTERNAL. Use Category.categories.create() instead.
+            "prototype$__create__categories": {
+              url: urlBase + "/categories/:id/categories",
+              method: "POST",
+            },
+
+            // INTERNAL. Use Category.categories.destroyAll() instead.
+            "prototype$__delete__categories": {
+              url: urlBase + "/categories/:id/categories",
+              method: "DELETE",
+            },
+
+            // INTERNAL. Use Category.categories.count() instead.
+            "prototype$__count__categories": {
+              url: urlBase + "/categories/:id/categories/count",
+              method: "GET",
+            },
+
+            // INTERNAL. Use Category.dapps() instead.
+            "prototype$__get__dapps": {
+              isArray: true,
+              url: urlBase + "/categories/:id/dapps",
+              method: "GET",
+            },
+
+            // INTERNAL. Use Category.dapps.create() instead.
+            "prototype$__create__dapps": {
+              url: urlBase + "/categories/:id/dapps",
+              method: "POST",
+            },
+
+            // INTERNAL. Use Category.dapps.destroyAll() instead.
+            "prototype$__delete__dapps": {
+              url: urlBase + "/categories/:id/dapps",
+              method: "DELETE",
+            },
+
+            // INTERNAL. Use Category.dapps.count() instead.
+            "prototype$__count__dapps": {
+              url: urlBase + "/categories/:id/dapps/count",
+              method: "GET",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Category#create
+             * @methodOf lbServices.Category
+             *
+             * @description
+             *
+             * Create a new instance of the model and persist it into the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *   This method does not accept any parameters.
+             *   Supply an empty object or omit this argument altogether.
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Category` object.)
+             * </em>
+             */
+            "create": {
+              url: urlBase + "/categories",
+              method: "POST",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Category#createMany
+             * @methodOf lbServices.Category
+             *
+             * @description
+             *
+             * Create a new instance of the model and persist it into the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *   This method does not accept any parameters.
+             *   Supply an empty object or omit this argument altogether.
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Array.<Object>,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Array.<Object>} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Category` object.)
+             * </em>
+             */
+            "createMany": {
+              isArray: true,
+              url: urlBase + "/categories",
+              method: "POST",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Category#upsert
+             * @methodOf lbServices.Category
+             *
+             * @description
+             *
+             * Patch an existing model instance or insert a new one into the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *   This method does not accept any parameters.
+             *   Supply an empty object or omit this argument altogether.
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Category` object.)
+             * </em>
+             */
+            "upsert": {
+              url: urlBase + "/categories",
+              method: "PUT",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Category#replaceOrCreate
+             * @methodOf lbServices.Category
+             *
+             * @description
+             *
+             * Replace an existing model instance or insert a new one into the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *   This method does not accept any parameters.
+             *   Supply an empty object or omit this argument altogether.
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Category` object.)
+             * </em>
+             */
+            "replaceOrCreate": {
+              url: urlBase + "/categories/replaceOrCreate",
+              method: "POST",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Category#upsertWithWhere
+             * @methodOf lbServices.Category
+             *
+             * @description
+             *
+             * Update an existing model instance or insert a new one into the data source based on the where criteria.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `where` – `{object=}` - Criteria to match model instances
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Category` object.)
+             * </em>
+             */
+            "upsertWithWhere": {
+              url: urlBase + "/categories/upsertWithWhere",
+              method: "POST",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Category#exists
+             * @methodOf lbServices.Category
+             *
+             * @description
+             *
+             * Check whether a model instance exists in the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - Model id
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * Data properties:
+             *
+             *  - `exists` – `{boolean=}` -
+             */
+            "exists": {
+              url: urlBase + "/categories/:id/exists",
+              method: "GET",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Category#findById
+             * @methodOf lbServices.Category
+             *
+             * @description
+             *
+             * Find a model instance by {{id}} from the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - Model id
+             *
+             *  - `filter` – `{object=}` - Filter defining fields and include
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Category` object.)
+             * </em>
+             */
+            "findById": {
+              url: urlBase + "/categories/:id",
+              method: "GET",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Category#replaceById
+             * @methodOf lbServices.Category
+             *
+             * @description
+             *
+             * Replace attributes for a model instance and persist it into the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - Model id
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Category` object.)
+             * </em>
+             */
+            "replaceById": {
+              url: urlBase + "/categories/:id/replace",
+              method: "POST",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Category#find
+             * @methodOf lbServices.Category
+             *
+             * @description
+             *
+             * Find all instances of the model matched by filter from the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `filter` – `{object=}` - Filter defining fields, where, include, order, offset, and limit
+             *
+             * @param {function(Array.<Object>,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Array.<Object>} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Category` object.)
+             * </em>
+             */
+            "find": {
+              isArray: true,
+              url: urlBase + "/categories",
+              method: "GET",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Category#findOne
+             * @methodOf lbServices.Category
+             *
+             * @description
+             *
+             * Find first instance of the model matched by filter from the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `filter` – `{object=}` - Filter defining fields, where, include, order, offset, and limit
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Category` object.)
+             * </em>
+             */
+            "findOne": {
+              url: urlBase + "/categories/findOne",
+              method: "GET",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Category#updateAll
+             * @methodOf lbServices.Category
+             *
+             * @description
+             *
+             * Update instances of the model matched by {{where}} from the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `where` – `{object=}` - Criteria to match model instances
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * Information related to the outcome of the operation
+             */
+            "updateAll": {
+              url: urlBase + "/categories/update",
+              method: "POST",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Category#deleteById
+             * @methodOf lbServices.Category
+             *
+             * @description
+             *
+             * Delete a model instance by {{id}} from the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - Model id
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Category` object.)
+             * </em>
+             */
+            "deleteById": {
+              url: urlBase + "/categories/:id",
+              method: "DELETE",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Category#count
+             * @methodOf lbServices.Category
+             *
+             * @description
+             *
+             * Count instances of the model matched by where from the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `where` – `{object=}` - Criteria to match model instances
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * Data properties:
+             *
+             *  - `count` – `{number=}` -
+             */
+            "count": {
+              url: urlBase + "/categories/count",
+              method: "GET",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Category#prototype$updateAttributes
+             * @methodOf lbServices.Category
+             *
+             * @description
+             *
+             * Patch attributes for a model instance and persist it into the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - category id
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Category` object.)
+             * </em>
+             */
+            "prototype$updateAttributes": {
+              url: urlBase + "/categories/:id",
+              method: "PUT",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Category#createChangeStream
+             * @methodOf lbServices.Category
+             *
+             * @description
+             *
+             * Create a change stream.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *   This method does not accept any parameters.
+             *   Supply an empty object or omit this argument altogether.
+             *
+             * @param {Object} postData Request data.
+             *
+             *  - `options` – `{object=}` -
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * Data properties:
+             *
+             *  - `changes` – `{ReadableStream=}` -
+             */
+            "createChangeStream": {
+              url: urlBase + "/categories/change-stream",
+              method: "POST",
+            },
+
+            // INTERNAL. Use Dapp.categories.findById() instead.
+            "::findById::Dapp::categories": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/dapps/:id/categories/:fk",
+              method: "GET",
+            },
+
+            // INTERNAL. Use Dapp.categories.destroyById() instead.
+            "::destroyById::Dapp::categories": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/dapps/:id/categories/:fk",
+              method: "DELETE",
+            },
+
+            // INTERNAL. Use Dapp.categories.updateById() instead.
+            "::updateById::Dapp::categories": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/dapps/:id/categories/:fk",
+              method: "PUT",
+            },
+
+            // INTERNAL. Use Dapp.categories.link() instead.
+            "::link::Dapp::categories": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/dapps/:id/categories/rel/:fk",
+              method: "PUT",
+            },
+
+            // INTERNAL. Use Dapp.categories.unlink() instead.
+            "::unlink::Dapp::categories": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/dapps/:id/categories/rel/:fk",
+              method: "DELETE",
+            },
+
+            // INTERNAL. Use Dapp.categories.exists() instead.
+            "::exists::Dapp::categories": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/dapps/:id/categories/rel/:fk",
+              method: "HEAD",
+            },
+
+            // INTERNAL. Use Dapp.categories() instead.
+            "::get::Dapp::categories": {
+              isArray: true,
+              url: urlBase + "/dapps/:id/categories",
+              method: "GET",
+            },
+
+            // INTERNAL. Use Dapp.categories.create() instead.
+            "::create::Dapp::categories": {
+              url: urlBase + "/dapps/:id/categories",
+              method: "POST",
+            },
+
+            // INTERNAL. Use Dapp.categories.createMany() instead.
+            "::createMany::Dapp::categories": {
+              isArray: true,
+              url: urlBase + "/dapps/:id/categories",
+              method: "POST",
+            },
+
+            // INTERNAL. Use Dapp.categories.destroyAll() instead.
+            "::delete::Dapp::categories": {
+              url: urlBase + "/dapps/:id/categories",
+              method: "DELETE",
+            },
+
+            // INTERNAL. Use Dapp.categories.count() instead.
+            "::count::Dapp::categories": {
+              url: urlBase + "/dapps/:id/categories/count",
+              method: "GET",
+            },
+
+            // INTERNAL. Use Category.categories.findById() instead.
+            "::findById::Category::categories": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/categories/:id/categories/:fk",
+              method: "GET",
+            },
+
+            // INTERNAL. Use Category.categories.destroyById() instead.
+            "::destroyById::Category::categories": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/categories/:id/categories/:fk",
+              method: "DELETE",
+            },
+
+            // INTERNAL. Use Category.categories.updateById() instead.
+            "::updateById::Category::categories": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/categories/:id/categories/:fk",
+              method: "PUT",
+            },
+
+            // INTERNAL. Use Category.categories() instead.
+            "::get::Category::categories": {
+              isArray: true,
+              url: urlBase + "/categories/:id/categories",
+              method: "GET",
+            },
+
+            // INTERNAL. Use Category.categories.create() instead.
+            "::create::Category::categories": {
+              url: urlBase + "/categories/:id/categories",
+              method: "POST",
+            },
+
+            // INTERNAL. Use Category.categories.createMany() instead.
+            "::createMany::Category::categories": {
+              isArray: true,
+              url: urlBase + "/categories/:id/categories",
+              method: "POST",
+            },
+
+            // INTERNAL. Use Category.categories.destroyAll() instead.
+            "::delete::Category::categories": {
+              url: urlBase + "/categories/:id/categories",
+              method: "DELETE",
+            },
+
+            // INTERNAL. Use Category.categories.count() instead.
+            "::count::Category::categories": {
+              url: urlBase + "/categories/:id/categories/count",
+              method: "GET",
+            },
+          }
+        );
+
+
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Category#patchOrCreate
+             * @methodOf lbServices.Category
+             *
+             * @description
+             *
+             * Patch an existing model instance or insert a new one into the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *   This method does not accept any parameters.
+             *   Supply an empty object or omit this argument altogether.
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Category` object.)
+             * </em>
+             */
+        R["patchOrCreate"] = R["upsert"];
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Category#updateOrCreate
+             * @methodOf lbServices.Category
+             *
+             * @description
+             *
+             * Patch an existing model instance or insert a new one into the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *   This method does not accept any parameters.
+             *   Supply an empty object or omit this argument altogether.
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Category` object.)
+             * </em>
+             */
+        R["updateOrCreate"] = R["upsert"];
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Category#patchOrCreateWithWhere
+             * @methodOf lbServices.Category
+             *
+             * @description
+             *
+             * Update an existing model instance or insert a new one into the data source based on the where criteria.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `where` – `{object=}` - Criteria to match model instances
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Category` object.)
+             * </em>
+             */
+        R["patchOrCreateWithWhere"] = R["upsertWithWhere"];
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Category#update
+             * @methodOf lbServices.Category
+             *
+             * @description
+             *
+             * Update instances of the model matched by {{where}} from the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `where` – `{object=}` - Criteria to match model instances
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * Information related to the outcome of the operation
+             */
+        R["update"] = R["updateAll"];
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Category#destroyById
+             * @methodOf lbServices.Category
+             *
+             * @description
+             *
+             * Delete a model instance by {{id}} from the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - Model id
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Category` object.)
+             * </em>
+             */
+        R["destroyById"] = R["deleteById"];
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Category#removeById
+             * @methodOf lbServices.Category
+             *
+             * @description
+             *
+             * Delete a model instance by {{id}} from the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - Model id
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Category` object.)
+             * </em>
+             */
+        R["removeById"] = R["deleteById"];
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Category#patchAttributes
+             * @methodOf lbServices.Category
+             *
+             * @description
+             *
+             * Patch attributes for a model instance and persist it into the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - category id
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Category` object.)
+             * </em>
+             */
+        R["patchAttributes"] = R["prototype$updateAttributes"];
+
+
+        /**
+        * @ngdoc property
+        * @name lbServices.Category#modelName
+        * @propertyOf lbServices.Category
+        * @description
+        * The name of the model represented by this $resource,
+        * i.e. `Category`.
+        */
+        R.modelName = "Category";
+
+    /**
+     * @ngdoc object
+     * @name lbServices.Category.categories
+     * @header lbServices.Category.categories
+     * @object
+     * @description
+     *
+     * The object `Category.categories` groups methods
+     * manipulating `Category` instances related to `Category`.
+     *
+     * Call {@link lbServices.Category#categories Category.categories()}
+     * to query all related instances.
+     */
+
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Category#categories
+             * @methodOf lbServices.Category
+             *
+             * @description
+             *
+             * Queries categories of category.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - category id
+             *
+             *  - `filter` – `{object=}` -
+             *
+             * @param {function(Array.<Object>,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Array.<Object>} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Category` object.)
+             * </em>
+             */
+        R.categories = function() {
+          var TargetResource = $injector.get("Category");
+          var action = TargetResource["::get::Category::categories"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Category.categories#count
+             * @methodOf lbServices.Category.categories
+             *
+             * @description
+             *
+             * Counts categories of category.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - category id
+             *
+             *  - `where` – `{object=}` - Criteria to match model instances
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * Data properties:
+             *
+             *  - `count` – `{number=}` -
+             */
+        R.categories.count = function() {
+          var TargetResource = $injector.get("Category");
+          var action = TargetResource["::count::Category::categories"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Category.categories#create
+             * @methodOf lbServices.Category.categories
+             *
+             * @description
+             *
+             * Creates a new instance in categories of this model.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - category id
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Category` object.)
+             * </em>
+             */
+        R.categories.create = function() {
+          var TargetResource = $injector.get("Category");
+          var action = TargetResource["::create::Category::categories"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Category.categories#createMany
+             * @methodOf lbServices.Category.categories
+             *
+             * @description
+             *
+             * Creates a new instance in categories of this model.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - category id
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Array.<Object>,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Array.<Object>} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Category` object.)
+             * </em>
+             */
+        R.categories.createMany = function() {
+          var TargetResource = $injector.get("Category");
+          var action = TargetResource["::createMany::Category::categories"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Category.categories#destroyAll
+             * @methodOf lbServices.Category.categories
+             *
+             * @description
+             *
+             * Deletes all categories of this model.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - category id
+             *
+             *  - `where` – `{object=}` -
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * This method returns no data.
+             */
+        R.categories.destroyAll = function() {
+          var TargetResource = $injector.get("Category");
+          var action = TargetResource["::delete::Category::categories"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Category.categories#destroyById
+             * @methodOf lbServices.Category.categories
+             *
+             * @description
+             *
+             * Delete a related item by id for categories.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - category id
+             *
+             *  - `fk` – `{*}` - Foreign key for categories
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * This method returns no data.
+             */
+        R.categories.destroyById = function() {
+          var TargetResource = $injector.get("Category");
+          var action = TargetResource["::destroyById::Category::categories"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Category.categories#findById
+             * @methodOf lbServices.Category.categories
+             *
+             * @description
+             *
+             * Find a related item by id for categories.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - category id
+             *
+             *  - `fk` – `{*}` - Foreign key for categories
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Category` object.)
+             * </em>
+             */
+        R.categories.findById = function() {
+          var TargetResource = $injector.get("Category");
+          var action = TargetResource["::findById::Category::categories"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Category.categories#updateById
+             * @methodOf lbServices.Category.categories
+             *
+             * @description
+             *
+             * Update a related item by id for categories.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - category id
+             *
+             *  - `fk` – `{*}` - Foreign key for categories
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Category` object.)
+             * </em>
+             */
+        R.categories.updateById = function() {
+          var TargetResource = $injector.get("Category");
+          var action = TargetResource["::updateById::Category::categories"];
+          return action.apply(R, arguments);
+        };
+    /**
+     * @ngdoc object
+     * @name lbServices.Category.dapps
+     * @header lbServices.Category.dapps
+     * @object
+     * @description
+     *
+     * The object `Category.dapps` groups methods
+     * manipulating `Dapp` instances related to `Category`.
+     *
+     * Call {@link lbServices.Category#dapps Category.dapps()}
+     * to query all related instances.
+     */
+
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Category#dapps
+             * @methodOf lbServices.Category
+             *
+             * @description
+             *
+             * Queries dapps of category.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - category id
+             *
+             *  - `filter` – `{object=}` -
+             *
+             * @param {function(Array.<Object>,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Array.<Object>} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Dapp` object.)
+             * </em>
+             */
+        R.dapps = function() {
+          var TargetResource = $injector.get("Dapp");
+          var action = TargetResource["::get::Category::dapps"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Category.dapps#count
+             * @methodOf lbServices.Category.dapps
+             *
+             * @description
+             *
+             * Counts dapps of category.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - category id
+             *
+             *  - `where` – `{object=}` - Criteria to match model instances
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * Data properties:
+             *
+             *  - `count` – `{number=}` -
+             */
+        R.dapps.count = function() {
+          var TargetResource = $injector.get("Dapp");
+          var action = TargetResource["::count::Category::dapps"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Category.dapps#create
+             * @methodOf lbServices.Category.dapps
+             *
+             * @description
+             *
+             * Creates a new instance in dapps of this model.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - category id
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Dapp` object.)
+             * </em>
+             */
+        R.dapps.create = function() {
+          var TargetResource = $injector.get("Dapp");
+          var action = TargetResource["::create::Category::dapps"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Category.dapps#createMany
+             * @methodOf lbServices.Category.dapps
+             *
+             * @description
+             *
+             * Creates a new instance in dapps of this model.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - category id
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Array.<Object>,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Array.<Object>} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Dapp` object.)
+             * </em>
+             */
+        R.dapps.createMany = function() {
+          var TargetResource = $injector.get("Dapp");
+          var action = TargetResource["::createMany::Category::dapps"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Category.dapps#destroyAll
+             * @methodOf lbServices.Category.dapps
+             *
+             * @description
+             *
+             * Deletes all dapps of this model.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - category id
+             *
+             *  - `where` – `{object=}` -
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * This method returns no data.
+             */
+        R.dapps.destroyAll = function() {
+          var TargetResource = $injector.get("Dapp");
+          var action = TargetResource["::delete::Category::dapps"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Category.dapps#destroyById
+             * @methodOf lbServices.Category.dapps
+             *
+             * @description
+             *
+             * Delete a related item by id for dapps.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - category id
+             *
+             *  - `fk` – `{*}` - Foreign key for dapps
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * This method returns no data.
+             */
+        R.dapps.destroyById = function() {
+          var TargetResource = $injector.get("Dapp");
+          var action = TargetResource["::destroyById::Category::dapps"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Category.dapps#exists
+             * @methodOf lbServices.Category.dapps
+             *
+             * @description
+             *
+             * Check the existence of dapps relation to an item by id.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - category id
+             *
+             *  - `fk` – `{*}` - Foreign key for dapps
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Dapp` object.)
+             * </em>
+             */
+        R.dapps.exists = function() {
+          var TargetResource = $injector.get("Dapp");
+          var action = TargetResource["::exists::Category::dapps"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Category.dapps#findById
+             * @methodOf lbServices.Category.dapps
+             *
+             * @description
+             *
+             * Find a related item by id for dapps.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - category id
+             *
+             *  - `fk` – `{*}` - Foreign key for dapps
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Dapp` object.)
+             * </em>
+             */
+        R.dapps.findById = function() {
+          var TargetResource = $injector.get("Dapp");
+          var action = TargetResource["::findById::Category::dapps"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Category.dapps#link
+             * @methodOf lbServices.Category.dapps
+             *
+             * @description
+             *
+             * Add a related item by id for dapps.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - category id
+             *
+             *  - `fk` – `{*}` - Foreign key for dapps
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Dapp` object.)
+             * </em>
+             */
+        R.dapps.link = function() {
+          var TargetResource = $injector.get("Dapp");
+          var action = TargetResource["::link::Category::dapps"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Category.dapps#unlink
+             * @methodOf lbServices.Category.dapps
+             *
+             * @description
+             *
+             * Remove the dapps relation to an item by id.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - category id
+             *
+             *  - `fk` – `{*}` - Foreign key for dapps
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * This method returns no data.
+             */
+        R.dapps.unlink = function() {
+          var TargetResource = $injector.get("Dapp");
+          var action = TargetResource["::unlink::Category::dapps"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Category.dapps#updateById
+             * @methodOf lbServices.Category.dapps
+             *
+             * @description
+             *
+             * Update a related item by id for dapps.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - category id
+             *
+             *  - `fk` – `{*}` - Foreign key for dapps
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Dapp` object.)
+             * </em>
+             */
+        R.dapps.updateById = function() {
+          var TargetResource = $injector.get("Dapp");
+          var action = TargetResource["::updateById::Category::dapps"];
           return action.apply(R, arguments);
         };
 

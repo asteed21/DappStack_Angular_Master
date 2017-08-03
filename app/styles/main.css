@@ -68,7 +68,9 @@ body {
 }
 
 /*DAPP CATALOG STYLES*/
-
+.dapp-search-panel {
+    background: white;
+}
 
 /* DAPP LIST ELEMENT STYLES */
 .dapps-row {
