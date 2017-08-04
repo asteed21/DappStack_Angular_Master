@@ -3,9 +3,11 @@ angular.module('dappstackApp.components.dappCatalog.dappSearchPanel')
     .component('dappSearchPanel', {
         bindings: {
             category: "<",
-            tag: "<",
+            selectedTags: "<",
+            status: "<",
             onCategoryChange: "&",
-            onTagChange: "&"
+            onTagChange: "&",
+            onStatusChange: "&"
         },
         template: require('./dapp-search-panel.html'),
         controller: 'DappSearchPanelController',

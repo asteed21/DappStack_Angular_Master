@@ -3,8 +3,9 @@ angular.module('dappstackApp.components.dappCatalog.dappResultsPanel')
     .component('dappResultsPanel', {
         bindings: {
             category: "<",
-            tag: "<",
-            query: "<"
+            selectedTags: "<",
+            query: "<",
+            status: "<"
         },
         template: require('./dapp-results-panel.html'),
         controller: 'DappResultsPanelController',

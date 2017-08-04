@@ -6,10 +6,20 @@ angular.module('dappstackApp.components.dappCatalog.dappSearchPanel')
 
         var vm = this;
 
-        vm.categories;
-        vm.tags;
+        vm.$onInit = function() {
+            vm.categories;
+            vm.tags;
+            vm.statuses = [
+                {label:"Live", selected: false},
+                {label:"In Progress", selected: false},
+                {label:"Concept", selected: false},
+                {label:"Deprecated", selected: false}
+            ]; //array of possible statuses
+            vm.selectedTags = []; //array of tags selected
+            vm.statusesSelected = []; //array of statuses selected
+        };
 
-        //Get dapps list from database - TODO: work filter into db query
+        //Get available categories
         Category.find()
             .$promise.then(
             function (response) {
@@ -20,6 +30,7 @@ angular.module('dappstackApp.components.dappCatalog.dappSearchPanel')
             }
         );
 
+        //Get available tags
         Tag.find()
             .$promise.then(
             function (response) {
@@ -30,15 +41,70 @@ angular.module('dappstackApp.components.dappCatalog.dappSearchPanel')
             }
         );
 
-        //function to handle click on categories
+        //funcitons to check status of categories, tags and statuses
+        vm.checkCategory = function(category) {
+            if (vm.category === category) {
+                vm.removeCategory(category);
+            } else {
+                vm.assignCategory(category);
+            }
+        };
+
+        vm.checkTag = function(tag) {
+            if (vm.selectedTags.indexOf(tag) == -1) {
+                vm.assignTag(tag);
+            } else {
+                vm.removeTag(tag);
+            }
+        };
+
+        vm.checkStatus = function(status) {
+            var found = false;
+            for (var i=0; i < vm.statuses.length; i++) {
+                if (vm.statuses[i].label === status && vm.statuses[i].selected === true) {
+                    found = true;
+                    break
+                }
+            }
+            if (found) {
+                vm.removeStatus(status);
+            } else {
+                vm.assignStatus(status);
+            }
+        };
+
+        //functions to handle clicks on inactive categories, tags and statuses
         vm.assignCategory = function(category) {
             vm.category = category;
-            vm.onCategoryChange({$event: {category: category}})
+            vm.onCategoryChange({$event: {category: vm.category}});
         };
 
         vm.assignTag = function(tag) {
-            vm.tag = tag;
-            vm.onTagChange({$event: {tag: tag}})
+            vm.selectedTags.push(tag);
+            vm.onTagChange({$event: {tags: vm.selectedTags}});
         };
+
+        vm.assignStatus = function(status) {
+            vm.statusesSelected.push(status);
+            vm.statuses[vm.statuses.findIndex(i => i.label === status)].selected = true;
+            vm.onStatusChange({$event: {statuses: vm.statusesSelected}});
+        }
+
+        //functions to handle clicks on actie category, tags and statuses
+        vm.removeCategory = function(category) {
+            vm.category = category;
+            vm.onCategoryChange({$event: {category: vm.category}})
+        }
+
+        vm.removeTag = function(tag) {
+            vm.selectedTags.splice(vm.selectedTags.indexOf(tag),1);
+            vm.onTagChange({$event: {tags: vm.selectedTags}})
+        }
+
+        vm.removeStatus = function(status) {
+            vm.statusesSelected.splice(vm.statusesSelected.indexOf(status),1);
+            vm.statuses[vm.statuses.findIndex(i => i.label === status)].selected = false;
+            vm.onStatusChange({$event: {statuses: vm.statusesSelected}})
+        }
 
     }]);

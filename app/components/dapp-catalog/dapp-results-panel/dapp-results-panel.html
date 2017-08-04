@@ -4,3 +4,5 @@
 <div class="card-deck">
     <dapp-list-item class="col-sm-4 col-lg-3 pt-3" ng-repeat="dapp in vm.dapps" dapp-id="dapp.id" name="dapp.name" thumbnail-description="dapp.thumbnailDescription" logo-image="dapp.logoImage" likes="dapp.likes"></dapp-list-item>
 </div>
+<button class="btn btn-primary" ng-hide="" ng-click="vm.lastPage()"></button>
+<button class="btn btn-primary" ng-click="vm.nextPage()"></button>
