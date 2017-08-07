@@ -5,7 +5,7 @@ angular.module('dappstackApp.components.dappCatalog.dappResultsPanel')
             category: "<",
             selectedTags: "<",
             query: "<",
-            status: "<"
+            statusesSelected: "<"
         },
         template: require('./dapp-results-panel.html'),
         controller: 'DappResultsPanelController',

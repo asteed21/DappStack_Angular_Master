@@ -77,34 +77,38 @@ angular.module('dappstackApp.components.dappCatalog.dappSearchPanel')
         vm.assignCategory = function(category) {
             vm.category = category;
             vm.onCategoryChange({$event: {category: vm.category}});
+            console.log(vm.category);
         };
 
         vm.assignTag = function(tag) {
             vm.selectedTags.push(tag);
-            vm.onTagChange({$event: {tags: vm.selectedTags}});
+            vm.onTagChange({$event: {selectedTags: vm.selectedTags}});
+            console.log(vm.selectedTags);
         };
 
         vm.assignStatus = function(status) {
             vm.statusesSelected.push(status);
             vm.statuses[vm.statuses.findIndex(i => i.label === status)].selected = true;
-            vm.onStatusChange({$event: {statuses: vm.statusesSelected}});
+            vm.onStatusChange({$event: {statusesSelected: vm.statusesSelected}});
         }
 
         //functions to handle clicks on actie category, tags and statuses
         vm.removeCategory = function(category) {
             vm.category = category;
-            vm.onCategoryChange({$event: {category: vm.category}})
+            vm.onCategoryChange({$event: {category: vm.category}});
+            console.log(vm.category);
         }
 
         vm.removeTag = function(tag) {
             vm.selectedTags.splice(vm.selectedTags.indexOf(tag),1);
-            vm.onTagChange({$event: {tags: vm.selectedTags}})
+            vm.onTagChange({$event: {selectedTags: vm.selectedTags}});
+            console.log(vm.selectedTags);
         }
 
         vm.removeStatus = function(status) {
             vm.statusesSelected.splice(vm.statusesSelected.indexOf(status),1);
             vm.statuses[vm.statuses.findIndex(i => i.label === status)].selected = false;
-            vm.onStatusChange({$event: {statuses: vm.statusesSelected}})
+            vm.onStatusChange({$event: {statusesSelected: vm.statusesSelected}})
         }
 
     }]);

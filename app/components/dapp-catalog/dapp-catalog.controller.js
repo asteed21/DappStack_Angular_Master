@@ -10,7 +10,7 @@ angular.module('dappstackApp.components.dappCatalog')
             vm.query = $stateParams.q;
             vm.category;
             vm.selectedTags;
-            vm.status;
+            vm.statusesSelected;
         } 
 
     }]);

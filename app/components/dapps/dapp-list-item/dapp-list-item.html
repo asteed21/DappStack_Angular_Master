@@ -1,6 +1,6 @@
 <!-- use of component as html element should include class card and set card width -->
 <div class="card h-100">
-    <a ui-sref="app.dapps.dappdetails({dappId: vm.dappId})">
+    <a ui-sref="app.dapps.dappdetails({dappId: vm.dappId, name: vm.name})">
         <img class="card-img-top img-fluid" src="{{vm.logoImage}}" alt="Card image cap"> 
     </a>
     <div class="card-block">

@@ -120,7 +120,7 @@ module.exports = angular.module('dappstackApp', [
   });
 
   $stateProvider.state('app.dapps.dappdetails', {
-        url:'/:dappId',
+        url:'/:name/:dappId',
         views: {
           'content@': {
             component: 'dappDialogComponent'

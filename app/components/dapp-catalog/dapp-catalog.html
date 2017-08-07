@@ -1,10 +1,10 @@
 <div class="container-fluid dapps-content-container" style="background: lightgrey;">
     <div class="row">
         <div class="col-12 col-sm-3 mt-5">
-            <dapp-search-panel category="vm.category" on-category-change="vm.category = $event.category" selected-tags="vm.selectedTags" on-tags-change="vm.selectedTags = $event.selectedTags" status="vm.status" on-status-change="vm.status = $event.status"></dapp-search-panel>
+            <dapp-search-panel category="vm.category" on-category-change="vm.category = $event.category" selected-tags="vm.selectedTags" on-tags-change="vm.selectedTags = $event.selectedTags" statuses-selected="vm.statusesSelected" on-status-change="vm.statusesSelected = $event.statusesSelected"></dapp-search-panel>
         </div>
         <div class="col-12 col-sm-9 mt-5 mb-5 dapps-view-panel">
-            <dapp-results-panel category="vm.category" selected-tags="vm.selectedTags" query="vm.query"></dapp-results-panel>
+            <dapp-results-panel category="vm.category" selected-tags="vm.selectedTags" statuses-selected="vm.statusesSelected" query="vm.query"></dapp-results-panel>
         </div>
     </div>
 </div>

@@ -1,14 +1,14 @@
 <div class="d-flex flex-column m-3 pt-3 pb-3 align-items-center dapp-search-panel">
     <h6 class="w-75 mb-3">Filter By Category</h6>
     <ul class="w-75 list-group">
-        <li class="btn btn-secondary list-group-item" ng-repeat="category in vm.categories" ng-click="vm.checkCategory(category.id)">
+        <li class="btn btn-secondary list-group-item" ng-repeat="category in vm.categories" ng-click="vm.checkCategory(category.label)">
             <span class="fa {{category.icon}} fa-lg mr-2"></span>
             <span class="ml-2">{{category.label}}</span>
         </li>
     </ul>
     <h6 class="w-75 mt-3">Filter By Tag</h6>
     <div class="w-75">
-        <button type="button" class="btn btn-outline-secondary btn-sm m-1" data-toggle="button" ng-repeat="tag in vm.tags" ng-click="vm.checkTag(tag.id)">
+        <button type="button" class="btn btn-outline-secondary btn-sm m-1" data-toggle="button" ng-repeat="tag in vm.tags" ng-click="vm.checkTag(tag.label)">
             <span>{{tag.label}}</span>
         </button>
     </div>
