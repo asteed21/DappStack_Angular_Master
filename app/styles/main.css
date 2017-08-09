@@ -72,6 +72,11 @@ body {
     background: white;
 }
 
+.page-button {
+    margin-top: 30px;
+    margin-right: 15px;
+}
+
 /* DAPP LIST ELEMENT STYLES */
 .dapps-row {
     overflow-x: auto;
