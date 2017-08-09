@@ -7,18 +7,7 @@
     <title>DappStack</title>
     <meta name="description" content="">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <!-- build:css(.) styles/vendor.css -->
-    <!-- bower:css -->
-    <!-- endbower -->
-    <!-- endbuild -->
-    <!-- build:css styles/main.css -->
-    <!--<link href="../node_modules/tether/dist/css/tether.min.css" rel="stylesheet">
-    <link href="../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <link href="../node_modules/ng-dialog/css/ngDialog.min.css" rel="stylesheet"> 
-    <link href="../node_modules/ng-dialog/css/ngDialog-theme-default.min.css" rel="stylesheet">
-    <link href="styles/main.css" rel="stylesheet">-->
-    <!-- endbuild -->
+
   </head>
 
   <body>
@@ -44,79 +33,5 @@
        ga('create', 'UA-XXXXX-X');
        ga('send', 'pageview');
     </script>
-
-    <!-- build:js(.) scripts/vendor.js -->
-    <!-- bower:js -->
-    <!-- endbower -->
-    <!-- endbuild -->
-
-    <!-- build:js({.tmp,app}) scripts/scripts.js -->
-    <!--<script src="app.bundle.js"></script>-->
-    <!--<script src="../bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="../bower_components/angular/angular.js"></script>
-    <script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
-    <script src="../bower_components/tether/dist/js/tether.min.js"></script>
-    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="../bower_components/angular-animate/angular-animate.min.js"></script>
-    <script src="../bower_components/angular-resource/angular-resource.min.js"></script>
-    <script src="../bower_components/angular-css/angular-css.min.js"></script>
-    <script src="../bower_components/ng-dialog/js/ngDialog.min.js"></script>
-    <script src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
-    <script src="../bower_components/angular-file-upload/dist/angular-file-upload.min.js"></script>
-    <script src="/app.module.js"></script>
-    <script src="/lb-services.js"></script>
-    <script src="/common/common.module.js"></script>
-    <script src="/components/components.module.js"></script>
-    <script src="/common/footer/footer.module.js"></script>
-    <script src="/common/footer/footer.component.js"></script>
-    <script src="/common/auth/auth.module.js"></script>
-    <script src="/common/auth/auth.service.js"></script>
-    <script src="/common/nav-bar/nav-bar.module.js"></script>
-    <script src="/common/nav-bar/nav-bar.component.js"></script>
-    <script src="/common/nav-bar/nav-bar.controller.js"></script>
-    <script src="/common/search/search.module.js"></script>
-    <script src="/common/search/search.component.js"></script>
-    <script src="/common/search/search.controller.js"></script>
-    <script src="/common/auth/login/login.module.js"></script>
-    <script src="/common/auth/login/login.controller.js"></script>
-    <script src="/common/auth/register/register.module.js"></script>
-    <script src="/common/auth/register/register.controller.js"></script>
-    <script src="/components/dapps/dapp-list-item/dapp-list-item.module.js"></script>
-    <script src="/components/dapps/dapp-list-item/dapp-list-item.component.js"></script>
-    <script src="/components/dapps/dapp-list-item/dapp-list-item.controller.js"></script>
-    <script src="/components/home/home.module.js"></script>
-    <script src="/components/home/home.component.js"></script>
-    <script src="/components/home/home.controller.js"></script>
-    <script src="/components/dapp-catalog/dapp-catalog.module.js"></script>
-    <script src="/components/dapp-catalog/dapp-catalog.component.js"></script>
-    <script src="/components/dapp-catalog/dapp-catalog.controller.js"></script>     
-    <script src="/components/dapps/dapps.module.js"></script>
-    <script src="/components/dapps/dapps.component.js"></script>
-    <script src="/components/dapps/dapps.controller.js"></script>
-    <script src="/components/dapps/dapp-dialog/dapp-dialog.module.js"></script>
-    <script src="/components/dapps/dapp-dialog/dapp-dialog.component.js"></script>
-    <script src="/components/dapps/dapp-dialog/dapp-dialog.controller.js"></script>
-    <script src="/components/dapps/dapp-dialog/dapp-about/dapp-about.module.js"></script>
-    <script src="/components/dapps/dapp-dialog/dapp-about/dapp-about.component.js"></script>
-    <script src="/components/dapps/dapp-dialog/dapp-about/dapp-about.controller.js"></script>
-    <script src="/components/dapps/dapp-dialog/dapp-discussion/dapp-discussion.module.js"></script>
-    <script src="/components/dapps/dapp-dialog/dapp-discussion/dapp-discussion.component.js"></script>
-    <script src="/components/dapps/dapp-dialog/dapp-discussion/dapp-discussion.controller.js"></script>
-    <script src="/components/dapps/dapp-dialog/dapp-discussion/comments/comments.module.js"></script>
-    <script src="/components/dapps/dapp-dialog/dapp-discussion/comments/comments.component.js"></script>
-    <script src="/components/dapps/dapp-dialog/dapp-discussion/comments/comments.controller.js"></script>
-    <script src="/components/dapps/dapp-dialog/dapp-discussion/comments/comment/comment.module.js"></script>
-    <script src="/components/dapps/dapp-dialog/dapp-discussion/comments/comment/comment.component.js"></script>
-    <script src="/components/dapps/dapp-dialog/dapp-discussion/comments/comment/comment.controller.js"></script>
-    <script src="/components/profile/profile.module.js"></script>
-    <script src="/components/profile/profile.component.js"></script>
-    <script src="/components/profile/profile.controller.js"></script>
-    <script src="/components/profile/profile-favorites/profile-favorites.module.js"></script>
-    <script src="/components/profile/profile-favorites/profile-favorites.component.js"></script>
-    <script src="/components/profile/profile-favorites/profile-favorites.controller.js"></script>
-    <script src="/components/profile/profile-settings/profile-settings.module.js"></script>
-    <script src="/components/profile/profile-settings/profile-settings.component.js"></script>
-    <script src="/components/profile/profile-settings/profile-settings.controller.js"></script>-->
-    <!-- endbuild -->
 </body>
 </html>

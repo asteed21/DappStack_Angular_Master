@@ -1,0 +1,10 @@
+<div ng-hide="vm.heading == null" class="pl-2">
+    <h4 class="card-deck-title">{{vm.heading}}</h4>
+</div>
+<div class="card-deck">
+    <dapp-list-item class="col-sm-4 col-lg-3 pt-3" ng-repeat="dapp in vm.dapps" dapp-id="dapp.id" name="dapp.name" thumbnail-description="dapp.thumbnailDescription" logo-image="dapp.logoImage" likes="dapp.likes"></dapp-list-item>
+</div>
+<div class="page-buttons d-flex row justify-content-end align-items-center">
+    <button class="btn btn-primary page-button" ng-hide="" ng-click="vm.lastPage()">Last</button>
+    <button class="btn btn-primary page-button" ng-click="vm.nextPage()">Next</button>
+</div>

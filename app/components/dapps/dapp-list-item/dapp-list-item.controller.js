@@ -2,7 +2,7 @@
 
 angular.module('dappstackApp.components.dapps.dappListItem')
 
-    .controller('DappListItemController', ['$scope','$state','Dapps','DappStackUser','Likes','authService','Favorites', '$rootScope', function($scope, $state, Dapps, DappStackUser, Likes, authService, Favorites, $rootScope) {
+    .controller('DappListItemController', ['$scope','$state','Dapp','DappStackUser','Like','authService','Favorite', '$rootScope', function($scope, $state, Dapp, DappStackUser, Likes, authService, Favorites, $rootScope) {
         
         var vm = this;
 
@@ -55,7 +55,7 @@ angular.module('dappstackApp.components.dapps.dappListItem')
         //function to add favorite to user's profile, executed using angular directives in template
         vm.addFavorite = function(input) {
             if (vm.loggedIn())
-                Favorites.create({dappStackUserId: $rootScope.currentUser.id, dappsId: input}).$promise.then(
+                Favorite.create({DappStackUserId: $rootScope.currentUser.id, dappsId: input}).$promise.then(
                     function(response) {
                         vm.showFavorite = !vm.showFavorite;
                     },
@@ -68,7 +68,7 @@ angular.module('dappstackApp.components.dapps.dappListItem')
         //function to add a like to the list-item selected, then disable liking again
         vm.addLike = function(input) {
             if (vm.loggedIn())
-                Likes.create({dappStackUserId: $rootScope.currentUser.id, dappsId: input}).$promise.then(
+                Like.create({DappStackUserId: $rootScope.currentUser.id, dappsId: input}).$promise.then(
                     function(response) {
                         vm.disableLikes = !vm.disableLikes;
                         console.log(response);

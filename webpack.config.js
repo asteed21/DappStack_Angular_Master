@@ -24,6 +24,26 @@ var config = {
                 test: /\.html$/,
                 exclude: /node_modules/,
                 loader: 'raw-loader'
+            },
+            {
+                test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
+                loader: "url-loader?limit=10000&mimetype=application/font-woff"
+            }, 
+            {
+                test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,
+                loader: "url-loader?limit=10000&mimetype=application/font-woff"
+            },
+            {
+                test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
+                loader: "url-loader?limit=10000&mimetype=application/octet-stream"
+            },
+            {
+                test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
+                loader: "file-loader"
+            },
+            {
+                test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+                loader: "url-loader?limit=10000&mimetype=image/svg+xml"
             }
         ]
     },
@@ -31,7 +51,12 @@ var config = {
         //new webpack.optimize.CommonsChunkPlugin(/* chunkName= */"vendor"),
         new HtmlWebpackPlugin({
             template: './index.ejs'
-        })
+        }),
+        new webpack.ProvidePlugin({
+           $: "jquery",
+           jQuery: "jquery",
+           "Tether": 'tether'
+       })
     ]
 };
 

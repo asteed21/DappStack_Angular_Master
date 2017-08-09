@@ -3,16 +3,20 @@
 //css require statements
 require("../node_modules/tether/dist/css/tether.min.css");
 require("../node_modules/bootstrap/dist/css/bootstrap.min.css");
+require("../node_modules/ng1bs4/library/library.css");
+require("../node_modules/font-awesome/css/font-awesome.min.css");
 require("../node_modules/ng-dialog/css/ngDialog.min.css");
 require("../node_modules/ng-dialog/css/ngDialog-theme-default.min.css");
 require("./styles/main.css");
 
 //vendor module loading
+require('jquery');
+require('tether');
+require('bootstrap');
 require('angular');
 require('angular-resource');
 var uiRouter = require('angular-ui-router').default;
 require('angular-animate');
-require('angular-ui-bootstrap');
 require('ng-dialog');
 require('angular-file-upload');
 
@@ -21,8 +25,6 @@ require('./lb-services');
 require('./common/common.module');
 require('./components/components.module');
 require('./common/nav-bar/nav-bar.module');
-require('./common/nav-bar/nav-bar.controller');
-require('./common/nav-bar/nav-bar.component');
 
 /**
  * @ngdoc overview
@@ -38,7 +40,6 @@ module.exports = angular.module('dappstackApp', [
   'ngResource',
   uiRouter,
   'ngAnimate',
-  'ui.bootstrap',
   'ngDialog',
   'angularFileUpload',
 //In-App
@@ -119,7 +120,7 @@ module.exports = angular.module('dappstackApp', [
   });
 
   $stateProvider.state('app.dapps.dappdetails', {
-        url:'/:dappId',
+        url:'/:name/:dappId',
         views: {
           'content@': {
             component: 'dappDialogComponent'

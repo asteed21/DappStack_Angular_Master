@@ -2,7 +2,7 @@
 
 angular.module('dappstackApp.components.profile.profileFavorites')
 
-    .controller('ProfileFavoritesController', ['DappStackUser', 'Favorites', 'Dapps', '$rootScope','$state', function(DappStackUser, Favorites, Dapps, $rootScope, $state) {
+    .controller('ProfileFavoritesController', ['DappStackUser', 'Favorites', 'dapps', '$rootScope','$state', function(DappStackUser, Favorites, dapps, $rootScope, $state) {
         
         var vm = this;
 

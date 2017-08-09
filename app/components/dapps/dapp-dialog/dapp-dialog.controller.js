@@ -3,7 +3,7 @@
 angular.module('dappstackApp.components.dapps.dappDialog')
 
     //Include $stateParams to get local route parameter of dappId and use in dappsFactory to populate modal
-    .controller('DappDialogController', ['Dapps', '$state', '$stateParams', '$rootScope', function(Dapps, $state, $stateParams, $rootScope) {
+    .controller('DappDialogController', ['Dapp', '$state', '$stateParams', '$rootScope', function(Dapp, $state, $stateParams, $rootScope) {
 
         //Assign scope as variable
         var vm = this;
@@ -11,7 +11,7 @@ angular.module('dappstackApp.components.dapps.dappDialog')
 
         //assign scope access to dapp information
         vm.$onInit = function() {
-            vm.dapp = Dapps.get({id: vm.dappId})
+            vm.dapp = Dapp.get({id: vm.dappId})
                 .$promise.then(
                     function (response) {
                         vm.dapp = response;

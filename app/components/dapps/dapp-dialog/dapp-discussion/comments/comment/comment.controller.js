@@ -2,7 +2,7 @@
 
 angular.module('dappstackApp.components.dapps.dappDialog.dappDiscussion.comments.comment')
 
-    .controller('CommentController', ['Dapps', 'Comments', 'DappStackUser', '$rootScope','$stateParams', function(Dapps, Comments, DappStackUser, $rootScope, $stateParams) {
+    .controller('CommentController', ['Dapp', 'Comment', 'DappStackUser', '$rootScope','$stateParams', function(Dapp, Comment, DappStackUser, $rootScope, $stateParams) {
 
         var vm = this;
 
@@ -14,7 +14,7 @@ angular.module('dappstackApp.components.dapps.dappDialog.dappDiscussion.comments
             vm.comments = [];
 
             function _amOwner() {
-                if (vm.comment.dappStackUserId == $rootScope.currentUser.id) {
+                if (vm.comment.DappStackUserId == $rootScope.currentUser.id) {
                     vm.amOwner = true;
                 } else {
                     vm.amOwner = false;
@@ -22,7 +22,7 @@ angular.module('dappstackApp.components.dapps.dappDialog.dappDiscussion.comments
             };
 
             function _getUsername(comment) {
-                DappStackUser.findById({id: comment.dappStackUserId})
+                DappStackUser.findById({id: comment.DappStackUserId})
                 .$promise.then(
                     function(response) {
                         vm.username = response.username;
@@ -54,7 +54,7 @@ angular.module('dappstackApp.components.dapps.dappDialog.dappDiscussion.comments
         };
 
         vm.updateComment = function(commentObj) {
-            Dapps.comments.updateById({id: commentObj.dappsId, fk: commentObj.id}, {comment: commentObj.interact})
+            Dapp.comments.updateById({id: commentObj.DappId, fk: commentObj.id}, {comment: commentObj.interact})
             .$promise.then(
                 function(response) {
                     _commentResetState(commentObj);
@@ -72,9 +72,9 @@ angular.module('dappstackApp.components.dapps.dappDialog.dappDiscussion.comments
                 editing: false,
                 interact: '',
                 dappsId: $stateParams.dappId,
-                dappStackUserId: $rootScope.currentUser.id
+                DappStackUserId: $rootScope.currentUser.id
             }
-            Comments.comments.create({id: commentObj.id}, childComment)
+            Comment.comments.create({id: commentObj.id}, childComment)
             .$promise.then(
                 function(response) {
                     _commentResetState(commentObj);
@@ -86,7 +86,7 @@ angular.module('dappstackApp.components.dapps.dappDialog.dappDiscussion.comments
         };
 
         vm.deleteComment = function(commentObj) {
-            Dapps.comments.destroyById({id: commentObj.id})
+            Dapp.comments.destroyById({id: commentObj.id})
             .success(function() {
                 vm.comments.remove(commentObj);
             });

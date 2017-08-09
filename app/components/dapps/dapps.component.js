@@ -2,10 +2,9 @@ angular.module('dappstackApp.components.dapps')
 
     .component('dapps', {
         bindings: {
-            heading: '<',
-            filter: '<',
+            heading: '@',
             limitTo: '<',
-            orderBy: '<'
+            orderBy: '@'
         },
         template: require('./dapps.html'),
         controller: 'DappsController',
