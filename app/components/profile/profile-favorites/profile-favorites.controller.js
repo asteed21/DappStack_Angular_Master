@@ -2,7 +2,7 @@
 
 angular.module('dappstackApp.components.profile.profileFavorites')
 
-    .controller('ProfileFavoritesController', ['DappStackUser', 'Favorites', 'dapps', '$rootScope','$state', function(DappStackUser, Favorites, dapps, $rootScope, $state) {
+    .controller('ProfileFavoritesController', ['DappStackUser', 'Favorite','$rootScope','$state', function(DappStackUser, Favorite, $rootScope, $state) {
         
         var vm = this;
 
@@ -16,12 +16,12 @@ angular.module('dappstackApp.components.profile.profileFavorites')
             }
         );
 
-        vm.toggleDelete = function () {
+        vm.toggleDelete = function() {
             vm.showDelete = !vm.showDelete;
         };
 
         vm.deleteFavorite = function(favoriteid) {
-            Favorites.deleteById({id: favoriteid}).$promise.then(
+            Favorite.deleteById({id: favoriteid}).$promise.then(
                 function() {
                     vm.showDelete = !vm.showDelete;
                     $state.go($state.current, {}, {reload: true});

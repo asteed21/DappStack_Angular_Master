@@ -52,15 +52,15 @@ angular.module('dappstackApp.components.dapps.dappListItem')
             return authService.isAuthenticated();
         }
 
-        //function to add favorite to user's profile, executed using angular directives in template
+        //function to add favorite to user's profile
         vm.addFavorite = function(input) {
             if (vm.loggedIn())
-                Favorite.create({DappStackUserId: $rootScope.currentUser.id, dappsId: input}).$promise.then(
+                Favorites.create({dappStackUserId: $rootScope.currentUser.id, dappsId: input}).$promise.then(
                     function(response) {
                         vm.showFavorite = !vm.showFavorite;
                     },
                     function(response) {
-                        console.log(response);
+                        console.log("Error: " + response.status + " " + response.statusText);
                     } 
                 );
         }
@@ -74,7 +74,7 @@ angular.module('dappstackApp.components.dapps.dappListItem')
                         console.log(response);
                     },
                     function(response) {
-                        console.log(response);
+                        console.log("Error: " + response.status + " " + response.statusText);
                     } 
                 );
         }

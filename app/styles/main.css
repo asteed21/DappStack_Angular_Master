@@ -125,10 +125,6 @@ body {
     margin-top: 2em;
 }
 
-#profile-pic {
-    margin: auto;
-}
-
 .profile-edit-btn {
     position: absolute;
     width: 5em;
