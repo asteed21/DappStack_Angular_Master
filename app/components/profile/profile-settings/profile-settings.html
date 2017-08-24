@@ -1,15 +1,8 @@
 <div class="profile-settings">
-    <div class="profile-content-header row text-center">
-        <div class="col-xs-2">
-            <h2>Settings</h2>
-        </div>
-        <div class="col-xs-10 text-right">
-            <button ng-click="vm.toggleEdit()" class="btn btn-primary profile-edit-btn"
-                type="button">
-                {{vm.showEdit ? 'Back':'Edit'}}
-            </button>
-        </div>
-    </div>
+    <button ng-click="vm.toggleEdit()" class="btn btn-primary profile-edit-btn"
+        type="button">
+        {{vm.showEdit ? 'Back':'Edit'}}
+    </button>
     <div class="row" ng-show="!vm.showEdit">
         <table class="table table-bordered">
             <tr>

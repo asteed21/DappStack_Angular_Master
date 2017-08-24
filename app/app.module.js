@@ -71,17 +71,18 @@ module.exports = angular.module('dappstackApp', [
         }
   });
 
-  // $stateProvider.state('app.profile', {
-  //       url:'profile',
-  //       views: {
-  //         'content@': {
-  //           component: 'profile'
-  //         },
-  //         'profile-content@app.profile': {
-  //           component: 'profileFavorites'
-  //         }
-  //       }
-  // }); --> not in use, keeping for reference
+  $stateProvider.state('app.profile', {
+        url:'profile',
+        views: {
+          'content@': {
+            component: 'profile'
+          }
+        //   'profile-content@app.profile': {
+        //     component: 'profileFavorites'
+        //   }
+        //  --> not in use, keep for ref
+      }
+  });
 
   $stateProvider.state('app.dapps', {
         url:'dapps',

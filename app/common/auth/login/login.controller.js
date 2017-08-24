@@ -2,22 +2,35 @@
 
 angular.module('dappstackApp.common.auth.login')
 
-    .controller('LoginController', ['$scope', 'ngDialog', '$localStorage', 'authService', function ($scope, ngDialog, $localStorage, authService) {
+    .controller('LoginController', ['ngDialog', '$localStorage', 'authService', function (ngDialog, $localStorage, authService) {
         
-        $scope.loginData = $localStorage.getObject('userinfo','{}');
+        var vm = this;
+
+        vm.loginData = $localStorage.getObject('userinfo','{}');
         
-        $scope.doLogin = function() {
-            if($scope.rememberMe)
-                $localStorage.storeObject('userinfo',$scope.loginData);
+        vm.reject = function(input) {
+            vm.onReject({msg:input});
+        };
+
+        vm.doLogin = function() {
+            if(vm.rememberMe)
+                $localStorage.storeObject('userinfo',vm.loginData);
                 
-            authService.login($scope.loginData);
+            authService.login(vm.loginData);
 
             ngDialog.close();
-
         };
                 
-        $scope.openRegister = function () {
-            ngDialog.open({ template: '/common/auth/register/register.html', scope: $scope, className: 'ngdialog-theme-default', controller:"RegisterController" });
+        vm.openRegister = function(vm) {
+            ngDialog.close();
+            ngDialog.open({
+                template: '<register-component></register-component>', 
+                scope: vm,
+                className: 'ngdialog-theme-default',
+                plain: true,
+                closeByNavigation: true,
+                showClose: false
+            });
         };
         
     }]);

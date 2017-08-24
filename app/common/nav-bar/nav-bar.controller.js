@@ -2,7 +2,7 @@
 
 angular.module('dappstackApp.common.navBar')
 
-    .controller('NavBarController', ['$scope', '$state', '$rootScope', 'ngDialog', 'authService', 'DappStackUser', function($scope, $state, $rootScope, ngDialog, authService, DappStackUser) {
+    .controller('NavBarController', ['$state', '$rootScope', 'ngDialog', 'authService', 'DappStackUser', function($state, $rootScope, ngDialog, authService, DappStackUser) {
         
         var vm = this;
 
@@ -28,8 +28,15 @@ angular.module('dappstackApp.common.navBar')
             );
         }
 
-        vm.openLogin = function () {
-            ngDialog.open({ template: 'common/auth/login/login.html', scope: $scope, className: 'ngdialog-theme-default', controller:"LoginController" });
+        vm.openLogin = function(vm) {
+            ngDialog.open({ 
+                template: '<login-component on-resolve="ngDialog.close()" on-reject="closeThisDialog(msg)"></login-component>', 
+                scope: vm,
+                className: 'ngdialog-theme-default',
+                plain: true,
+                closeByNavigation: true,
+                showClose: false
+            });
         };
         
         vm.logOut = function() {

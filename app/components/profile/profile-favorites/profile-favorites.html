@@ -1,29 +1,7 @@
 <div class="favorites-list" class="mt-3">
     <ul class="list-group">
-        <li class="media list-group-item" ng-repeat="favorite in vm.favorites">
-            <div class="card w-100">
-                <div class="row">
-                    <div class="d-flex col-3">
-                        <a class="align-self-center p-3" ui-sref="app.dapps.dappdetails({name: favorite.dapps.name, dappId: favorite.dapps.id})">
-                            <img class="w-100" ng-src={{favorite.dapps.logoImage}} alt="favorite.dapps.name">
-                        </a>
-                    </div>
-                    <div class="d-flex col-7">
-                        <div class="card-block px-1">
-                            <h4 class="card-title">{{favorite.dapps.name}}</h4>
-                            <p class="card-text">{{favorite.dapps.thumbnailDescription}}</p>
-                        </div>
-                    </div>
-                    <div class="col-2 d-flex align-content-center justify-content-center">
-                        <button  ng-show="!vm.showDelete" ng-click="vm.toggleDelete()" class="close" type="button" aria-label="Remove">
-                                <i class="fa fa-times"></i>
-                        </button>
-                        <button  ng-show="vm.showDelete" ng-click="vm.deleteFavorite(favorite.id)" class="btn btn-outline-danger pr-2 h-25" type="button" aria-label="Confirm Remove">
-                            <span><i class="fa fa-minus-square-o pr-2"></i>Confirm</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
+        <li class="media list-group-item" ng-repeat="favorite in vm.favorites" ng-init="favoriteIndex = $index">
+            <profile-favorite favorite=favorite on-delete="vm.loadFavorites()"></profile-favorite>
         </li>
     </ul>
 </div>

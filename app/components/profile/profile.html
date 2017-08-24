@@ -1,33 +1,3 @@
-<!-- <div class="container">
-    <div class="row" ng-show="vm.loggedIn">
-        <div class="profile-header col-md-offset-1 col-md-10">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-3">
-                    <img id="profile-pic" class="img-responsive img-circle" width="200px" height="200px" alt="profile picture" ng-src="/images/profile_placeholder.png">
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-9">
-                    <h2>{{vm.user.firstName}} {{vm.user.lastName}}</h2>
-                    <p>{{vm.user.username}}</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row profile-row-2" ng-show="vm.loggedIn">
-        <div class="profile-menu-area col-xs-12 col-md-offset-1 col-md-2">
-            <ul class="list-group">
-                <li class="list-group-item"><a ui-sref="app.profile.settings">Settings</a></li>
-                <li class="list-group-item"><a ui-sref="app.profile.favorites" ui-sref-active>Favorites</a></li>
-            </ul>
-        </div>
-        <div ui-view="profile-content" class="profile-content-area col-xs-12 col-md-8">
-        </div>
-    </div>
-    <div class="row text-center" ng-show="!vm.loggedIn">
-        <div class="access-restricted col-xs-12">
-            <h2>You are not logged in. Please log in to view your profile.</h2>
-        </div>
-    </div>
-</div> -->
 <div class="container">
     <div class="row text-center" ng-show="!vm.loggedIn">
         <div class="access-restricted col-xs-12">
@@ -57,9 +27,9 @@
                             <a href="" class="tag tag-default tag-pill">data management</a>
                             <a href="" class="tag tag-default tag-pill">money</a>
                             <div class="flex-row justify-content-center mt-5">
-                                <span class="badge badge-success text-center py-2 px-2"><i class="fa fa-heart fa-lg"></i> 5 Favorites</span>
-                                <span class="badge badge-info text-center py-2 px-2"><i class="fa fa-database fa-lg"></i> 0 Dapps</span>
-                                <span class="badge badge-primary text-center py-2 px-2"><i class="fa fa-comment fa-lg"></i> 0 Comments</span>
+                                <span class="badge badge-success text-center py-2 px-2"><i class="fa fa-heart fa-lg"></i>&nbsp; {{vm.favoritesCount.count}} &nbsp; Favorites</span>
+                                <span class="badge badge-info text-center py-2 px-2"><i class="fa fa-database fa-lg"></i> &nbsp; {{vm.dappTeamsCount}} &nbsp; Dapps</span>
+                                <span class="badge badge-primary text-center py-2 px-2"><i class="fa fa-comment fa-lg"></i>&nbsp; {{vm.commentsCount.count}} &nbsp;  Comments</span>
                             </div>
                         </div>
                     </div>
@@ -73,8 +43,13 @@
                     </div>
                 </div>
                 <div class="tab-pane" id="edit">
-                    <h4 class="m-y-2">Edit Profile</h4>
-                    <form role="form">
+                    <h4 class="my-2 text-center">Profile Settings</h4>
+                    <div class="row my-2">
+                        <div class="col-sm-12 d-flex flex-column align-items-center">
+                            <profile-settings></profile-settings>
+                        </div>
+                    </div>
+                    <!-- <form role="form">
                         <div class="form-group row">
                             <label class="col-lg-3 col-form-label form-control-label">First name</label>
                             <div class="col-lg-9">
@@ -91,48 +66,6 @@
                             <label class="col-lg-3 col-form-label form-control-label">Email</label>
                             <div class="col-lg-9">
                                 <input class="form-control" type="email" value="email@gmail.com">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label class="col-lg-3 col-form-label form-control-label">Company</label>
-                            <div class="col-lg-9">
-                                <input class="form-control" type="text" value="">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label class="col-lg-3 col-form-label form-control-label">Website</label>
-                            <div class="col-lg-9">
-                                <input class="form-control" type="url" value="">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label class="col-lg-3 col-form-label form-control-label">Address</label>
-                            <div class="col-lg-9">
-                                <input class="form-control" type="text" value="" placeholder="Street">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label class="col-lg-3 col-form-label form-control-label"></label>
-                            <div class="col-lg-6">
-                                <input class="form-control" type="text" value="" placeholder="City">
-                            </div>
-                            <div class="col-lg-3">
-                                <input class="form-control" type="text" value="" placeholder="State">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label class="col-lg-3 col-form-label form-control-label">Time Zone</label>
-                            <div class="col-lg-9">
-                                <select id="user_time_zone" class="form-control" size="0">
-                                    <option value="Hawaii">(GMT-10:00) Hawaii</option>
-                                    <option value="Alaska">(GMT-09:00) Alaska</option>
-                                    <option value="Pacific Time (US &amp; Canada)">(GMT-08:00) Pacific Time (US &amp; Canada)</option>
-                                    <option value="Arizona">(GMT-07:00) Arizona</option>
-                                    <option value="Mountain Time (US &amp; Canada)">(GMT-07:00) Mountain Time (US &amp; Canada)</option>
-                                    <option value="Central Time (US &amp; Canada)" selected="selected">(GMT-06:00) Central Time (US &amp; Canada)</option>
-                                    <option value="Eastern Time (US &amp; Canada)">(GMT-05:00) Eastern Time (US &amp; Canada)</option>
-                                    <option value="Indiana (East)">(GMT-05:00) Indiana (East)</option>
-                                </select>
                             </div>
                         </div>
                         <div class="form-group row">
@@ -160,7 +93,7 @@
                                 <input type="button" class="btn btn-primary" value="Save Changes">
                             </div>
                         </div>
-                    </form>
+                    </form> -->
                 </div>
             </div>
         </div>

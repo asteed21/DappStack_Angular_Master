@@ -24,28 +24,43 @@ body {
     width: 50%;
 }
 
-@media (max-width: 991px) {
-    #search-form {
-        position: relative;
-        margin: auto;
-        width: 80%;
-    }
-}
-
-#search-input {
-    width: 100%;
-}
-
-.navbar-collapse {
-    width: 50%;
-}
-
 .navbar .navbar-toggler:focus, .navbar .navbar-toggler:hover{
     background-color: transparent;
 }
 
 .navbar .navbar-toggler{
     border-color: transparent;
+}
+
+.dropdown-toggle::after {
+    display:none
+}
+
+#dropdown-top-menu {
+    display: inherit;
+    padding: 0 20px;
+}
+
+.dropdown-single-item {
+    display: none;
+}
+
+@media (max-width: 991px) {
+    #search-form {
+        position: initial;
+        transform: none;
+        width: 100%;
+        padding: 10px 30px 0 30px;
+    }
+    #dropdown-top-menu {
+        display: none;
+    }
+    .dropdown-single-item {
+        display: inherit;
+    }
+    #id-menu-links {
+        padding: 5px 0;
+    }
 }
 
 /* HOMEPAGE STYLES */
@@ -102,40 +117,8 @@ body {
 }
 
 /* PROFILE PAGE STYLES */
-.profile-header {
-    margin-top: 30px;
-    padding: 40px;
-    background: grey;
-    border-radius: 15px;
-}
 
-.profile-content-header {
-    border: 2px solid gray;
-    border-radius: 15px;
-    margin: 0 5px 15px 5px;
-    padding-bottom: 10px;
-}
 
-.profile-content-area {
-    border-radius: 15px;
-    padding: 10px;
-}
-
-.profile-row-2 {
-    margin-top: 2em;
-}
-
-.profile-edit-btn {
-    position: absolute;
-    width: 5em;
-    top: 50%;
-    transform: translateY(50%);
-    margin-left: -5em;
-}
-
-.profile-menu-area {
-    margin-top: 20px;
-}
 
 /* COMMENTS STYLING */
 .comments-container {

@@ -2,16 +2,22 @@
 
 angular.module('dappstackApp.common.auth.register')
     
-    .controller('RegisterController', ['$scope', 'ngDialog', '$localStorage', 'authService', '$rootScope', function ($scope, ngDialog, $localStorage, authService, $rootScope) {
+    .controller('RegisterController', ['ngDialog', '$localStorage', 'authService', '$rootScope', function (ngDialog, $localStorage, authService, $rootScope) {
         
-        $scope.register={};
-        $scope.loginData={};
-        
-        $scope.doRegister = function() {
+        var vm = this;
 
-            authService.register($scope.registration);
+        vm.register={};
+        vm.loginData={};
+        
+        vm.reject = function() {
+            ngDialog.close();
+        };
+
+        vm.doRegister = function() {
+
+            authService.register(vm.registration);
             
-            $rootScope.$on('registration:Successful', function() {
+            vm.$on('registration:Successful', function() {
                 var message = '<div class="ngdialog-message">\
                     <div><h3>Registration Unsuccessful</h3></div>' +
                     '<div><p>' +  response.data.error.message + 
@@ -19,7 +25,7 @@ angular.module('dappstackApp.common.auth.register')
 
                 ngDialog.openConfirm({ template: message, plain: 'true'});
             
-            authService.login($scope.loginData);
+            authService.login(vm.loginData);
 
             ngDialog.close();
         });

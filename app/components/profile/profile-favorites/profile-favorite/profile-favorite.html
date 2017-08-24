@@ -1,0 +1,23 @@
+<div class="card w-100">
+    <div class="row">
+        <div class="d-flex col-3">
+            <a class="align-self-center p-3" ui-sref="app.dapps.dappdetails({name: vm.favorite.dapps.name, dappId: vm.favorite.dapps.id})">
+                <img class="w-100" ng-src={{vm.favorite.dapps.logoImage}} alt="vm.favorite.dapps.name">
+            </a>
+        </div>
+        <div class="d-flex col-7">
+            <div class="card-block px-1">
+                <h4 class="card-title">{{vm.favorite.dapps.name}}</h4>
+                <p class="card-text">{{vm.favorite.dapps.thumbnailDescription}}</p>
+            </div>
+        </div>
+        <div class="col-2 d-flex align-content-center justify-content-center">
+            <button  ng-show="!vm.showDelete" ng-click="vm.toggleDelete(vm.favorite.id)" class="close" type="button" aria-label="Remove">
+                    <i class="fa fa-times"></i>
+            </button>
+            <button  ng-show="vm.showDelete" ng-click="vm.deleteFavorite(vm.favorite.id)" class="btn btn-outline-danger pr-2 h-25" type="button" aria-label="Confirm Remove">
+                <span><i class="fa fa-minus-square-o pr-2"></i>Confirm</span>
+            </button>
+        </div>
+    </div>
+</div>
