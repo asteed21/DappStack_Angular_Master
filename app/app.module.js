@@ -50,10 +50,10 @@ module.exports = angular.module('dappstackApp', [
 
 .constant('urlBase','http://0.0.0.0:3000/api')
 
-.config( function($stateProvider, $urlServiceProvider, LoopBackResourceProvider) {
+.config( function($stateProvider, $urlServiceProvider, LoopBackResourceProvider, urlBase) {
 
   // Assign the URL lb-services uses to access the LoopBack REST API server
-  LoopBackResourceProvider.setUrlBase('http://0.0.0.0:3000/api');
+  LoopBackResourceProvider.setUrlBase(urlBase);
 
   //state routing for basic app states (no other dependencies)
   $stateProvider.state('app', {
@@ -117,10 +117,16 @@ module.exports = angular.module('dappstackApp', [
 })
 
 //set function on $rootScope to check for state change, set variable for use in controllers
-.run(function($rootScope, $transitions, $state) {    
+.run(function($rootScope, $transitions, $state, LoopBackAuth, authService) {    
 
-    $transitions.onSuccess({}, function($transition$) {
-      $rootScope.previousState = $transition$.$from().name;
+  $transitions.onSuccess({}, function($transition$) {
+    $rootScope.previousState = $transition$.$from().name;
   });
+
+  // Get data from localstorage after page refresh
+  // and load user data into rootscope.
+  if (LoopBackAuth.accessTokenId && !$rootScope.currentUser) {
+    authService.refresh(LoopBackAuth.accessTokenId);
+  }
 
 }).name;

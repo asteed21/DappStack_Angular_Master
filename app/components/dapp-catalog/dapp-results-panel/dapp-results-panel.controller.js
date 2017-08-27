@@ -59,7 +59,6 @@ angular.module('dappstackApp.components.dappCatalog.dappResultsPanel')
             })
             .$promise.then(
                 function (response) {
-                    console.log(queryFilter);
                     vm.dapps = response;
                     vm.heading =  " Dapps found"; //update dapp list heading
                 },

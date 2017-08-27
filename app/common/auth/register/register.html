@@ -1,10 +1,9 @@
-<div class="ngdialog-message">
-    <div class="">
-        <h3>Register </h3>
+<div class="container">
+    <div class="d-flex flex-row justify-content-center my-3">
+        <h3>Register</h3>
     </div>
-    <div class="">&nbsp;</div>
-    <div class="">
-        <form ng-submit="vm.doRegister()">
+    <form ng-submit="vm.doRegister()">
+        <div class="d-flex flex-column justify-content-center">
             <div class="form-group">
                 <label class="sr-only" for="username">Username</label>
                 <input type="text" class="form-control input-sm" id="username" placeholder="Username" ng-model="vm.registration.username">
@@ -30,8 +29,10 @@
                     <input type="checkbox" ng-model="vm.registration.rememberMe"> Remember me?
                 </label>
             </div>
-            <button type="submit" class="btn btn-outline-info btn-sm">Register</button>
-            <button type="button" class="btn btn-outline-danger btn-sm" ng-click="vm.reject()">Cancel</button>
-        </form>
-    </div>
+        </div>
+        <div class="d-flex flex-row justify-content-between">
+            <button type="submit" class="btn btn-outline-info">Register</button>
+            <button type="button" class="btn btn-outline-danger" ng-click="vm.reject()">Cancel</button>
+        </div>
+    </form>
 </div>

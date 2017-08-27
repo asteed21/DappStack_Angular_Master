@@ -2,31 +2,14 @@
 
 angular.module('dappstackApp.common.navBar')
 
-    .controller('NavBarController', ['$state', '$rootScope', 'ngDialog', 'authService', 'DappStackUser', function($state, $rootScope, ngDialog, authService, DappStackUser) {
+    .controller('NavBarController', ['$state', '$rootScope', 'ngDialog', 'authService', 'DappStackUser', '$localStorage', function($state, $rootScope, ngDialog, authService, DappStackUser, $localStorage) {
         
         var vm = this;
 
+        vm.loggedIn = authService.isAuthenticated();
+
         vm.isNavCollapsed = true;
         vm.isCollapsed = false;
-
-        vm.loggedIn = false;
-        vm.username = '';
-        
-        if(authService.isAuthenticated()) {
-            vm.loggedIn = true;
-            vm.username = authService.getUsername();
-            
-            DappStackUser.findOne({id: $rootScope.currentUser.id})
-            .$promise.then(
-                function (response) {
-                    vm.user = response;
-                    console.log(vm.user);
-                },
-                function (response) {
-                    console.log("Error: " + response.status + " " + response.statusText);
-                }
-            );
-        }
 
         vm.openLogin = function(vm) {
             ngDialog.open({ 
@@ -47,12 +30,19 @@ angular.module('dappstackApp.common.navBar')
         
         $rootScope.$on('login:Successful', function() {
             vm.loggedIn = authService.isAuthenticated();
-            vm.username = authService.getUsername();
+            vm.username = authService.getUserName();
         });
             
         $rootScope.$on('registration:Successful', function() {
-            vm.loggedIn = authService.isAuthenticated();
-            vm.username = authService.getUsername();
+            var message = '\
+            <div class="ngdialog-message">\
+            <div><h3>YOU DID IT!!!</h3></div>' +
+            '<div><p>CONGRATULATIONS, YOU SIGNED UP SUCCCESFULLY!!!!!!!!!!!!!!!</p></div>';
+
+            ngDialog.openConfirm({
+                template: message, 
+                plain: 'true'
+            });
         });
         
         vm.stateis = function(curstate) {

@@ -4,16 +4,18 @@ angular.module('dappstackApp.common.auth')
 
     .factory('authService', ['DappStackUser', '$q', '$rootScope', 'ngDialog', function(DappStackUser, $q, $rootScope, ngDialog) {
     
-        function login(loginData) {
-            return DappStackUser.login(loginData)
+        function login(params, credentials) {
+            return DappStackUser.login(params, credentials)
             .$promise.then(
                 function(response) {
                     $rootScope.currentUser = {
                         id: response.user.id,
                         tokenId: response.id,
-                        username: loginData.username
+                        email: response.user.email,
+                        username: response.user.username
                     };
                     console.log($rootScope.currentUser);
+                    console.log(DappStackUser.getCurrentId());
                     $rootScope.$broadcast('login:Successful');
                 },
                 function(response){
@@ -32,25 +34,47 @@ angular.module('dappstackApp.common.auth')
         }
         
         function isAuthenticated() {
-            if ($rootScope.currentUser) {
-                return true;
-            }
-            else{
-                return false;
-            }
+            return DappStackUser.isAuthenticated();
         }
         
-        function getUsername() {
+        function getUserName() {
             return $rootScope.currentUser.username;
         }
 
-        function logout() {
-            return DappStackUser.logout().$promise
-            .then(function() {
-                $rootScope.currentUser = null;
-                $rootScope.$broadcast('logout:Successful');
-            });
+        function getCurrentId() {
+            return DappStackUser.getCurrentId();
         }
+
+        function logout() {
+            return DappStackUser.logout().$promise.then(
+                function() {
+                    console.log("logged out");
+                    $rootScope.currentUser = null;
+                    $rootScope.$broadcast('logout:Successful');
+                },
+                function(response) {
+                    console.log("Error: " + response.status + " " + response.statusText);
+                }
+            );
+        }
+
+        function refresh(accessTokenId) {
+            return DappStackUser
+            .getCurrent().$promise.then(
+                function(response) {
+                    $rootScope.currentUser = {
+                        id: response.id,
+                        tokenId: accessTokenId,
+                        email: response.email,
+                        username: response.username
+                    }
+                    $rootScope.$broadcast('login:Successful');
+                },
+                function (response) {
+                    console.log("Error: " + response.status + " " + response.statusText);
+                }
+            );
+        }        
 
         function register(registerData) {
             var date = new Date();
@@ -64,37 +88,41 @@ angular.module('dappstackApp.common.auth')
                 lastName: registerData.lastname,
                 joinDate: dateSubmitted
             })
-            .$promise
-            .then (function(response) {
-                $rootScope.currentUser = {
-                    id: response.id,
-                    tokenId: response.id,
-                    username: registerData.username
-                };
-                $rootScope.$broadcast('registration:Successful');
-            },
-            function(response){
-                
+            .$promise.then(
+                function(response) {
+                    console.log(response);
+                    // $rootScope.currentUser = {
+                    //     id: response.id,
+                    //     email: registerData.email,
+                    //     username: registerData.username
+                    // };
+                    $rootScope.$broadcast('registration:Successful');
+                },
+                function(response){
                     var message = '\
                     <div class="ngdialog-message">\
                     <div><h3>Registration Unsuccessful</h3></div>' +
-                        '<div><p>' +  response.data.error.message + 
-                        '</p><p>' + response.data.error.name + '</p></div>';
+                    '<div><p>' +  response.data.error.message + 
+                    '</p><p>' + response.data.error.name + '</p></div>';
 
                     ngDialog.openConfirm({ template: message, plain: 'true'});
 
-            });
+                }
+            );
         }
 
         return {
-            login: login,
+            login: login, 
             logout: logout,
             register: register,
             isAuthenticated: isAuthenticated,
-            getUsername: getUsername
+            getUserName: getUserName,
+            refresh: refresh,
+            getCurrentId: getCurrentId
         };
     }])
 
+    //factory for managing localstorage functions --> aiding in login persistence and auth factory functions
     .factory('$localStorage', ['$window', function ($window) {
         return {
             store: function (key, value) {

@@ -2,7 +2,7 @@
 
 angular.module('dappstackApp.common.auth.login')
 
-    .controller('LoginController', ['ngDialog', '$localStorage', 'authService', function (ngDialog, $localStorage, authService) {
+    .controller('LoginController', ['ngDialog', 'authService', '$localStorage', function (ngDialog, authService, $localStorage) {
         
         var vm = this;
 
@@ -13,10 +13,11 @@ angular.module('dappstackApp.common.auth.login')
         };
 
         vm.doLogin = function() {
-            if(vm.rememberMe)
-                $localStorage.storeObject('userinfo',vm.loginData);
-                
-            authService.login(vm.loginData);
+            if (vm.loginData.rememberMe) {
+                $localStorage.storeObject('userinfo', vm.loginData);
+            }
+
+            authService.login({rememberMe: vm.loginData.rememberMe}, {email: vm.loginData.email, password: vm.loginData.password});
 
             ngDialog.close();
         };
