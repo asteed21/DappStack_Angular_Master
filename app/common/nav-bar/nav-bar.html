@@ -28,7 +28,7 @@
             </ul>
             <ul class="navbar-nav" id="id-menu-links">
                 <li class="nav-item align-self-center" ng-if="!vm.loggedIn">
-                    <a class="btn btn-outline-secondary" ng-click="vm.openLogin()">
+                    <a class="btn btn-outline-primary" ng-click="vm.openLogin()">
                         <span class="fa fa-sign-in"></span> Login
                     </a>
                 </li>
@@ -36,7 +36,7 @@
                     <a class="nav-link" ui-sref="app.profile">{{vm.username}}</a>
                 </li>
                 <li class="nav-item align-self-center" class="nav-item" ng-if="vm.loggedIn">
-                    <a class="nav-link" ng-click="vm.logOut()">
+                    <a class="btn btn-outline-secondary" ng-click="vm.logOut()">
                         <span class="fa fa-sign-out"></span> Logout
                     </a>
                 </li>

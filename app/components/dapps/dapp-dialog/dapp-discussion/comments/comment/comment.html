@@ -1,37 +1,37 @@
 <!--TODO: add upvote/downvote buttons and score from object model to display/interact-->
 
-<div class="comment-block col-xs-8 col-xs-offset-4">
-  <img class="" alt="placeholder image" src="/images/profile_placeholder.png" height="40" width="40">
-  
-  <div class="media-body" ng-show="vm.comment.editing">
-    <textarea ng-model="vm.comment.interact" placeholder="Reply..."></textarea>
-    <div class="buttons">
-      <button class="btn btn-primary" ng-click="vm.updateComment(vm.comment)">Update</button>
-      <button class="cancel btn" ng-click="vm.cancelComment(vm.comment)">Cancel</button>
+<div class="media">
+  <img class="d-flex mr-3" alt="placeholder image" src="/images/profile_placeholder.png" height="40" width="40">
+  <div class="media-body">
+    <div ng-show="vm.comment.editing">
+      <textarea ng-model="vm.comment.interact" placeholder="Reply..."></textarea>
+      <div class="buttons">
+        <button class="btn btn-primary" ng-click="vm.updateComment(vm.comment)">Update</button>
+        <button class="cancel btn" ng-click="vm.cancelComment(vm.comment)">Cancel</button>
+      </div>
     </div>
-  </div>
 
-  <div class="media-body" ng-hide="vm.comment.editing">
-    <h5>{{vm.comment.comment}}</h5>
-    <div class="" ng-hide="vm.comment.editing">
-      <span class="">--> {{vm.username}}</span>
+    <div ng-hide="vm.comment.editing">
+      <h5>{{vm.comment.comment}}</h5>
+      <div class="" ng-hide="vm.comment.editing">
+        <span class="">- {{vm.username}}</span>
+      </div>
+      <div class="d-flex flex-row comment-actions">
+        <span><a ng-show="vm.loggedIn && !vm.comment.editing && !comment.replying" ng-click="vm.commentReply(vm.comment)">reply</a></span>
+        <span><a ng-show="vm.amOwner && !vm.comment.editing  && !vm.comment.replying" ng-click="vm.commentEdit(vm.comment)">edit</a></span>
+        <span><a ng-show="vm.amOwner && !vm.comment.editing  && !vm.comment.replying" ng-click="vm.deleteComment(vm.comment)">delete</a></span>
+      </div>
     </div>
-    <ul class="list-unstyled">
-      <li ng-show="vm.loggedIn && !vm.comment.editing && !comment.replying"><a ng-click="vm.commentReply(vm.comment)">reply</a></li>
-      <li ng-show="vm.amOwner && !vm.comment.editing  && !vm.comment.replying"><a ng-click="vm.commentEdit(vm.comment)">edit</a></li>
-      <li ng-show="vm.amOwner && !vm.comment.editing  && !vm.comment.replying"><span></span></li>
-    </ul>
-  </div>
 
-  <div class="media-body" ng-show="vm.comment.replying">
-    <textarea ng-model="vm.comment.interact" placeholder="Reply..." class="col-xs-8 col-xs-offset-2"></textarea>
-    <div class="">
-      <button class="save-comment-btn btn btn-primary" ng-click="vm.replyComment(vm.comment)">Save</button>
-      <button class="cancel btn" ng-click="vm.cancelComment(vm.comment)">Cancel</button>
+    <div ng-show="vm.comment.replying">
+      <textarea ng-model="vm.comment.interact" placeholder="Reply..." class=""></textarea>
+      <div class="">
+        <button class="save-comment-btn btn btn-primary" ng-click="vm.replyComment(vm.comment)">Save</button>
+        <button class="cancel btn" ng-click="vm.cancelComment(vm.comment)">Cancel</button>
+      </div>
     </div>
+    <comment-component ng-repeat="comment in vm.replies" ng-init="commentIndex = $index" comment="comment" on-delete="vm.removeItem(commentIndex)" logged-in="vm.loggedIn">
+    </comment-component>
   </div>
 </div>
-<ul>
-  <comment-component ng-repeat="comment in vm.comment.comments" comment="comment" comments="vm.comment.comments" logged-in="vm.loggedIn">
-  </comment-component>
-</ul>
+

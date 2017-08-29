@@ -1,27 +1,31 @@
-<div class="container">
-    <div class="row justify-content-end pr-5 mt-5">
+<div class="container-fluid">
+    <div class="row justify-content-end pr-3 pr-md-5 mt-5">
       <button type="button" class="close" aria-label="Close" ng-click="vm.goBack()">
         <span class="close-button" aria-hidden="true">&times;</span>
       </button>
     </div>
-    <div class="row flex-row justify-content-center mb-5">
+    <div class="row justify-content-center mb-5 mt-3">
       <div class="col-12 col-sm-3">
-          <img class="rounded img-fluid" ng-src='{{vm.dapp.logoImage}}'/>
+          <img class="rounded mx-auto d-block img-fluid" ng-src='{{vm.dapp.logoImage}}'/>
       </div>
       <div class="col-12 col-sm-5">
-        <h2 class="">{{vm.dapp.name}}</h2>
+        <h2 class="d-flex justify-content-center justify-content-md-start py-2 mt-2">{{vm.dapp.name}}</h2>
         <p>{{vm.dapp.thumbnailDescription}}</p>
         <hr class="my-3">
-        <div class="flex-row justify-content-around">
-          <button ng-click="vm.addFavorite()" ng-show="vm.loggedIn" ng-disabled="vm.favorited" class="btn btn-secondary rounded-button" role="button">
+        <div class="row justify-content-center justify-content-md-start mx-md-1 mb-3 mb-md-0">
+          <button ng-click="vm.addFavorite()" ng-show="vm.loggedIn" ng-disabled="vm.favorited" class="btn btn-secondary rounded-button mx-2" role="button">
               <span class="fa fa-heart"></span>
           </button>
-          <button ng-click="vm.addLike()" ng-show="vm.loggedIn" ng-disabled="vm.liked" class="btn btn-secondary rounded-button" role="button" >
+          <button ng-click="vm.addLike()" ng-show="vm.loggedIn" ng-disabled="vm.liked" class="btn btn-secondary rounded-button mx-2" role="button" >
               <span class="fa fa-thumbs-up"></span>
           </button>
+          <div>
+          </div>
         </div>
       </div>
-      <div class="col-12 col-sm-3 d-flex justify-content-center align-items-center">
+      <div class="col-12 col-sm-3 d-flex flex-column justify-content-center align-items-center">
+        <a href="vm.website">Website</a>
+        <hr class="my-2">
         <ul class="list-unstyled d-flex">
           <li class="pl-2" ng-show="vm.hasSocial('facebook')">
             <a class="dapp-social-links" href="{{vm.dapp.socialLinks.facebook}}">
@@ -50,8 +54,8 @@
         </ul>
       </div>
     </div>
-    <div class="row flex-row justify-content-center">
-      <div class="dapp-body col-10">
+    <div class="justify-content-center">
+      <div class="dapp-body">
         <ul class="nav nav-tabs nav-justified" role="tablist">
           <li class="nav-item">
             <a class="nav-link active" data-toggle="tab" data-target="#dapp-about" role="tab">About</a>
@@ -60,7 +64,7 @@
             <a class="nav-link" data-toggle="tab" data-target="#dapp-discussion" role="tab">Discussion</a>
           </li>
         </ul>
-        <div class="tab-content">
+        <div class="tab-content col-12 col-md-10 offset-md-1">
           <div class="tab-pane active fade show" id="dapp-about" role="tabpanel">
              <dapp-about-component about-content="vm.dapp.aboutContent" about-images="vm.dapp.aboutImages"></dapp-about-component> 
           </div>

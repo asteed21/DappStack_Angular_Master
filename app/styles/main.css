@@ -3,7 +3,7 @@
 /* OVERALL STYLES */
 body {
     padding-top: 50px;
-    background: rgba(225,225,225,.5);
+    background: whitesmoke;
 }
 
 .content-area {
@@ -19,6 +19,10 @@ body {
 /* NAVBAR STYLES */
 #navbarElements {
     width: auto;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: inherit;
 }
 
 #search-form {
@@ -87,10 +91,6 @@ body {
 }
 
 /*DAPP CATALOG STYLES*/
-.dapp-search-panel {
-    background: white;
-}
-
 .page-button {
     margin-top: 30px;
     margin-right: 15px;
@@ -106,6 +106,16 @@ body {
     width: 100%;
 }
 
+.card {
+    width: 12rem;
+	background: #fff;
+	box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.dapp-card-body {
+    height: 12rem;
+}
+
 /* DAPP DETAIL PAGE STYLES */
 .rounded-button {
     padding: .5rem .75rem;
@@ -113,13 +123,20 @@ body {
 }
 
 /* DAPP ABOUT PAGE STYLES */
-.about-slides {
-    width: 100%;
-    height: 100%;
-}
+
 
 /* PROFILE PAGE STYLES */
 
 
 
 /* COMMENTS STYLING */
+.comment-actions {
+    border-bottom: 1px solid #eee;
+    margin-bottom: 5px;
+}
+.comment-actions a {
+    font-size: 12px;
+    color: grey;
+    font-weight: bolder;
+    margin-right: 5px;
+}

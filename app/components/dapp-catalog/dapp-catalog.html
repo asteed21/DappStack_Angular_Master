@@ -1,12 +1,10 @@
-<div class="container-fluid dapps-content-container" style="background: lightgrey;">
+<div class="container-fluid" style="background: lightgrey; max-width: 1200px;">
     <div class="row">
-        <div class="col-12 col-sm-3 mt-5">
+        <div class="col-12 col-md-3 mt-5">
             <dapp-search-panel category="vm.category" selected-tags="vm.selectedTags" statuses-selected="vm.statusesSelected"></dapp-search-panel>
         </div>
-        <div class="col-12 col-sm-9 mt-5 mb-5 dapps-view-panel">
+        <div class="col-12 col-md-9 mt-5 mb-5">
             <dapp-results-panel category="vm.category" selected-tags="vm.selectedTags" statuses-selected="vm.statusesSelected" query="vm.query"></dapp-results-panel>
         </div>
     </div>
 </div>
-
-<!-- on-category-change="vm.category = $event.category"  -->
