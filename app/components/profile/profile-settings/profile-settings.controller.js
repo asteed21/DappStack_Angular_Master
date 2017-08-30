@@ -2,9 +2,10 @@
 
 angular.module('dappstackApp.components.profile.profileSettings')
 
-    .controller('ProfileSettingsController', ['DappStackUser', '$rootScope', '$state', 'FileUploader', 'urlBase', function(DappStackUser, $rootScope, $state, FileUploader, urlBase) {
+    .controller('ProfileSettingsController', ['DappStackUser', '$rootScope', '$state', 'authService', function(DappStackUser, $rootScope, $state, authService) {
         
         var vm = this;
+        vm.userId = authService.getCurrentId();
 
         vm.showEdit = false;
         vm.newEmail;
@@ -13,7 +14,7 @@ angular.module('dappstackApp.components.profile.profileSettings')
         vm.newPassword;
         vm.newProfileImage;
         
-        DappStackUser.findOne({id: $rootScope.currentUser.id})
+        DappStackUser.findOne({id: vm.userId})
         .$promise.then(
             function (response) {
                 vm.user = response;
@@ -22,81 +23,6 @@ angular.module('dappstackApp.components.profile.profileSettings')
                 console.log("Error: " + response.status + " " + response.statusText);
             }
         );
-
-        //Handle image uploading for profile pic using Angular File Upload
-        vm.uploader = new FileUploader({
-            scope: vm,                          // to automatically update the html. Default: $rootScope
-            url: urlBase + '/attachments/pics/upload',
-            formData: [
-                { DappStackUserId: $rootScope.currentUser.id }
-            ]
-        });
-
-        vm.uploader.filters.push({
-            name: 'imageFilter',
-            fn: function(item /*{File|FileLikeObject}*/, options) {
-                var type = '|' + item.type.slice(item.type.lastIndexOf('/') + 1) + '|';
-                return '|jpg|png|jpeg|bmp|gif|'.indexOf(type) !== -1;
-            }
-        });
-
-        // REGISTER HANDLERS
-        // --------------------
-        vm.uploader.onAfterAddingFile = function(item) {
-            console.info('After adding a file', item);
-            var fileExtension = '.' + item.file.name.split('.').pop();
-
-            item.file.name = $rootScope.currentUser.id + fileExtension;
-        };
-        // --------------------
-        vm.uploader.onAfterAddingAll = function(items) {
-        console.info('After adding all files', items);
-        };
-        // --------------------
-        vm.uploader.onWhenAddingFileFailed = function(item, filter, options) {
-        console.info('When adding a file failed', item);
-        };
-        // --------------------
-        vm.uploader.onBeforeUploadItem = function(item) {
-        console.info('Before upload', item);
-        };
-        // --------------------
-        vm.uploader.onProgressItem = function(item, progress) {
-        console.info('Progress: ' + progress, item);
-        };
-        // --------------------
-        vm.uploader.onProgressAll = function(progress) {
-        console.info('Total progress: ' + progress);
-        };
-        // --------------------
-        vm.uploader.onSuccessItem = function(item, response, status, headers) {
-        console.info('Success', response, status, headers);
-        console.log(urlBase + '/attachments/pics/' + item.file.name);
-        };
-        // --------------------
-        vm.uploader.onErrorItem = function(item, response, status, headers) {
-        console.info('Error', response, status, headers);
-        };
-        // --------------------
-        vm.uploader.onCancelItem = function(item, response, status, headers) {
-        console.info('Cancel', response, status);
-        };
-        // --------------------
-        vm.uploader.onCompleteItem = function(item, response, status, headers) {
-        console.info('Complete', response, status, headers);
-        };
-        // --------------------
-        vm.uploader.onCompleteAll = function() {
-        console.info('Complete all');
-        };
-        // --------------------
-
-
-
-
-
-
-
 
         //Edit and process profile information
         vm.toggleEdit = function () {
@@ -109,6 +35,8 @@ angular.module('dappstackApp.components.profile.profileSettings')
                 updatedInfo.username = vm.newUsername;
             if (vm.newPassword)
                 updatedInfo.password = vm.newPassword;
+            if (vm.newEmail)
+                updatedInfo.email = vm.newEmail;
             if (vm.newFirstName)
                 updatedInfo.firstName = vm.newFirstName;
             if (vm.newLastName)
@@ -116,8 +44,7 @@ angular.module('dappstackApp.components.profile.profileSettings')
             if (vm.newProfileImage)
                 updatedInfo.profileImage = vm.newProfileImage;
             
-            console.log(updatedInfo);
-            DappStackUser.prototype$updateAttributes({id: $rootScope.currentUser.id}, updatedInfo).$promise.then(
+            DappStackUser.update({id: vm.userId}, updatedInfo).$promise.then(
                 function() {
                     vm.showEdit = !vm.showEdit;
                     $state.go($state.current, {}, {reload: true});

@@ -1,11 +1,17 @@
 <div class="container">
-    <div class="row text-center" ng-show="!vm.loggedIn">
-        <div class="access-restricted col-xs-12">
-            <h2>You are not logged in. Please log in to view your profile.</h2>
+    <div class="row text-center m-5" ng-show="!vm.loggedIn">
+        <div class="alert alert-danger col-12 p-5">
+            <h4>You are not logged in. Please log in to view your profile.</h4>
         </div>
     </div>
-    <div class="row mt-5" ng-show="vm.loggedIn">
-        <div class="col-lg-8 push-lg-4">
+    <div class="row mt-5" ng-hide="!vm.loggedIn">
+        <div class="col-md-4 text-center mt-5">
+            <img id="profile-pic" ng-src="/images/profile_placeholder.png" class="m-x-auto img-fluid img-circle" width="60%" alt="avatar">
+            <div class="d-flex justify-content-center my-4">
+                <h4>{{vm.user.firstName}} {{vm.user.lastName}}</h4>
+            </div>
+        </div>
+        <div class="col-md-8">
             <ul class="nav nav-tabs nav-justified" role="tablist">
                 <li class="nav-item">
                     <a href="" data-target="#profile" data-toggle="tab" class="nav-link active">Profile</a>
@@ -19,7 +25,6 @@
             </ul>
             <div class="tab-content pt-4 pb-5">
                 <div class="tab-pane active" id="profile">
-                    <h4 class="my-2 text-center">{{vm.user.firstName}} {{vm.user.lastName}}</h4>
                     <div class="row my-2">
                         <div class="col-sm-12 d-flex flex-column align-items-center">
                             <h6 class="my-2"><em>{{vm.user.username}}</em></h6>
@@ -38,69 +43,18 @@
                     <h4 class="my-2 text-center">My Favorites</h4>
                     <div class="row my-2">
                         <div class="col-sm-12 d-flex flex-column align-items-center">
-                            <profile-favorites></profile-favorites>
+                            <profile-favorites user="vm.user"></profile-favorites>
                         </div>
                     </div>
                 </div>
                 <div class="tab-pane" id="edit">
                     <h4 class="my-2 text-center">Profile Settings</h4>
                     <div class="row my-2">
-                        <div class="col-sm-12 d-flex flex-column align-items-center">
-                            <profile-settings></profile-settings>
+                        <div class="col-sm-12">
+                            <profile-settings user="vm.user"></profile-settings>
                         </div>
                     </div>
-                    <!-- <form role="form">
-                        <div class="form-group row">
-                            <label class="col-lg-3 col-form-label form-control-label">First name</label>
-                            <div class="col-lg-9">
-                                <input class="form-control" type="text" value="Jane">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label class="col-lg-3 col-form-label form-control-label">Last name</label>
-                            <div class="col-lg-9">
-                                <input class="form-control" type="text" value="Bishop">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label class="col-lg-3 col-form-label form-control-label">Email</label>
-                            <div class="col-lg-9">
-                                <input class="form-control" type="email" value="email@gmail.com">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label class="col-lg-3 col-form-label form-control-label">Username</label>
-                            <div class="col-lg-9">
-                                <input class="form-control" type="text" value="janeuser">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label class="col-lg-3 col-form-label form-control-label">Password</label>
-                            <div class="col-lg-9">
-                                <input class="form-control" type="password" value="11111122333">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label class="col-lg-3 col-form-label form-control-label">Confirm password</label>
-                            <div class="col-lg-9">
-                                <input class="form-control" type="password" value="11111122333">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label class="col-lg-3 col-form-label form-control-label"></label>
-                            <div class="col-lg-9">
-                                <input type="reset" class="btn btn-secondary" value="Cancel">
-                                <input type="button" class="btn btn-primary" value="Save Changes">
-                            </div>
-                        </div>
-                    </form> -->
                 </div>
-            </div>
-        </div>
-        <div class="col-lg-4 pull-lg-8 text-center mt-5">
-            <img id="profile-pic" ng-src="/images/profile_placeholder.png" class="m-x-auto img-fluid img-circle" width="60%" alt="avatar">
-            <div class="d-flex flex-row">
-                <input type="file" id="file" class="form-control-sm align-self-center">
             </div>
         </div>
     </div>

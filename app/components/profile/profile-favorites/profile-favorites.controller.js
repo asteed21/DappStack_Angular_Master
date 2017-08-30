@@ -2,13 +2,14 @@
 
 angular.module('dappstackApp.components.profile.profileFavorites')
 
-    .controller('ProfileFavoritesController', ['DappStackUser', 'Favorite','$rootScope', function(DappStackUser, Favorite, $rootScope) {
+    .controller('ProfileFavoritesController', ['DappStackUser', 'Favorite', '$rootScope', 'authService', function(DappStackUser, Favorite, $rootScope, authService) {
         
         var vm = this;
+        vm.userId = authService.getCurrentId();
 
         vm.loadFavorites = function() {
             DappStackUser.favorites({
-                id: $rootScope.currentUser.id,
+                id: vm.userId,
                 filter:{
                     include: "dapps"
                 }

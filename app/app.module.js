@@ -24,7 +24,6 @@ require('angular-file-upload');
 require('./lb-services');
 require('./common/common.module');
 require('./components/components.module');
-require('./common/nav-bar/nav-bar.module');
 
 /**
  * @ngdoc overview
