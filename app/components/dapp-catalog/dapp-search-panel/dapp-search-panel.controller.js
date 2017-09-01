@@ -73,6 +73,14 @@ angular.module('dappstackApp.components.dappCatalog.dappSearchPanel')
             }
         };
 
+        vm.categorySelected = function(value) {
+            if (vm.category == value) {
+                return true;
+            } else {
+                return false;
+            }
+        };
+
         //functions to handle clicks on inactive categories, tags and statuses
         vm.assignCategory = function(category) {
             vm.category = category;
@@ -89,7 +97,7 @@ angular.module('dappstackApp.components.dappCatalog.dappSearchPanel')
 
         //functions to handle clicks on actie category, tags and statuses
         vm.removeCategory = function(category) {
-            vm.category = category;
+            vm.category = "";
         }
 
         vm.removeTag = function(tag) {

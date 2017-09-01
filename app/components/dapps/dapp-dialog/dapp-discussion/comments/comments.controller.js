@@ -6,77 +6,61 @@ angular.module('dappstackApp.components.dapps.dappDialog.dappDiscussion.comments
 
         var vm = this;
 
-        vm.$onInit = function() {
+        vm.formComment = {};
+        vm.commentMap = {};
+        vm.loggedIn = authService.isAuthenticated();
+        vm.dappId = $stateParams.dappId;
 
-            vm.comments = [];
-            vm.formComment = {};
-            vm.commentMap = {};
-            vm.loggedIn = authService.isAuthenticated();
+        function updateCommentsList() {
+            Comment.find({filter:{where:{dappId: $stateParams.dappId, parentId: {exists:false}}}})
+            .$promise.then(
+                function(response) {
+                    setComments(response);
+                },
+                function(response){
+                    console.log('Error - ' + response + ' - COULD NOT GET COMMENTS')
+                }
+            )
+        };
 
-            //TODO - configure $scope.watch() or similar to manage list updates automatically
-            function _updateCommentsList() {
-                Dapp.comments({id: $stateParams.dappId})
+        vm.createComment = function() {
+            if (vm.formComment.body) {
+                var newComment = {
+                    dappId: vm.dappId,
+                    dappStackUserId: $rootScope.currentUser.id,
+                    comment: vm.formComment.body
+                };
+                Comment.create(newComment)
                 .$promise.then(
                     function(response) {
-                        console.log(response);
-                        _setComments(response);
+                        resetFormComment();
+                        updateCommentsList();
                     },
-                    function(response){
-                        console.log('Error - ' + response + ' - COULD NOT GET COMMENTS')
+                    function(response) {
+                        console.log('Error - ' + response + " - COULD NOT ADD COMMENT");
                     }
                 )
-            };
+            }
+        };
 
-            vm.createComment = function() {
-                if (vm.formComment.body) {
-                    var newComment = {
-                        DappId: $stateParams.dappId,
-                        DappStackUserId: $rootScope.currentUser.id,
-                        comment: vm.formComment.body,
-                        comments: []
-                    };
-                    Comment.create(newComment)
-                    .$promise.then(
-                        function(response) {
-                            _resetFormComment();
-                            _updateCommentsList();
-                        },
-                        function(response) {
-                            console.log('Error - ' + response + " - COULD NOT ADD COMMENT");
-                        }
-                    )
-                }
-            };
-
-            //update comment list at load, follow up of above function placement
-            _updateCommentsList();
-        }
+        //update comment list at load, follow up of above function placement
+        updateCommentsList();
 
         /// Controller-side helper functions, not accessed in view
-        function _resetFormComment() {
+        function resetFormComment() {
             vm.formComment = null;
             vm.formComment = {};
         }
 
-        function _setComments(response) {
+        function setComments(response) {
             vm.comments = null;
             vm.commentMap = null;
             vm.commentMap = {};
 
             vm.comments = response;
-            _mapComments(vm.comments);
-            console.log(vm.comments);
-
         }
 
-        function _mapComments(comments) {
-            comments.forEach( function(comment){
-                vm.commentMap[comments.id] = comment;
-                if (comment.comments) {
-                    _mapComments(comment.comments)
-                }
-            });
-
-        }
-
+        vm.removeItem = function(index) {
+            vm.comments.splice(index, 1);
+        };
     }]);

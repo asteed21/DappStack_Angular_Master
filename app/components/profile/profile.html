@@ -1,30 +1,61 @@
-<div class="container">
-    <div class="row" ng-show="vm.loggedIn">
-        <div class="profile-header col-md-offset-1 col-md-10">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-3">
-                    <img id="profile-pic" class="img-responsive img-circle" width="200px" height="200px" alt="profile picture" ng-src="/images/profile_placeholder.png">
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-9">
-                    <h2>{{vm.user.firstName}} {{vm.user.lastName}}</h2>
-                    <p>{{vm.user.username}}</p>
-                </div>
+<div class="container profile-container">
+    <div class="row text-center m-5" ng-show="!vm.loggedIn">
+        <div class="alert alert-danger col-12 p-5">
+            <h4>You are not logged in. Please log in to view your profile.</h4>
+        </div>
+    </div>
+    <div class="row mt-5" ng-hide="!vm.loggedIn">
+        <div class="col-md-4 text-center mt-5">
+            <img id="profile-pic" ng-src="/images/profile_placeholder.png" class="m-x-auto img-fluid img-circle" width="60%" alt="avatar">
+            <div class="d-flex justify-content-center my-4">
+                <h4>{{vm.user.firstName}} {{vm.user.lastName}}</h4>
             </div>
         </div>
-    </div>
-    <div class="row profile-row-2" ng-show="vm.loggedIn">
-        <div class="profile-menu-area col-xs-12 col-md-offset-1 col-md-2">
-            <ul class="list-group">
-                <li class="list-group-item"><a ui-sref="app.profile.settings">Settings</a></li>
-                <li class="list-group-item"><a ui-sref="app.profile.favorites" ui-sref-active>Favorites</a></li>
+        <div class="col-md-8">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+                <li class="nav-item">
+                    <a href="" data-target="#profile" data-toggle="tab" class="nav-link active">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a href="" data-target="#favorites" data-toggle="tab" class="nav-link">Favorites</a>
+                </li>
+                <li class="nav-item">
+                    <a href="" data-target="#edit" data-toggle="tab" class="nav-link">Edit</a>
+                </li>
             </ul>
-        </div>
-        <div ui-view="profile-content" class="profile-content-area col-xs-12 col-md-8">
-        </div>
-    </div>
-    <div class="row text-center" ng-show="!vm.loggedIn">
-        <div class="access-restricted col-xs-12">
-            <h2>You are not logged in. Please log in to view your profile.</h2>
+            <div class="tab-content pt-4 pb-5">
+                <div class="tab-pane active" id="profile">
+                    <div class="row my-2">
+                        <div class="col-sm-12 d-flex flex-column align-items-center">
+                            <h6 class="my-2"><em>{{vm.user.username}}</em></h6>
+                            <h6 class="mt-5">Areas of Interest</h6>
+                            <a href="" class="tag tag-default tag-pill">data management</a>
+                            <a href="" class="tag tag-default tag-pill">money</a>
+                            <div class="flex-row justify-content-center mt-5">
+                                <span class="badge badge-success text-center py-2 px-2"><i class="fa fa-heart fa-lg"></i>&nbsp; {{vm.favoritesCount.count}} &nbsp; Favorites</span>
+                                <span class="badge badge-info text-center py-2 px-2"><i class="fa fa-database fa-lg"></i> &nbsp; {{vm.dappTeamsCount}} &nbsp; Dapps</span>
+                                <span class="badge badge-primary text-center py-2 px-2"><i class="fa fa-comment fa-lg"></i>&nbsp; {{vm.commentsCount.count}} &nbsp;  Comments</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="favorites">
+                    <h4 class="my-2 text-center">My Favorites</h4>
+                    <div class="row my-2">
+                        <div class="col-sm-12 d-flex flex-column align-items-center">
+                            <profile-favorites user="vm.user"></profile-favorites>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="edit">
+                    <h4 class="my-2 text-center">Profile Settings</h4>
+                    <div class="row my-2">
+                        <div class="col-sm-12">
+                            <profile-settings user="vm.user"></profile-settings>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

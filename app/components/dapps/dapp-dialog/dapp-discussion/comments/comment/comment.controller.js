@@ -11,18 +11,19 @@ angular.module('dappstackApp.components.dapps.dappDialog.dappDiscussion.comments
             vm.showEditOrDelete = false;
             vm.username;
             vm.amOwner;
-            vm.comments = [];
+            vm.replies = [];
+            vm.comment = vm.comment;
 
-            function _amOwner() {
-                if (vm.comment.DappStackUserId == $rootScope.currentUser.id) {
+            function amOwner(comment) {
+                if (comment.dappStackUserId == $rootScope.currentUser.id) {
                     vm.amOwner = true;
                 } else {
                     vm.amOwner = false;
                 }
             };
 
-            function _getUsername(comment) {
-                DappStackUser.findById({id: comment.DappStackUserId})
+            function getUsername(comment) {
+                DappStackUser.findById({id: comment.dappStackUserId})
                 .$promise.then(
                     function(response) {
                         vm.username = response.username;
@@ -33,9 +34,23 @@ angular.module('dappstackApp.components.dapps.dappDialog.dappDiscussion.comments
                 )
             };
 
-            _amOwner();
-            _getUsername(vm.comment);
+            amOwner(vm.comment);
+            getUsername(vm.comment);
+
+            getReplies(vm.comment);
         }
+
+        function getReplies(comment) {
+            Comment.find({filter:{where:{dappId: comment.dappId, parentId: comment.id}}})
+            .$promise.then(
+                function(response) {
+                    vm.replies = response;
+                },
+                function(response){
+                    console.log('Error - ' + response + ' - COULD NOT GET COMMENTS')
+                }
+            )
+        };
 
         vm.commentEdit = function(commentObj) {
             commentObj.interact = commentObj.comment;
@@ -47,17 +62,19 @@ angular.module('dappstackApp.components.dapps.dappDialog.dappDiscussion.comments
             commentObj.interact = '';
             commentObj.replying = true;
             commentObj.editing = false;
+            getReplies(commentObj);
         };
 
         vm.cancelComment = function(commentObj) {
-            _commentResetState(commentObj);
+            commentResetState(commentObj);
         };
 
         vm.updateComment = function(commentObj) {
-            Dapp.comments.updateById({id: commentObj.DappId, fk: commentObj.id}, {comment: commentObj.interact})
+            Dapp.comments.updateById({id: commentObj.dappId, fk: commentObj.id}, {comment: commentObj.interact})
             .$promise.then(
                 function(response) {
-                    _commentResetState(commentObj);
+                    vm.comment = response;
+                    commentResetState(commentObj);
                 },
                 function(response) {
                     console.log("ERROR - " + response + " - UNABLE TO UPDATE COMMENT");
@@ -71,13 +88,14 @@ angular.module('dappstackApp.components.dapps.dappDialog.dappDiscussion.comments
                 replying: false,
                 editing: false,
                 interact: '',
-                dappsId: $stateParams.dappId,
-                DappStackUserId: $rootScope.currentUser.id
+                dappId: $stateParams.dappId,
+                dappStackUserId: $rootScope.currentUser.id,
             }
-            Comment.comments.create({id: commentObj.id}, childComment)
+            Comment.replies.create({id: commentObj.id}, childComment)
             .$promise.then(
                 function(response) {
-                    _commentResetState(commentObj);
+                    commentResetState(commentObj);
+                    getReplies(commentObj);
                 },
                 function(response) {
                     console.log("Error - " + response + " - COULD NOT CREATE REPLY");
@@ -86,9 +104,9 @@ angular.module('dappstackApp.components.dapps.dappDialog.dappDiscussion.comments
         };
 
         vm.deleteComment = function(commentObj) {
-            Dapp.comments.destroyById({id: commentObj.id})
-            .success(function() {
-                vm.comments.remove(commentObj);
+            Dapp.comments.destroyById({id: commentObj.dappId, fk: commentObj.id})
+            .$promise.then(function() {
+                vm.onDelete();
             });
         };
 
@@ -96,10 +114,13 @@ angular.module('dappstackApp.components.dapps.dappDialog.dappDiscussion.comments
             return parseFloat(commentObj.upVotes - commentObj.downVotes) * -1;
         };
 
-        //HELPER FUNCTION
+        vm.removeItem = function(index) {
+            vm.replies.splice(index, 1);
+        };
 
-        function _commentResetState(commentObj) {
+        function commentResetState(commentObj) {
             commentObj.replying = false;
             commentObj.editing = false;
-        }
+        };
+
     }]);

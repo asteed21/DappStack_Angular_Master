@@ -41,7 +41,7 @@ angular.module('dappstackApp.components.dappCatalog.dappResultsPanel')
                     if (typeof searchQuery != "undefined") {
                         queryFilter.where.$text = {search: searchQuery};
                     };
-                    if (typeof category != "undefined") {
+                    if (typeof category != "undefined" && category !== "") {
                         queryFilter.where.category = category;
                     };
                     if (tags.length > 0 && typeof tags != "undefined") {
@@ -59,7 +59,6 @@ angular.module('dappstackApp.components.dappCatalog.dappResultsPanel')
             })
             .$promise.then(
                 function (response) {
-                    console.log(queryFilter);
                     vm.dapps = response;
                     vm.heading =  " Dapps found"; //update dapp list heading
                 },

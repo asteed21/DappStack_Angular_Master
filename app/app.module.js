@@ -24,7 +24,6 @@ require('angular-file-upload');
 require('./lb-services');
 require('./common/common.module');
 require('./components/components.module');
-require('./common/nav-bar/nav-bar.module');
 
 /**
  * @ngdoc overview
@@ -50,10 +49,10 @@ module.exports = angular.module('dappstackApp', [
 
 .constant('urlBase','http://0.0.0.0:3000/api')
 
-.config( function($stateProvider, $urlServiceProvider, LoopBackResourceProvider) {
+.config( function($stateProvider, $urlServiceProvider, LoopBackResourceProvider, urlBase) {
 
   // Assign the URL lb-services uses to access the LoopBack REST API server
-  LoopBackResourceProvider.setUrlBase('http://0.0.0.0:3000/api');
+  LoopBackResourceProvider.setUrlBase(urlBase);
 
   //state routing for basic app states (no other dependencies)
   $stateProvider.state('app', {
@@ -76,29 +75,12 @@ module.exports = angular.module('dappstackApp', [
         views: {
           'content@': {
             component: 'profile'
-          },
-          'profile-content@app.profile': {
-            component: 'profileFavorites'
           }
-        }
-  });
-
-  $stateProvider.state('app.profile.favorites', {
-        url:'/favorites',
-        views: {
-          'profile-content@app.profile': {
-            component: 'profileFavorites'
-          }
-        }
-  });
-
-  $stateProvider.state('app.profile.settings', {
-        url:'/settings',
-        views: {
-          'profile-content@app.profile': {
-            component: 'profileSettings'
-          }
-        }
+        //   'profile-content@app.profile': {
+        //     component: 'profileFavorites'
+        //   }
+        //  --> not in use, keep for ref
+      }
   });
 
   $stateProvider.state('app.dapps', {
@@ -120,12 +102,56 @@ module.exports = angular.module('dappstackApp', [
   });
 
   $stateProvider.state('app.dapps.dappdetails', {
-        url:'/:name/:dappId',
+        url:'/:name',
+        params: {
+          dappId: null
+        },
         views: {
           'content@': {
             component: 'dappDialogComponent'
           }
         }
+  });
+
+  //dumb route, no content loaded now
+  $stateProvider.state('app.admin', {
+    views: {
+      'header@': {},
+      'content@': {
+        component: 'adminComponent'
+      },
+      'footer@': {}
+    }
+  });
+
+  $stateProvider.state('app.admin.managedapps', {
+    url: 'admin/manage-dapps',
+    views: {
+      'admin-content@app.admin': {
+        component: 'manageDappsComponent'
+      }
+    }
+  });
+  
+  $stateProvider.state('app.admin.managedapps.editdapp', {
+    url: 'admin/manage-dapps/edit/:name',
+    params: {
+      dappId: null
+    },
+    views: {
+      'admin-content@app.admin': {
+        component: 'editDappComponent'
+      }
+    }
+  });
+
+  $stateProvider.state('app.admin.adddapp', {
+    url: 'admin/add-dapp',
+    views: {
+      'admin-content@app.admin': {
+        component: 'addDappComponent'
+      }
+    }
   });
 
   //set default route for the app to homepage
@@ -134,10 +160,16 @@ module.exports = angular.module('dappstackApp', [
 })
 
 //set function on $rootScope to check for state change, set variable for use in controllers
-.run(function($rootScope, $transitions, $state) {    
+.run(function($rootScope, $transitions, $state, LoopBackAuth, authService) {    
 
-    $transitions.onSuccess({}, function($transition$) {
-      $rootScope.previousState = $transition$.$from().name;
+  $transitions.onSuccess({}, function($transition$) {
+    $rootScope.previousState = $transition$.$from().name;
   });
+
+  // Get data from localstorage after page refresh
+  // and load user data into rootscope.
+  if (LoopBackAuth.accessTokenId && !$rootScope.currentUser) {
+    authService.refresh(LoopBackAuth.accessTokenId);
+  }
 
 }).name;

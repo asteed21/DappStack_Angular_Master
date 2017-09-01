@@ -5,8 +5,8 @@ angular.module('dappstackApp.components.dapps.dappDialog.dappDiscussion.comments
     .component('commentComponent', {
         bindings: {
             comment: '<',
-            comments: '<',
-            loggedIn: '<'
+            loggedIn: '<',
+            onDelete: '&'
         },
         template: require('./comment.html'),
         controller: 'CommentController',

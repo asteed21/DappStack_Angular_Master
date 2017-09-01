@@ -1,64 +1,52 @@
 <div class="profile-settings">
-    <div class="profile-content-header row text-center">
-        <div class="col-xs-2">
-            <h2>Settings</h2>
-        </div>
-        <div class="col-xs-10 text-right">
-            <button ng-click="vm.toggleEdit()" class="btn btn-primary profile-edit-btn"
-                type="button">
-                {{vm.showEdit ? 'Back':'Edit'}}
-            </button>
-        </div>
-    </div>
-    <div class="row" ng-show="!vm.showEdit">
-        <table class="table table-bordered">
-            <tr>
-                <th>Username</th>
-                <th>{{vm.user.username}}</th>
-            </tr>
-            <tr>
-                <th>Password</th>
-                <td>{{vm.user.password}}</td>
-            </tr>
-            <tr>
-                <th>First Name</th>
-                <td>{{vm.user.firstName}}</td>
-            </tr>
-            <tr>
-                <th>Last Name</th>
-                <td>{{vm.user.lastName}}</td>
-            </tr>
-            <tr>
-                <th>Profile Image</th>
-                <td>{{vm.uploader.queue.item.file.name}}</td>
-            </tr>
-        </table>
-    </div>
-    <div class="row">
-        <form ng-show="vm.showEdit" ng-submit="vm.updateProfile()">
-            <div class="form-group">
-                <label for="userUsername">Username</label>
-                <input ng-model="vm.newUsername" type="text" class="form-control" id="userUsername" placeholder="{{vm.user.username}}">
+    <div class="col-12">
+        <form ng-submit="vm.updateProfile()">
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label form-control-label h6" for="userUsername">Username</label>
+                <div class="col-md-9">
+                    <input ng-show="vm.showEdit" ng-model="vm.newUsername" type="text" class="form-control" id="userUsername" placeholder="{{vm.user.username}}">
+                    <p ng-show="!vm.showEdit" class="form-control-static">{{vm.user.username}}</p>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="userPassword">Password</label>
-                <input ng-model="vm.newPassword" type="password" class="form-control" id="userPassword" placeholder="*******">
+            <div class="form-group row" ng-show="vm.showEdit">
+                <label class="col-md-3 col-form-label form-control-label h6" for="userPassword">Password</label>
+                <div class="col-md-9">
+                    <input ng-model="new.newPassword" class="form-control" type="password" id="userPassword">
+                </div>
             </div>
-            <div class="form-group">
-                <label for="userFirstName">First Name</label>
-                <input ng-model="vm.newFirstName" type="text" class="form-control" id="userFirstName" placeholder="{{vm.user.firstName}}">
+            <div class="form-group row" ng-show="vm.showEdit">
+                <label class="col-md-3 col-form-label form-control-label h6" for="confirmPassword">Confirm new password</label>
+                <div class="col-md-9">
+                    <input ng-model="new.newPassword" class="form-control" type="password" id="confirmPassword">
+                </div>
             </div>
-            <div class="form-group">
-                <label for="userLastName">Last Name</label>
-                <input ng-model="vm.newLastName" type="text" class="form-control" id="userLastName" placeholder="{{vm.user.lastName}}">
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label form-control-label h6" for="userEmail">Email</label>
+                <div class="col-md-9">
+                    <input ng-show="vm.showEdit" ng-model="vm.newEmail" class="form-control" type="email" id="userEmail" placeholder="{{vm.user.email}}">
+                    <p ng-show="!vm.showEdit" class="form-control-static">{{vm.user.email}}</p>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="userProfilePic">Avatar Image</label>
-                <input type="file" nv-file-select uploader="vm.uploader" filters="imageFilter">
-                <button ng-click="vm.uploader.uploadAll().onCompleteAll()" ng-disabled="item.isReady || item.isUploading || item.isSuccess">upload</button>
-                <p class="help-block">Upload a picture for your avatar.</p>
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label form-control-label h6" for="userFirstName">First Name</label>
+                <div class="col-md-9">
+                    <input ng-show="vm.showEdit" ng-model="vm.newFirstName" type="text" class="form-control" id="userFirstName" placeholder="{{vm.user.firstName}}">
+                    <p ng-show="!vm.showEdit" class="form-control-static">{{vm.user.firstName}}</p>
+                </div>
             </div>
-            <button type="submit" class="btn btn-default">Confirm</button>
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label form-control-label h6" for="userLastName">Last Name</label>
+                <div class="col-md-9">
+                    <input ng-show="vm.showEdit" ng-model="vm.newLastName" type="text" class="form-control" id="userLastName" placeholder="{{vm.user.lastName}}">
+                    <p ng-show="!vm.showEdit" class="form-control-static">{{vm.user.lastName}}</p>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <button ng-click="vm.toggleEdit()" class="btn btn-outline-primary mx-3" type="button">
+                    {{vm.showEdit ? 'Cancel':'Edit'}}
+                </button>
+                <button ng-show="vm.showEdit" type="button" class="btn btn-primary mx-3" ng-click="vm.updateProfile()">Save Changes</button>
+            </div>
         </form>
     </div>
 </div>

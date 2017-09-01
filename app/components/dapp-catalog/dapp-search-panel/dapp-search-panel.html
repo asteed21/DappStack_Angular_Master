@@ -1,24 +1,25 @@
-<div class="d-flex flex-column m-3 pt-3 pb-3 align-items-center dapp-search-panel">
-    <h6 class="w-75 mb-3">Filter By Category</h6>
-    <ul class="w-75 list-group">
-        <li class="btn btn-secondary list-group-item" ng-repeat="category in vm.categories" ng-click="vm.checkCategory(category.label)">
-            <span class="fa {{category.icon}} fa-lg mr-2"></span>
-            <span class="ml-2">{{category.label}}</span>
+<div class="d-flex flex-column py-3 px-4 align-items-center">
+    <h6 class="mb-4 w-100 justify-content-start">Categories</h6>
+    <ul class="list-unstyled w-100">
+        <li class="row py-1" style="cursor: default;" ng-repeat="category in vm.categories" ng-click="vm.checkCategory(category.label)">
+            <span class="d-flex justify-content-center align-self-center col-2"><i class="fa {{category.icon}} fa-lg"></i></span>
+            <span class="col-6">{{category.label}}</span>
+            <span ng-show="vm.categorySelected(category.label)" class="d-flex justify-content-start align-self-center col-4"><i class="fa fa-check fa-sm"></i></span>
         </li>
     </ul>
-    <h6 class="w-75 mt-3">Filter By Tag</h6>
-    <div class="w-75">
-        <button type="button" class="btn btn-outline-secondary btn-sm m-1" data-toggle="button" ng-repeat="tag in vm.tags" ng-click="vm.checkTag(tag.label)">
-            <span>{{tag.label}}</span>
-        </button>
-    </div>
-    <h6 class="w-75 mt-3">Filter By Status</h6>
-    <div class="w-75">
+    <h6 class="mb-4 w-100">Status</h6>
+    <div class="w-100">
         <div class="form-check" ng-repeat="status in vm.statuses" active="status.selected">
         <label class="form-check-label">
             <input class="form-check-input" type="checkbox" ng-click="vm.checkStatus(status.label)">
             {{status.label}}
         </label>
         </div>
+    </div>
+    <h6 class="mt-2 mb-4 w-100">Tags</h6>
+    <div class="w-100">
+        <button type="button" class="btn btn-outline-primary btn-sm m-1" data-toggle="button" ng-repeat="tag in vm.tags" ng-click="vm.checkTag(tag.label)">
+            <span>{{tag.label}}</span>
+        </button>
     </div>
 </div>

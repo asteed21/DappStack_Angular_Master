@@ -2,34 +2,24 @@
 
 angular.module('dappstackApp.common.navBar')
 
-    .controller('NavBarController', ['$scope', '$state', '$rootScope', 'ngDialog', 'authService', 'DappStackUser', function($scope, $state, $rootScope, ngDialog, authService, DappStackUser) {
+    .controller('NavBarController', ['$state', '$rootScope', 'ngDialog', 'authService', 'DappStackUser', '$localStorage', function($state, $rootScope, ngDialog, authService, DappStackUser, $localStorage) {
         
         var vm = this;
+
+        vm.loggedIn = authService.isAuthenticated();
 
         vm.isNavCollapsed = true;
         vm.isCollapsed = false;
 
-        vm.loggedIn = false;
-        vm.username = '';
-        
-        if(authService.isAuthenticated()) {
-            vm.loggedIn = true;
-            vm.username = authService.getUsername();
-            
-            DappStackUser.findOne({id: $rootScope.currentUser.id})
-            .$promise.then(
-                function (response) {
-                    vm.user = response;
-                    console.log(vm.user);
-                },
-                function (response) {
-                    console.log("Error: " + response.status + " " + response.statusText);
-                }
-            );
-        }
-
-        vm.openLogin = function () {
-            ngDialog.open({ template: 'common/auth/login/login.html', scope: $scope, className: 'ngdialog-theme-default', controller:"LoginController" });
+        vm.openLogin = function(vm) {
+            ngDialog.open({ 
+                template: '<login-component on-resolve="ngDialog.close()" on-reject="closeThisDialog(msg)"></login-component>', 
+                scope: vm,
+                className: 'ngdialog-theme-default',
+                plain: true,
+                closeByNavigation: true,
+                showClose: false
+            });
         };
         
         vm.logOut = function() {
@@ -40,12 +30,19 @@ angular.module('dappstackApp.common.navBar')
         
         $rootScope.$on('login:Successful', function() {
             vm.loggedIn = authService.isAuthenticated();
-            vm.username = authService.getUsername();
+            vm.username = authService.getUserName();
         });
             
         $rootScope.$on('registration:Successful', function() {
-            vm.loggedIn = authService.isAuthenticated();
-            vm.username = authService.getUsername();
+            var message = '\
+            <div class="ngdialog-message">\
+            <div><h3>YOU DID IT!!!</h3></div>' +
+            '<div><p>CONGRATULATIONS, YOU SIGNED UP SUCCCESFULLY!!!!!!!!!!!!!!!</p></div>';
+
+            ngDialog.openConfirm({
+                template: message, 
+                plain: 'true'
+            });
         });
         
         vm.stateis = function(curstate) {

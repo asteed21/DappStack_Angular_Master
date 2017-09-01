@@ -1,20 +1,22 @@
 
-<div class="row">
-  <div class="comments-container col-xs-8 col-xs-offset-2">
-    <div ng-hide="vm.loggedIn" class="col-xs-12 add-top-level-area text-center">
-      Please <a href="#">Login</a> or <a href="#">Sign Up</a> to comment on this Dapp
-    </div>
-    <div ng-show="vm.loggedIn" class="col-xs-12">
-      <div class="col-xs-9">
-        <textarea class="text-box-top" ng-model="vm.formComment.body" placeholder="Add Comment..." ></textarea>
+<div class="d-flex flex-row justify-content-center mb-3">
+  <div ng-hide="vm.loggedIn">
+    Please <a href="#">Login</a> or <a href="#">Sign Up</a> to comment on this Dapp
+  </div>
+  <div ng-show="vm.loggedIn" class="col-12 col-sm-8">
+      <hr>
+      <h6 class="d-flex flex-row justify-content-center justify-content-sm-start">Your Comment</h6>
+      <div class="form-group w-100">
+        <label class="sr-only" for="comment-input" aria-label="Comment Input">Comment Input</label>
+        <textarea class="form-control" id="comment-input" rows="2" ng-model="vm.formComment.body"></textarea>
       </div>
-      <div class="col-xs-3 btn-container">
+      <div class="d-flex flex-row justify-content-center justify-content-sm-start">
         <button class="top-btn btn btn-primary" ng-click="vm.createComment()">Save</button>
       </div>
-    </div>
+      <hr>
   </div>
 </div>
-<ul>
-  <comment-component class="comment-block" ng-repeat="comment in vm.comments" comment="comment" comments="vm.comments" logged-in="vm.loggedIn">
+<ul class="d-flex flex-column col-12">
+  <comment-component ng-repeat="comment in vm.comments" ng-init="commentIndex = $index" comment="comment" on-delete="vm.removeItem(commentIndex)" logged-in="vm.loggedIn">
   </comment-component>
 </ul>
