@@ -89,32 +89,72 @@ angular.module('dappstackApp.components.dapps.dappDialog')
         }
 
         //function to add favorite to user's profile
-        vm.addFavorite = function() {
-            if (vm.loggedIn())
-                Favorite.create({dappStackUserId: $rootScope.currentUser.id, dappsId: dappId}).$promise.then(
-                    function(response) {
-                        vm.favorited = true;
-                    },
-                    function(response) {
-                        console.log("Error: " + response.status + " " + response.statusText);
-                    } 
-                );
+        vm.handleFavorite = function() {
+            if (vm.loggedIn()) {
+                if (!vm.favorited) {
+                    Favorite.create({dappStackUserId: $rootScope.currentUser.id, dappsId: dappId}).$promise.then(
+                        function(response) {
+                            console.log("favorite added");
+                            vm.favorited = true;
+
+                        },
+                        function(response) {
+                            console.log("Error: " + response.status + " " + response.statusText);
+                        } 
+                    );
+                } else {
+                    Favorite.findOne({filter:{where:{dappStackUserId: $rootScope.currentUser.id, dappsId: dappId}}}).$promise.then(
+                        function(response) {
+                            Favorite.deleteById({id: response.id}).$promise.then(
+                                function(response) {
+                                    console.log("favorited deleted");
+                                    vm.favorited = false;
+                                },
+                                function(response) {
+                                    console.log("Error: " + response.status + " " + response.statusText);
+                                }
+                            )
+                        },
+                        function(response) {
+                            console.log("Error: " + response.status + " " + response.statusText);
+                        }
+                    )
+                }
+            }
         }
 
         //function to add a like to the list-item selected, then disable liking again
-        vm.addLike = function() {
-            if (!vm.liked) {
-                Like.create({dappStackUserId: $rootScope.currentUser.id, dappsId: dappId}).$promise.then(
-                    function(response) {
-                        vm.liked = true;
-                    },
-                    function(response) {
-                        console.log("Error: " + response.status + " " + response.statusText);
-                    } 
-                );
-            } else {
-                Like.delete({id: currentLike});
-                vm.liked = false;
+        vm.handleLike = function() {
+            if (vm.loggedIn()) {
+                if (!vm.liked) {
+                    Like.create({dappStackUserId: $rootScope.currentUser.id, dappsId: dappId}).$promise.then(
+                        function(response) {
+                            console.log("like added");
+                            vm.liked = true;
+
+                        },
+                        function(response) {
+                            console.log("Error: " + response.status + " " + response.statusText);
+                        } 
+                    );
+                } else {
+                    Like.findOne({filter:{where:{dappStackUserId: $rootScope.currentUser.id, dappsId: dappId}}}).$promise.then(
+                        function(response) {
+                            Like.deleteById({id: response.id}).$promise.then(
+                                function(response) {
+                                    console.log("like deleted");
+                                    vm.liked = false;
+                                },
+                                function(response) {
+                                    console.log("Error: " + response.status + " " + response.statusText);
+                                }
+                            )
+                        },
+                        function(response) {
+                            console.log("Error: " + response.status + " " + response.statusText);
+                        }
+                    )
+                }
             }
         }
 

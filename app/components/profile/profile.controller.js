@@ -44,8 +44,6 @@ angular.module('dappstackApp.components.profile')
             );
         }
 
-        //if (authService.isAuthenticated());
-
         $rootScope.$on('login:Successful', function() {
             vm.setUserInfo();
             vm.loggedIn = true;

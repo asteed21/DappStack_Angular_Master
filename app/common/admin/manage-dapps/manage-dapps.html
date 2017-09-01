@@ -1,0 +1,29 @@
+<div class="mt-4">
+    <div class="d-flex flex-row justify-content-around">
+        <h1>Manage Dapps</h1>
+
+        <input class="corner-search" type="search" placeholder="Find a dapp..." ng-model="searchText">
+    </div>
+    <table class="table table-hover mt-4">
+        <thead>
+            <tr>
+            <th class="text-center">#</th>
+            <th class="text-center">Name</th>
+            <th class="text-center">Details</th>
+            <th class="text-center">Remove</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="dapp in vm.dapps | filter:searchText" ng-init="rowIndex = $index">
+            <th scope="row" class="text-center">{{rowIndex + 1}}</th>
+            <td class="text-center">{{dapp.name}}</td>
+            <td class="text-center">
+                <a ui-sref="app.admin.managedapps.editdapp({name: dapp.name, dappId: dapp.id})">Edit</a>
+            </td>
+            <td class="text-center">
+                <button type="button" class="btn btn-danger btn-sm" ng-click="vm.deleteDapp(dapp.id, rowIndex)">Delete</a>
+            </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

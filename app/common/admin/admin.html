@@ -1,0 +1,15 @@
+<div class="container-fluid admin-page">
+    <div class="row">
+        <div class="d-flex flex-column nav-column align-content-center col-12 col-md-3">
+            <a class="mx-auto my-4" ui-sref="app">
+                <img ng-src="./images/DS_logo.png" width="150" height="75">
+            </a>
+            <ul class="list-group">
+                <li class="list-group-item" ui-sref="app.admin.managedapps">Manage Dapps</li>
+                <li class="list-group-item" ui-sref="app.admin.adddapp">Add Dapp</li>
+            </ul>
+        </div>
+        <div ui-view="admin-content" class="d-flex flex-column col-12 col-md-9">
+        </div>
+    </div>
+</div>

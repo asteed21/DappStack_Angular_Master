@@ -1,5 +1,5 @@
-<div class="container-fluid">
-    <div class="row justify-content-end pr-3 pr-md-5 mt-5">
+<div class="container-fluid dapp-dialog-container">
+    <div class="row justify-content-end pr-3 pr-md-5 mt-4">
       <button type="button" class="close" aria-label="Close" ng-click="vm.goBack()">
         <span class="close-button" aria-hidden="true">&times;</span>
       </button>
@@ -13,18 +13,20 @@
         <p>{{vm.dapp.thumbnailDescription}}</p>
         <hr class="my-3">
         <div class="row justify-content-center justify-content-md-start mx-md-1 mb-3 mb-md-0">
-          <button ng-click="vm.addFavorite()" ng-show="vm.loggedIn" ng-disabled="vm.favorited" class="btn btn-secondary rounded-button mx-2" role="button">
-              <span class="fa fa-heart"></span>
+          <button ng-click="vm.handleFavorite()" ng-show="vm.loggedIn" class="btn btn-secondary rounded-button mx-2" role="button">
+              <span class="fa fa-heart-o" ng-show="!vm.favorited"></span>
+              <span class="fa fa-heart favorited" ng-show="vm.favorited"></span>
           </button>
-          <button ng-click="vm.addLike()" ng-show="vm.loggedIn" ng-disabled="vm.liked" class="btn btn-secondary rounded-button mx-2" role="button" >
-              <span class="fa fa-thumbs-up"></span>
+          <button ng-click="vm.handleLike()" ng-show="vm.loggedIn" class="btn btn-secondary rounded-button mx-2" role="button" >
+              <span class="fa fa-thumbs-o-up" ng-show="!vm.liked"></span>
+              <span class="fa fa-thumbs-up" ng-show="vm.liked"></span>
           </button>
           <div>
           </div>
         </div>
       </div>
       <div class="col-12 col-sm-3 d-flex flex-column justify-content-center align-items-center">
-        <a href="vm.website">Website</a>
+        <a href="{{vm.dapp.website}}">Website</a>
         <hr class="my-2">
         <ul class="list-unstyled d-flex">
           <li class="pl-2" ng-show="vm.hasSocial('facebook')">

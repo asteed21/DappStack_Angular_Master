@@ -1,9 +1,10 @@
 <div class="d-flex flex-column py-3 px-4 align-items-center">
     <h6 class="mb-4 w-100 justify-content-start">Categories</h6>
     <ul class="list-unstyled w-100">
-        <li class="row" ng-repeat="category in vm.categories" ng-click="vm.checkCategory(category.label)">
-            <span class="d-flex justify-content-center align-content-center col-3"><i class="fa {{category.icon}} fa-lg"></i></span>
-            <span class="col-9">{{category.label}}</span>
+        <li class="row py-1" style="cursor: default;" ng-repeat="category in vm.categories" ng-click="vm.checkCategory(category.label)">
+            <span class="d-flex justify-content-center align-self-center col-2"><i class="fa {{category.icon}} fa-lg"></i></span>
+            <span class="col-6">{{category.label}}</span>
+            <span ng-show="vm.categorySelected(category.label)" class="d-flex justify-content-start align-self-center col-4"><i class="fa fa-check fa-sm"></i></span>
         </li>
     </ul>
     <h6 class="mb-4 w-100">Status</h6>

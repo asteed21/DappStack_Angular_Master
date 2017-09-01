@@ -1,0 +1,132 @@
+<div class="my-4">
+    <div class="d-flex flex-row justify-content-around">
+        <h1>Edit Dapp</h1>
+        <div class="w-50 d-flex justify-content-end">
+            <button ng-show="!vm.showEdit" type="button" class="btn btn-primary px-4" ng-click="vm.goBack()">Back</button>
+        </div>
+    </div>
+    <hr>
+    <div class="col-12">
+        <form ng-submit="vm.updateDapp()">
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label form-control-label h6" for="dappName">Dapp Name</label>
+                <div class="col-md-9">
+                    <input ng-show="vm.showEdit" ng-model="vm.newName" type="text" class="form-control" id="dappName">
+                    <p ng-show="!vm.showEdit" class="form-control-static">{{vm.dapp.name}}</p>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label form-control-label h6" for="dappCategory">Dapp Category</label>
+                <div class="col-md-9">
+                    <input ng-show="vm.showEdit" ng-model="vm.newCategory" type="text" class="form-control" id="dappCategory">
+                    <p ng-show="!vm.showEdit" class="form-control-static">{{vm.dapp.category}}</p>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label form-control-label h6" for="dappTags">Dapp Tags</label>
+                <div class="col-md-9">
+                    <input ng-show="vm.showEdit" ng-model="vm.newTags" type="text" class="form-control" id="dappCategory">
+                    <p ng-show="!vm.showEdit" class="form-control-static">{{vm.dapp.tags}}</p>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label form-control-label h6" for="dappStatus">Dapp Status</label>
+                <div class="col-md-9">
+                    <select ng-show="vm.showEdit" ng-model="vm.newStatus" class="form-control" id="dappStatus">
+                        <option value="Live">Live</option>
+                        <option value="In Progress">In Progress</option>
+                        <option value="Concept">Concept</option>
+                        <option value="Deprecated">Deprecated</option>
+                    </select>
+                    <p ng-show="!vm.showEdit" class="form-control-static">{{vm.dapp.status}}</p>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label form-control-label h6" for="dappReleaseDate">Dapp Release Date</label>
+                <div class="col-md-9">
+                    <input ng-show="vm.showEdit" ng-model="vm.newReleaseDate" type="date" class="form-control" id="dappReleaseDate">
+                    <p ng-show="!vm.showEdit" class="form-control-static">{{vm.dapp.releaseDate | date: 'mediumDate'}}</p>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label form-control-label h6" for="dappWebsite">Dapp Website</label>
+                <div class="col-md-9">
+                    <input ng-show="vm.showEdit" ng-model="vm.newWebsite" type="text" class="form-control" id="dappWebsite">
+                    <p ng-show="!vm.showEdit" class="form-control-static">{{vm.dapp.website}}</p>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="flex-row w-100">
+                    <h5>Social Links</h5>
+                    <hr>
+                </div>
+                <div class="flex-column pl-3 w-100">
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label form-control-label h6" for="dappFacebook">Facebook</label>
+                        <div class="col-md-9">
+                            <input ng-show="vm.showEdit" ng-model="vm.newFacebook" type="text" class="form-control" id="dappFacebook">
+                            <p ng-show="!vm.showEdit" class="form-control-static">{{vm.dapp.socialLinks.facebook}}</p>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label form-control-label h6" for="dappTwitter">Twitter</label>
+                        <div class="col-md-9">
+                            <input ng-show="vm.showEdit" ng-model="vm.newTwitter" type="text" class="form-control" id="dappTwitter">
+                            <p ng-show="!vm.showEdit" class="form-control-static">{{vm.dapp.socialLinks.twitter}}</p>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label form-control-label h6" for="dappReddit">Reddit</label>
+                        <div class="col-md-9">
+                            <input ng-show="vm.showEdit" ng-model="vm.newReddit" type="text" class="form-control" id="dappReddit">
+                            <p ng-show="!vm.showEdit" class="form-control-static">{{vm.dapp.socialLinks.reddit}}</p>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label form-control-label h6" for="dappGithub">Github</label>
+                        <div class="col-md-9">
+                            <input ng-show="vm.showEdit" ng-model="vm.newGithub" type="text" class="form-control" id="dappGithub">
+                            <p ng-show="!vm.showEdit" class="form-control-static">{{vm.dapp.socialLinks.github}}</p>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label form-control-label h6" for="dappSlack">Slack</label>
+                        <div class="col-md-9">
+                            <input ng-show="vm.showEdit" ng-model="vm.newSlack" type="text" class="form-control" id="dappSlack">
+                            <p ng-show="!vm.showEdit" class="form-control-static">{{vm.dapp.socialLinks.slack}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-row w-100">
+                    <hr>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label form-control-label h6" for="dappFeatured">Dapp Featured?</label>
+                <div class="col-md-9">
+                    <input ng-model="vm.newFeatured" ng-disabled="!vm.showEdit" type="checkbox" class="form-check" id="dappFeatured">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label form-control-label h6" for="dappThumbnailDescription">Dapp Thumbnail Description</label>
+                <div class="col-md-9">
+                    <input ng-show="vm.showEdit" ng-model="vm.newThumbnailDescription" type="text" class="form-control" id="dappThumbnailDescription">
+                    <p ng-show="!vm.showEdit" class="form-control-static">{{vm.dapp.thumbnailDescription}}</p>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label form-control-label h6" for="dappAboutContent">Dapp About Page Content</label>
+                <div class="col-md-9">
+                    <textarea ng-show="vm.showEdit" rows="5" ng-model="vm.newAboutContent" class="form-control" id="dappAboutContent"></textarea>
+                    <p ng-show="!vm.showEdit" class="form-control-static">{{vm.dapp.aboutContent}}</p>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <button ng-click="vm.toggleEdit()" class="btn btn-outline-primary mx-3" type="button">
+                    {{vm.showEdit ? 'Cancel':'Edit'}}
+                </button>
+                <button ng-show="vm.showEdit" type="button" class="btn btn-primary mx-3" ng-click="vm.updateDapp()">Save Changes</button>
+            </div>
+        </form>
+    </div>
+    </div>

@@ -1,0 +1,122 @@
+<div class="mt-4">
+    <div class="d-flex flex-row justify-content-center">
+        <h1>Add Dapp</h1>
+    </div>
+    <hr>
+    <div ng-show="vm.dappSubmitted">
+        <div class="alert alert-success p-5" role="alert">
+            <!-- <div class="flex-row justify-content-center"> -->
+                <h4 class="my-5"><strong>Dapp Submitted Successfully!</strong></h4>
+                <p>Would you like to add another Dapp?</p>
+                <a ui-sref="app.admin.adddapp" class="btn btn-primary btn-lg">Add More</a>
+            <!-- </div> -->
+        </div>
+    </div>
+    <div class="col-8 offset-2 mt-4" ng-show="!vm.dappSubmitted">
+        <form ng-submit="vm.submitDapp()">
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label form-control-label h6" for="dappName">Dapp Name</label>
+                <div class="col-md-9">
+                    <input ng-model="vm.newName" type="text" class="form-control" id="dappName">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label form-control-label h6" for="dappCategory">Dapp Category</label>
+                <div class="col-md-9">
+                    <input ng-model="vm.newCategory" type="text" class="form-control" id="dappCategory">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label form-control-label h6" for="dappTags">Dapp Tags</label>
+                <div class="col-md-9">
+                    <input ng-model="vm.newTags" type="text" class="form-control" id="dappCategory">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label form-control-label h6" for="dappStatus">Dapp Status</label>
+                <div class="col-md-9">
+                    <select ng-model="vm.newStatus" class="form-control" id="dappStatus">
+                        <option value="Live">Live</option>
+                        <option value="In Progress">In Progress</option>
+                        <option value="Concept">Concept</option>
+                        <option value="Deprecated">Deprecated</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label form-control-label h6" for="dappReleaseDate">Dapp Release Date</label>
+                <div class="col-md-9">
+                    <input ng-model="vm.newReleaseDate" type="date" class="form-control" id="dappReleaseDate">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label form-control-label h6" for="dappWebsite">Dapp Website</label>
+                <div class="col-md-9">
+                    <input ng-model="vm.newWebsite" type="text" class="form-control" id="dappWebsite">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="flex-row w-100">
+                    <h5>Social Links</h5>
+                    <hr>
+                </div>
+                <div class="flex-column pl-3 w-100">
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label form-control-label h6" for="dappFacebook">Facebook</label>
+                        <div class="col-md-9">
+                            <input ng-model="vm.newFacebook" type="text" class="form-control" id="dappFacebook">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label form-control-label h6" for="dappTwitter">Twitter</label>
+                        <div class="col-md-9">
+                            <input ng-model="vm.newTwitter" type="text" class="form-control" id="dappTwitter">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label form-control-label h6" for="dappReddit">Reddit</label>
+                        <div class="col-md-9">
+                            <input ng-model="vm.newReddit" type="text" class="form-control" id="dappReddit">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label form-control-label h6" for="dappGithub">Github</label>
+                        <div class="col-md-9">
+                            <input ng-model="vm.newGithub" type="text" class="form-control" id="dappGithub">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label form-control-label h6" for="dappSlack">Slack</label>
+                        <div class="col-md-9">
+                            <input ng-model="vm.newSlack" type="text" class="form-control" id="dappSlack">
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-row w-100">
+                    <hr>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label form-control-label h6" for="dappFeatured">Dapp Featured?</label>
+                <div class="col-md-9">
+                    <input ng-model="vm.newFeatured" type="checkbox" class="form-check" id="dappFeatured">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label form-control-label h6" for="dappThumbnailDescription">Dapp Thumbnail Description</label>
+                <div class="col-md-9">
+                    <input ng-model="vm.newThumbnailDescription" type="text" class="form-control" id="dappThumbnailDescription">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-md-3 col-form-label form-control-label h6" for="dappAboutContent">Dapp About Page Content</label>
+                <div class="col-md-9">
+                    <textarea rows="5" ng-model="vm.newAboutContent" class="form-control" id="dappAboutContent"></textarea>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <button type="submit" class="btn btn-primary mx-3">Save</button>
+            </div>
+        </form>
+    </div>
+</div>

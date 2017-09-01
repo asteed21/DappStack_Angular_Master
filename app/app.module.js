@@ -102,12 +102,56 @@ module.exports = angular.module('dappstackApp', [
   });
 
   $stateProvider.state('app.dapps.dappdetails', {
-        url:'/:name/:dappId',
+        url:'/:name',
+        params: {
+          dappId: null
+        },
         views: {
           'content@': {
             component: 'dappDialogComponent'
           }
         }
+  });
+
+  //dumb route, no content loaded now
+  $stateProvider.state('app.admin', {
+    views: {
+      'header@': {},
+      'content@': {
+        component: 'adminComponent'
+      },
+      'footer@': {}
+    }
+  });
+
+  $stateProvider.state('app.admin.managedapps', {
+    url: 'admin/manage-dapps',
+    views: {
+      'admin-content@app.admin': {
+        component: 'manageDappsComponent'
+      }
+    }
+  });
+  
+  $stateProvider.state('app.admin.managedapps.editdapp', {
+    url: 'admin/manage-dapps/edit/:name',
+    params: {
+      dappId: null
+    },
+    views: {
+      'admin-content@app.admin': {
+        component: 'editDappComponent'
+      }
+    }
+  });
+
+  $stateProvider.state('app.admin.adddapp', {
+    url: 'admin/add-dapp',
+    views: {
+      'admin-content@app.admin': {
+        component: 'addDappComponent'
+      }
+    }
   });
 
   //set default route for the app to homepage

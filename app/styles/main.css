@@ -2,21 +2,20 @@
 
 /* OVERALL STYLES */
 body {
-    padding-top: 50px;
-    background: whitesmoke;
+    background: white;
 }
 
 .content-area {
     min-height: 100vh;
 }
 
-/* REDIRECT PAGE STYLES */
-.access-restricted {
-    height: 400px;
-    padding: 10%;
+/* NAVBAR STYLES */
+.navbar {
+    background: midnightblue;
+    opacity: .9;
+    color: white;
 }
 
-/* NAVBAR STYLES */
 #navbarElements {
     width: auto;
 }
@@ -32,6 +31,10 @@ body {
     width: 50%;
 }
 
+#search-form > div > input {
+    border-radius: 50rem;
+}
+
 .navbar .navbar-toggler:focus, .navbar .navbar-toggler:hover{
     background-color: transparent;
 }
@@ -41,7 +44,7 @@ body {
 }
 
 .dropdown-toggle::after {
-    display:none
+    display: none;
 }
 
 #dropdown-top-menu {
@@ -73,24 +76,41 @@ body {
 
 /* HOMEPAGE STYLES */
 .home-splash {
-    height: 400px;
-    background-image: url("/images/homepage_pic_1.jpg");
+    height: 100vh;
+    background-image: url("/images/splash_image_2.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 0;
 }
 
-.home-container {
+#splash-message {
+    margin-top: 60px;
+    color: whitesmoke;
+    opacity: .9;
+}
+
+#splash-message > p > a {
+    margin-top: 10px;
+}
+
+.home-body{
     margin-bottom: 50px;
 }
 
 /*FOOTER STYLES*/
-#footer ul li {
-    margin: 0 10px;
+#footer {
+    color: white;
+    background: midnightblue;
+    opacity: .9;
+    font-size: 12px;
 }
 
 /*DAPP CATALOG STYLES*/
+.dapp-catalog-container {
+    padding-top: 60px;
+}
+
 .page-button {
     margin-top: 30px;
     margin-right: 15px;
@@ -108,7 +128,7 @@ body {
 
 .card {
     width: 12rem;
-	background: #fff;
+	background: white;
 	box-shadow: 0 3px 10px rgba(0,0,0,0.1);
 }
 
@@ -117,17 +137,26 @@ body {
 }
 
 /* DAPP DETAIL PAGE STYLES */
+.dapp-dialog-container {
+    padding-top: 60px;
+}
+
 .rounded-button {
     padding: .5rem .75rem;
     border-radius: 50%;
+}
+
+.favorited {
+    color: red;
 }
 
 /* DAPP ABOUT PAGE STYLES */
 
 
 /* PROFILE PAGE STYLES */
-
-
+.profile-container {
+    padding-top: 60px;
+}
 
 /* COMMENTS STYLING */
 .comment {
@@ -158,4 +187,32 @@ body {
 
 .comment-meta {
     font-size: 12px;
+}
+
+/* ADMIN STYLES */
+.admin-page {
+    background: white;
+    padding: 0;
+}
+
+.nav-column {
+    background: midnightblue;
+    min-height: 100vh;
+    padding: 0;
+}
+
+.nav-column ul li {
+    width: 100%;
+    background: rgba(255,255,255,.1);
+    color: white;
+    margin: auto;
+    cursor: pointer;
+}
+
+.corner-search {
+    border: 1px solid gray;
+    border-radius: 50rem;
+    height: 3rem;
+    width: 30rem;
+    padding: 0 2rem;
 }
